@@ -154,6 +154,7 @@
     <Compile Include="Utility\MuliLanguageRouteHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\customform.css" />
     <Content Include="Content\easyui\images\checkmark.gif" />
     <Content Include="Content\easyui\images\checknomark.gif" />
     <Content Include="Content\easyui\images\icon.png" />
@@ -848,6 +849,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\SliderImg\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

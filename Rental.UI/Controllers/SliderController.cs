@@ -32,12 +32,45 @@ namespace Rental.UI.Controllers
             return View();
         }
 
-        public ActionResult Save()
+        public ActionResult _AjaxSaveSliderImg()
         {
-            var file = Request.Files[0];
-            file.SaveAs(Server.MapPath("~/Content/1.png"));
-            return View();
+            if (System.IO.File.Exists(Server.MapPath("~/Upload/SliderImg")))
+            {
+                var uploadFiles = Request.Files;
+                if (uploadFiles != null && uploadFiles.Count > 0)
+                {
+                    var file = uploadFiles[0];
+                }
+            }
+            Msg tmp = new Msg();
+            tmp.files.Add(new MsgInfo()
+            {
+                url = "http://url.to/file/or/page",
+                name = "thumb2.jpg",
+                type = "image/jpeg",
+                size = 46353,
+            });
+            return Json(tmp);
         }
 
+    }
+
+    public class Msg
+    {
+        public Msg()
+        {
+            files = new List<MsgInfo>();
+        }
+        public List<MsgInfo> files { get; set; }
+    }
+
+    public class MsgInfo
+    {
+        public string url { get; set; }
+
+        public string name { get; set; }
+        public string type { get; set; }
+
+        public int size { get; set; }
     }
 }

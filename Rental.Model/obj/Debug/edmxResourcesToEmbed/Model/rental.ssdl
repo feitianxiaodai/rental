@@ -5,10 +5,12 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="TitleCN" Type="varchar" MaxLength="128" Nullable="false" />
     <Property Name="ImgUrl" Type="varchar" MaxLength="256" Nullable="false" />
     <Property Name="CreateTime" Type="datetime" Nullable="false" />
     <Property Name="Remark" Type="varchar" MaxLength="256" />
+    <Property Name="TitleTW" Type="varchar" MaxLength="128" />
+    <Property Name="TitleEN" Type="varchar" MaxLength="128" />
   </EntityType>
   <EntityContainer Name="RentalModelStoreContainer">
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />

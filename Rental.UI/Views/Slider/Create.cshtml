@@ -1,33 +1,82 @@
-﻿@{
+﻿@model Rental.Service.SliderModel
+@{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<span class="btn btn-success fileinput-button">
-    <i class="glyphicon glyphicon-plus"></i>
-    <span>Add files...</span>
-    <!-- The file input field used as target for the file upload widget -->
-    <input id="fileupload" type="file" name="files[]" multiple>
-</span>
-<br>
-<br>
-<!-- The global progress bar -->
-<div id="progress" class="progress">
-    <div class="progress-bar progress-bar-success"></div>
+<link href="@Url.Content("~/Content/customform.css")" rel="stylesheet" />
+<div class="custome-page-header">
+    <h1>新增图片</h1>
 </div>
-<!-- The container for the uploaded files -->
-<div id="files" class="files"></div>
-@section otherScript{
+@using (Html.BeginForm("Create", "Slider", FormMethod.Post, new { @class = "custome-form" }))
+{
+    <div class="form-div">
+        <span class="span-title">图片标题(简体)</span>
+        <div class="form-input">
+            @Html.TextBoxFor(s => s.TitleCN)
+            @Html.ValidationMessageFor(s => s.TitleCN, "", new { @class = "tip" })
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="form-div">
+        <span class="span-title">图片标题(繁体)</span>
+        <div class="form-input">
+            @Html.TextBoxFor(s => s.TitleTW)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
+        <span class="span-title">图片标题(英文)</span>
+        <div class="form-input">
+            @Html.TextBoxFor(s => s.TitleEN)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
+        <span class="span-title">上传图片</span>
+        <div class="form-input">
+            <span class="btn btn-success fileinput-button">
+                <i class="glyphicon glyphicon-plus"></i>
+                <span>Add files...</span>
+                <!-- The file input field used as target for the file upload widget -->
+                <input id="fileupload" type="file" name="file">
+            </span>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="files" class="files"></div>
+    <div class="form-div">
+        <span class="span-title"></span>
+        <div class="form-input">
+            <div id="progress" class="progress">
+                <div class="progress-bar progress-bar-success"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="op-div">
+        <div class="op-container">
+            <button type="submit" class="btn btn-success">确定</button>
+        </div>
 
+    </div>
+
+}
+
+
+<!-- The global progress bar -->
+@section otherScript{
+    <link href="~/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/file-upload/jquery.fileupload.css" rel="stylesheet" />
     <script src="~/Scripts/file-upload/load-image.all.min.js"></script>
     <script src="~/Scripts/file-upload/canvas-to-blob.min.js"></script>
     <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
     <script src="~/Scripts/file-upload/jquery.iframe-transport.js"></script>
-    <link href="~/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <script src="~/Scripts/file-upload/jquery.fileupload.js"></script>
     <script src="~/Scripts/file-upload/jquery.fileupload-process.js"></script>
-    <link href="~/Scripts/file-upload/jquery.fileupload.css" rel="stylesheet" />
+
     <script src="~/Scripts/file-upload/jquery.fileupload-image.js"></script>
 
     <link href="~/Scripts/file-upload/jquery.fileupload.css" rel="stylesheet" />
@@ -58,10 +107,11 @@
                         });
                     });
             $('#fileupload').fileupload({
-                url: '@Url.Action("Save")',
+                url: '@Url.Action("_AjaxSaveSliderImg")',
                 dataType: 'json',
-                autoUpload: false,
+                autoUpload: true,
                 acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+                maxNumberOfFiles: 1,
                 maxFileSize: 999000,
                 // Enable image resizing, except for Android and Opera,
                 // which actually support image resizing, but fail to
@@ -76,11 +126,11 @@
                 $.each(data.files, function (index, file) {
                     var node = $('<p/>')
                             .append($('<span/>').text(file.name));
-                    if (!index) {
-                        node
-                            .append('<br>')
-                            .append(uploadButton.clone(true).data(data));
-                    }
+                    //if (!index) {
+                    //    node
+                    //        .append('<br>')
+                    //        .append(uploadButton.clone(true).data(data));
+                    //}
                     node.appendTo(data.context);
                 });
             }).on('fileuploadprocessalways', function (e, data) {
@@ -133,6 +183,7 @@
             }).prop('disabled', !$.support.fileInput)
                 .parent().addClass($.support.fileInput ? undefined : 'disabled');
         });
+        //uploader.find("input:file").removeAttr('disabled');
 
     </script>
 }

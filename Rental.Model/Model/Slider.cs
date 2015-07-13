@@ -15,9 +15,11 @@ namespace Rental.Model.Model
     public partial class Slider
     {
         public int ID { get; set; }
-        public string Title { get; set; }
+        public string TitleCN { get; set; }
         public string ImgUrl { get; set; }
-        public string Remark { get; set; }
         public System.DateTime CreateTime { get; set; }
+        public string Remark { get; set; }
+        public string TitleTW { get; set; }
+        public string TitleEN { get; set; }
     }
 }

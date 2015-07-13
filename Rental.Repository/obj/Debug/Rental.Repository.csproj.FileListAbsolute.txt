@@ -20,3 +20,14 @@ E:\rental\rental\Rental.Repository\bin\Debug\zh-Hans\EntityFramework.resources.d
 E:\rental\rental\Rental.Repository\obj\Debug\Rental.Repository.csprojResolveAssemblyReference.cache
 E:\rental\rental\Rental.Repository\obj\Debug\Rental.Repository.dll
 E:\rental\rental\Rental.Repository\obj\Debug\Rental.Repository.pdb
+D:\VSCode\rentalsite\rental\Rental.Repository\bin\Debug\Rental.Repository.dll.config
+D:\VSCode\rentalsite\rental\Rental.Repository\bin\Debug\Rental.Repository.dll
+D:\VSCode\rentalsite\rental\Rental.Repository\bin\Debug\Rental.Repository.pdb
+D:\VSCode\rentalsite\rental\Rental.Repository\bin\Debug\EntityFramework.dll
+D:\VSCode\rentalsite\rental\Rental.Repository\bin\Debug\Rental.Model.dll
+D:\VSCode\rentalsite\rental\Rental.Repository\bin\Debug\Rental.Model.pdb
+D:\VSCode\rentalsite\rental\Rental.Repository\bin\Debug\EntityFramework.xml
+D:\VSCode\rentalsite\rental\Rental.Repository\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\VSCode\rentalsite\rental\Rental.Repository\obj\Debug\Rental.Repository.csprojResolveAssemblyReference.cache
+D:\VSCode\rentalsite\rental\Rental.Repository\obj\Debug\Rental.Repository.dll
+D:\VSCode\rentalsite\rental\Rental.Repository\obj\Debug\Rental.Repository.pdb

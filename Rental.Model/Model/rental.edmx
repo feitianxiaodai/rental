@@ -10,10 +10,12 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="TitleCN" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="ImgUrl" Type="varchar" MaxLength="256" Nullable="false" />
           <Property Name="CreateTime" Type="datetime" Nullable="false" />
           <Property Name="Remark" Type="varchar" MaxLength="256" />
+          <Property Name="TitleTW" Type="varchar" MaxLength="128" />
+          <Property Name="TitleEN" Type="varchar" MaxLength="128" />
         </EntityType>
         <EntityContainer Name="RentalModelStoreContainer">
           <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
@@ -22,19 +24,21 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RentalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RentalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Slider" EntityType="RentalModel.Slider" />
+        </EntityContainer>
         <EntityType Name="Slider">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ImgUrl" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Remark" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="TitleCN" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
           <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="TitleTW" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="TitleEN" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="RentalEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Slider" EntityType="Self.Slider" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -44,11 +48,13 @@
           <EntitySetMapping Name="Slider">
             <EntityTypeMapping TypeName="RentalModel.Slider">
               <MappingFragment StoreEntitySet="Slider">
-                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
+                <ScalarProperty Name="TitleTW" ColumnName="TitleTW" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
