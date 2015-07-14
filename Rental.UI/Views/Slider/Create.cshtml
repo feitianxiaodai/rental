@@ -57,6 +57,7 @@
     <div class="clear"></div>
     <div class="op-div">
         <div class="op-container">
+            @Html.HiddenFor(s => s.ImgUrl)
             <button type="submit" class="btn btn-success">确定</button>
         </div>
 
@@ -124,6 +125,7 @@
                 $.each(data.files, function (index, file) {
                     var node = $('<p/>')
                             .append($('<span/>').text(file.name));
+                    $('#ImgUrl').val(file.name);
                     //if (!index) {
                     //    node
                     //        .append('<br>')

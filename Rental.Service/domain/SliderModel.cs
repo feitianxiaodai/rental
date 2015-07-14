@@ -17,6 +17,7 @@ namespace Rental.Service
 
         public string TitleTW { get; set; }
 
+        [Required(ErrorMessage="*")]
         public string ImgUrl { get; set; }
     }
 }

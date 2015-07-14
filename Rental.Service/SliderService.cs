@@ -40,5 +40,17 @@ namespace Rental.Service
 
         }
 
+        public bool Add(SliderModel model)
+        {
+            Model.Model.Slider dbModel = new Model.Model.Slider();
+            dbModel.CreateTime = DateTime.Now;
+            dbModel.ImgUrl = model.ImgUrl;
+            dbModel.TitleCN = model.TitleCN;
+            dbModel.TitleEN = model.TitleEN;
+            dbModel.TitleTW = model.TitleTW;
+            _unitOfWork.SliderRepository.Insert(dbModel);
+            return _unitOfWork.Commit() > 0;
+        }
+
     }
 }

@@ -33,12 +33,25 @@ namespace Rental.UI.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Create(SliderModel model)
+        {
+            bool result = sliderService.Add(model);
+            if(result)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
         /// <summary>
         /// 保存图片
         /// </summary>
         /// <returns></returns>
         public ActionResult _AjaxSaveSliderImg()
         {
+            string hostName = ConfigurationSettings.AppSettings["HOSTNAME"].ToString();
+            UploadResponeModel response = new UploadResponeModel();
             if (Directory.Exists(Server.MapPath("~/Upload/SliderImg")))
             {
                 string actualFileName = string.Empty;
@@ -61,7 +74,17 @@ namespace Rental.UI.Controllers
                     //先保存大图片
                     file.SaveAs(originUrl);
                     Utility.ImgHelper.GenerateThumbImg(originUrl, 54, 44, destUrl);
+
+                    //response
+                    response.fils.Add(new UploadFileInfo
+                    {
+                        url = string.Format("{0}/Upoad/SliderImg/{1}.{2}", hostName, actualFileName, fileExtension),
+                        name = string.Format("{0}.{1}", actualFileName, fileExtension),
+                        type = file.ContentType,
+
+                    });
                 }
+                return Json(response);
             }
             return null;
         }
