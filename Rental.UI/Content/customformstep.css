@@ -1,0 +1,160 @@
+﻿.clear {
+    clear: both;
+}
+
+.custome-page-header {
+    margin: 10px 0 12px 10px;
+    border-bottom: 1px dotted #e2e2e2;
+    padding-bottom: 16px;
+    padding-top: 7px;
+}
+
+    .custome-page-header h1 {
+        padding: 0px;
+        margin: 0 8px;
+        font-size: 24px;
+        font-weight: lighter;
+        color: #2679b5;
+    }
+
+.custome-form {
+    width: 960px;
+    margin: 0px auto;
+}
+
+    .custome-form .form-div {
+        width: 930px;
+        margin: 0px auto;
+        height: auto;
+        margin-top: 10px;
+    }
+
+        .custome-form .form-div .span-title {
+            display: block;
+            float: left;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            margin-right: 15px;
+            text-align: center;
+            margin-left: 20px;
+        }
+
+        .custome-form .form-div .form-input {
+            float: left;
+            width: 500px;
+            height: 40px;
+        }
+        /**配套设施***********/
+        .custome-form .form-div .form-multi-checkbox {
+            float: left;
+            width: 500px;
+            height: 120px;
+        }
+
+        .custome-form .form-div .form-multi-checkbox ul{
+            list-style:none;
+            width:480px;
+            height:120px;
+            padding:0px;
+        }
+        .custome-form .form-div .form-multi-checkbox ul li{
+            float:left;
+            width:120px;
+            height:30px;
+            line-height:30px;
+        }
+        
+        /**配套设施***********/
+
+        /*提供服务*/
+        .custome-form .form-div .form-multi-checkbox-service {
+            float: left;
+            width: 500px;
+            height: 40px;
+        }
+
+        .custome-form .form-div .form-multi-checkbox-service ul{
+            list-style:none;
+            width:480px;
+            height:40px;
+            padding:0px;
+        }
+        .custome-form .form-div .form-multi-checkbox-service ul li{
+            float:left;
+            width:120px;
+            height:40px;
+            line-height:40px;
+        }
+
+        /*提供服务*/
+
+        .custome-form .form-div .form-input input {
+            width: 480px;
+            line-height: 30px;
+        }
+
+        .custome-form .form-div .normalSel {
+            width: 200px;
+            line-height: 30px;
+            height: 30px;
+            margin-top: 5px;
+        }
+
+        .custome-form .form-div .standSel {
+            width: 65px;
+            line-height: 30px;
+            height: 30px;
+            margin-top: 5px;
+        }
+
+.tip {
+    color: #ff0000;
+}
+
+.op-div {
+    width: 900px;
+    height: 40px;
+    margin: 0px auto;
+}
+
+    .op-div .op-container {
+        width: 300px;
+        float: right;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+.form-progress {
+    width: 960px;
+    height: 40px;
+    margin: 0px auto;
+    background-color: #F0F0F0;
+    margin-bottom: 10px;
+}
+
+    .form-progress ul {
+        width: 960px;
+        height: 40px;
+        list-style: none;
+        padding: 0px;
+    }
+
+        .form-progress ul li {
+            width: 319px;
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #4EC661;
+        }
+
+    .form-progress .active {
+        background-color: #4EC661;
+        color: #ffffff;
+    }
+
+    .form-progress .second {
+        border-right: solid 1px #4EC661;
+        border-left: solid 1px #4EC661;
+    }

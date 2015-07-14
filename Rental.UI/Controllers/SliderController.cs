@@ -94,13 +94,14 @@ namespace Rental.UI.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public ActionResult _AjaxDeleteSlider(int id)
+        public ActionResult _AjaxDeleteSlider(int[] ids)
         {
             AjaxResponseModel response = new AjaxResponseModel() { Status = false };
-            bool result = sliderService.Delete(id);
+            bool result = sliderService.Delete(ids);
             if (result)
             {
                 response.Status = true;
+                response.Type = "Success";
             }
             return Json(response);
         }
