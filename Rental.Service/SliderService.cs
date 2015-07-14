@@ -23,5 +23,34 @@ namespace Rental.Service
             return _unitOfWork.SliderRepository.Query().OrderBy(s => s.ID).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
         }
 
+        public bool Delete(int id)
+        {
+            try
+            {
+                var model = _unitOfWork.SliderRepository.Query().FirstOrDefault(s => s.ID == id);
+                _unitOfWork.SliderRepository.Delete(model);
+                _unitOfWork.Commit();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+
+        }
+
+        public bool Add(SliderModel model)
+        {
+            Model.Model.Slider dbModel = new Model.Model.Slider();
+            dbModel.CreateTime = DateTime.Now;
+            dbModel.ImgUrl = model.ImgUrl;
+            dbModel.TitleCN = model.TitleCN;
+            dbModel.TitleEN = model.TitleEN;
+            dbModel.TitleTW = model.TitleTW;
+            _unitOfWork.SliderRepository.Insert(dbModel);
+            return _unitOfWork.Commit() > 0;
+        }
+
     }
 }
