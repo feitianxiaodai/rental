@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Rental.Service;
 using Rental.UI.Utility;
 using Rental.UI.Models;
+using System.IO;
 namespace Rental.UI.Controllers
 {
 
@@ -32,45 +33,55 @@ namespace Rental.UI.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 保存图片
+        /// </summary>
+        /// <returns></returns>
         public ActionResult _AjaxSaveSliderImg()
         {
-            if (System.IO.File.Exists(Server.MapPath("~/Upload/SliderImg")))
+            if (Directory.Exists(Server.MapPath("~/Upload/SliderImg")))
             {
+                string actualFileName = string.Empty;
+                string fileExtension = string.Empty;
+                string originUrl = string.Empty;
+                string destUrl = string.Empty;
                 var uploadFiles = Request.Files;
                 if (uploadFiles != null && uploadFiles.Count > 0)
                 {
                     var file = uploadFiles[0];
+
+                    string fileName = file.FileName;
+                    string[] fs = fileName.Split('.');
+                    //获得后缀名
+                    fileExtension = fs[fs.Length - 1];
+                    actualFileName = DateTime.Now.Ticks.ToString();
+                    originUrl = Server.MapPath(string.Format("~/Upload/SliderImg/{0}.{1}", actualFileName, fileExtension));
+                    destUrl = Server.MapPath(string.Format("~/Upload/SliderImg/thumb/{0}.{1}", actualFileName, fileExtension));
+
+                    //先保存大图片
+                    file.SaveAs(originUrl);
+                    Utility.ImgHelper.GenerateThumbImg(originUrl, 54, 44, destUrl);
                 }
             }
-            Msg tmp = new Msg();
-            tmp.files.Add(new MsgInfo()
-            {
-                url = "http://url.to/file/or/page",
-                name = "thumb2.jpg",
-                type = "image/jpeg",
-                size = 46353,
-            });
-            return Json(tmp);
+            return null;
         }
 
-    }
-
-    public class Msg
-    {
-        public Msg()
+        /// <summary>
+        /// 删除信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult _AjaxDeleteSlider(int id)
         {
-            files = new List<MsgInfo>();
+            AjaxResponseModel response = new AjaxResponseModel() { Status = false };
+            bool result = sliderService.Delete(id);
+            if (result)
+            {
+                response.Status = true;
+            }
+            return Json(response);
         }
-        public List<MsgInfo> files { get; set; }
+
     }
 
-    public class MsgInfo
-    {
-        public string url { get; set; }
-
-        public string name { get; set; }
-        public string type { get; set; }
-
-        public int size { get; set; }
-    }
 }

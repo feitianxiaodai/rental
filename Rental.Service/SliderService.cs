@@ -23,5 +23,22 @@ namespace Rental.Service
             return _unitOfWork.SliderRepository.Query().OrderBy(s => s.ID).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
         }
 
+        public bool Delete(int id)
+        {
+            try
+            {
+                var model = _unitOfWork.SliderRepository.Query().FirstOrDefault(s => s.ID == id);
+                _unitOfWork.SliderRepository.Delete(model);
+                _unitOfWork.Commit();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+
+        }
+
     }
 }

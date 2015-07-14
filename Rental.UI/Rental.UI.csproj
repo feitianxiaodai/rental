@@ -132,8 +132,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AjaxResponseModel.cs" />
     <Compile Include="Models\GridData.cs" />
     <Compile Include="Models\TreeNode.cs" />
+    <Compile Include="Models\UploadResponeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\en-US.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -150,6 +152,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>zh-TW.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\ImgHelper.cs" />
     <Compile Include="Utility\LanguageHelper.cs" />
     <Compile Include="Utility\MuliLanguageRouteHandler.cs" />
   </ItemGroup>
@@ -849,7 +852,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Upload\SliderImg\" />
+    <Folder Include="Upload\SliderImg\thumb\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
