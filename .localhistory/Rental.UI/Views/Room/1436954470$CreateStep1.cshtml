@@ -1,0 +1,235 @@
+﻿@{
+    ViewBag.Title = "CreateStep1";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="@Url.Content("~/Content/customformstep.css")" rel="stylesheet" />
+<style>
+    .palce-choose-div {
+        width:550px;
+        height:auto;
+    }
+    .palce-choose-div ul {
+        width: 550px;
+        height:auto;
+        list-style:none;
+    }
+    .palce-choose-div ul li{
+        width: 550px;
+        height: auto;
+        float:left;
+        display:block;
+    }
+    .palce-choose-div ul .place-choose-li {
+        width: 550px;
+        height: 40px;
+
+    }
+</style>
+
+<div class="custome-page-header">
+    <h1>房源信息</h1>
+</div>
+<div class="form-progress">
+    <ul>
+        <li class="active">1.房源信息</li>
+        <li class="second">2.房源图片</li>
+        <li>3.发布成功</li>
+    </ul>
+</div>
+<div class="clear"></div>
+<form class="custome-form">
+    <div class="form-div">
+        <span class="span-title">地理位置</span>
+        <div class="form-input">
+           @*<input type="button" value="+添加地址" style="width:150px; height:40px;"/>*@
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#paceModal">
+                +添加地址
+            </button>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
+        <span class="span-title">房屋类型</span>
+        <div class="form-input">
+            <select class="normalSel">
+                <option>民居</option>
+                <option>公寓</option>
+            </select>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
+        <span class="span-title">是否为地下室</span>
+        <div class="form-input">
+            <select class="normalSel">
+                <option>否</option>
+                <option>地下室</option>
+                <option>半地下室</option>
+            </select>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
+        <span class="span-title">房屋面积</span>
+        <div class="form-input">
+            <input type="text" style="width:400px;"/>平米
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
+        <span class="span-title">户型</span>
+        <div class="form-input">
+            <select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>室
+            <select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>厅
+            <select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>厨房
+            <select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>阳台
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
+        <span class="span-title">卫生间数</span>
+        <div class="form-input">
+            独立<select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>
+            公共<select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>
+            
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
+        <span class="span-title">可住人数</span>
+        <div class="form-input">
+            <select class="normalSel">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+            </select>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div" style="height:80px;">
+        <span class="span-title" style="line-height:80px;">床数</span>
+        <div class="form-input" style="height:80px;">
+            双人床<select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>
+            单人床<select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>
+            双层床<select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>
+            单人沙发<select class="standSel">
+                <option>0</option>
+                <option>1</option>
+            </select>
+            
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div" style="height:120px;">
+        <span class="span-title">配套设施</span>
+        <div class="form-multi-checkbox">
+            <ul>
+                <li><input type="checkbox" class="checkboxnew"/>冰箱</li>
+                <li><input type="checkbox" />洗衣机</li>
+                <li><input type="checkbox" />饮水机</li>
+                <li><input type="checkbox" />对讲系统</li>
+                <li><input type="checkbox" />冰箱</li>
+                <li><input type="checkbox" />洗衣机</li>
+                <li><input type="checkbox" />饮水机</li>
+                <li><input type="checkbox" />对讲系统</li>
+                <li><input type="checkbox" />冰箱</li>
+                <li><input type="checkbox" />洗衣机</li>
+                <li><input type="checkbox" />饮水机</li>
+                <li><input type="checkbox" />对讲系统</li>
+                <li><input type="checkbox" />冰箱</li>
+                <li><input type="checkbox" />洗衣机</li>
+                <li><input type="checkbox" />饮水机</li>
+                <li><input type="checkbox" />对讲系统</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div" style="height:40px;">
+        <span class="span-title">提供服务</span>
+        <div class="form-multi-checkbox-service">
+            <ul>
+                <li><input type="checkbox"/>冰箱</li>
+                <li><input type="checkbox" />洗衣机</li>
+                <li><input type="checkbox" />饮水机</li>
+                
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
+        <span class="span-title">同类房源</span>
+        <div class="form-input">
+            <input type="text"/>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="op-div" style="margin-top:10px;">
+        <div class="op-container">
+            <button type="submit" class="btn btn-success">保存,下一步</button>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="paceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">选择地区</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="palce-choose-div">
+                        <ul>
+                            <li class="place-choose-li"></li>
+                            <li class="place-text-li"></li>
+                            <li class="place-map-li"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section otherScript{
+<script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
+    <link href="~/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+}
+
+
+

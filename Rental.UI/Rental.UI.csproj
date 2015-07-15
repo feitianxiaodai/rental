@@ -852,6 +852,8 @@
     <Content Include="Views\Slider\Create.cshtml" />
     <Content Include="Views\Slider\Test.cshtml" />
     <Content Include="Views\Room\CreateStep1.cshtml" />
+    <Content Include="Views\Room\CreateStep2.cshtml" />
+    <Content Include="Views\Room\CreateStep3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
