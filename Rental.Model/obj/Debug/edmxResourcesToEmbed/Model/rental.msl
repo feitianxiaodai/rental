@@ -10,7 +10,7 @@
           <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
           <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
           <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

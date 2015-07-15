@@ -128,6 +128,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -157,6 +158,7 @@
     <Compile Include="Utility\MuliLanguageRouteHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\customformstep.css" />
     <Content Include="Content\customform.css" />
     <Content Include="Content\easyui\images\checkmark.gif" />
     <Content Include="Content\easyui\images\checknomark.gif" />
@@ -849,6 +851,7 @@
     <Content Include="Views\Admin\Welcome.cshtml" />
     <Content Include="Views\Slider\Create.cshtml" />
     <Content Include="Views\Slider\Test.cshtml" />
+    <Content Include="Views\Room\CreateStep1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

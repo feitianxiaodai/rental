@@ -20,14 +20,15 @@ namespace Rental.Service
             int count = 0;
             count = _unitOfWork.SliderRepository.Query().Where(s => true).Count();
             totalCount = count;
-            return _unitOfWork.SliderRepository.Query().OrderBy(s => s.ID).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            return _unitOfWork.SliderRepository.Query().OrderBy(s => s.Id).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
         }
 
-        public bool Delete(int id)
+        public bool Delete(int[] ids)
         {
             try
             {
-                var model = _unitOfWork.SliderRepository.Query().FirstOrDefault(s => s.ID == id);
+                int id = ids.First();
+                var model = _unitOfWork.SliderRepository.Query().FirstOrDefault(s => s.Id == id);
                 _unitOfWork.SliderRepository.Delete(model);
                 _unitOfWork.Commit();
                 return true;

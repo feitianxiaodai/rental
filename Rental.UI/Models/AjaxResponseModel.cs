@@ -10,5 +10,7 @@ namespace Rental.UI.Models
         public bool Status { get; set; }
 
         public string Msg { get; set; }
+
+        public string Type { get; set; }
     }
 }
