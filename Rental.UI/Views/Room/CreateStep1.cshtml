@@ -3,70 +3,116 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <link href="@Url.Content("~/Content/customformstep.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Scripts/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+
 <style>
+    .btn-primary {
+        background-color: #5CB85C;
+        border-color: #5CB85C;
+    }
+
+        .btn-primary:hover {
+            background-color: #5CB85C;
+            border-color: #5CB85C;
+        }
+
+        .btn-primary:focus {
+            background-color: #5CB85C;
+            border-color: #5CB85C;
+        }
+
     .palce-choose-div {
-        width:550px;
-        height:auto;
-    }
-    .palce-choose-div ul {
-        width: 550px;
-        height:auto;
-        list-style:none;
-        margin:0px;
-        padding:0px;
-    }
-    .palce-choose-div ul li{
         width: 550px;
         height: auto;
-        float:left;
-        display:block;
     }
-    .palce-choose-div ul .place-choose-li {
-        width: 550px;
-        height: 20px;
-        margin-bottom:10px;
-    }
-    .palce-choose-div ul .place-choose-li .place-choose-li-div {
-        width: 550px;
-        height: 20px;
-    }
-        .palce-choose-div ul .place-choose-li .place-choose-li-div .place-header{
-            display:block;
-            height:20px;
-            width:75px;
-            line-height:20px;
-            float:left;
-        }
-        .palce-choose-div ul .place-choose-li .place-choose-li-div select{
-            float:left;
-        }
-        .palce-choose-div ul .place-choose-li .place-choose-li-div .place-title{
-            display:block;
-            height:20px;
-            width:35px;
-            line-height:20px;
-            float:left;
-            padding-left:5px;
-        }
 
-        /*输入详细地址*/
-        .palce-choose-div ul .place-text-li {
+        .palce-choose-div ul {
             width: 550px;
-            height: 20px;
+            height: auto;
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
         }
 
-            .palce-choose-div ul .place-text-li .place-text-li-div {
+            .palce-choose-div ul li {
                 width: 550px;
-                height: 20px;
+                height: auto;
+                float: left;
+                display: block;
             }
 
-                .palce-choose-div ul .place-text-li .place-text-li-div .place-header {
-                    display: block;
+            .palce-choose-div ul .place-choose-li {
+                width: 550px;
+                height: 20px;
+                margin-bottom: 10px;
+            }
+                /*选择地址*/
+                .palce-choose-div ul .place-choose-li .place-choose-li-div {
+                    width: 550px;
                     height: 20px;
-                    width: 75px;
-                    line-height: 20px;
-                    float: left;
                 }
+
+                    .palce-choose-div ul .place-choose-li .place-choose-li-div .place-header {
+                        display: block;
+                        height: 20px;
+                        width: 75px;
+                        line-height: 20px;
+                        float: left;
+                    }
+
+                    .palce-choose-div ul .place-choose-li .place-choose-li-div select {
+                        float: left;
+                    }
+
+                    .palce-choose-div ul .place-choose-li .place-choose-li-div .place-title {
+                        display: block;
+                        height: 20px;
+                        width: 35px;
+                        line-height: 20px;
+                        float: left;
+                        padding-left: 5px;
+                    }
+
+            /*输入详细地址*/
+            .palce-choose-div ul .place-text-li {
+                width: 550px;
+                height: 20px;
+                margin-bottom:10px;
+            }
+
+                .palce-choose-div ul .place-text-li .place-text-li-div {
+                    width: 550px;
+                    height: 20px;
+                }
+
+                    .palce-choose-div ul .place-text-li .place-text-li-div .place-header {
+                        display: block;
+                        height: 20px;
+                        width: 75px;
+                        line-height: 20px;
+                        float: left;
+                    }
+
+                    .palce-choose-div ul .place-text-li .place-text-li-div .place-text-specific {
+                        width: 350px;
+                    }
+
+                    /*百度地图*/
+            .palce-choose-div ul .place-map-li {
+                width: 550px;
+                height: auto;
+            }
+            .palce-choose-div ul .place-map-li .place-map-title {
+                width:80px;
+                height:20px;
+                line-height:20px;
+                margin-bottom:5px;
+            }
+            
+            .palce-choose-div ul .place-map-li .place-map-container {
+                width: 550px;
+                height: 500px;
+            }
 </style>
 
 <div class="custome-page-header">
@@ -84,7 +130,7 @@
     <div class="form-div">
         <span class="span-title">地理位置</span>
         <div class="form-input">
-           @*<input type="button" value="+添加地址" style="width:150px; height:40px;"/>*@
+            @*<input type="button" value="+添加地址" style="width:150px; height:40px;"/>*@
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#paceModal">
                 +添加地址
             </button>
@@ -115,7 +161,7 @@
     <div class="form-div">
         <span class="span-title">房屋面积</span>
         <div class="form-input">
-            <input type="text" style="width:400px;"/>平米
+            <input type="text" style="width:400px;" />平米
         </div>
         <div class="clear"></div>
     </div>
@@ -152,7 +198,7 @@
                 <option>0</option>
                 <option>1</option>
             </select>
-            
+
         </div>
         <div class="clear"></div>
     </div>
@@ -186,7 +232,7 @@
                 <option>0</option>
                 <option>1</option>
             </select>
-            
+
         </div>
         <div class="clear"></div>
     </div>
@@ -194,7 +240,7 @@
         <span class="span-title">配套设施</span>
         <div class="form-multi-checkbox">
             <ul>
-                <li><input type="checkbox" class="checkboxnew"/>冰箱</li>
+                <li><input type="checkbox" class="checkboxnew" />冰箱</li>
                 <li><input type="checkbox" />洗衣机</li>
                 <li><input type="checkbox" />饮水机</li>
                 <li><input type="checkbox" />对讲系统</li>
@@ -218,10 +264,10 @@
         <span class="span-title">提供服务</span>
         <div class="form-multi-checkbox-service">
             <ul>
-                <li><input type="checkbox"/>冰箱</li>
+                <li><input type="checkbox" />冰箱</li>
                 <li><input type="checkbox" />洗衣机</li>
                 <li><input type="checkbox" />饮水机</li>
-                
+
             </ul>
         </div>
         <div class="clear"></div>
@@ -229,7 +275,7 @@
     <div class="form-div">
         <span class="span-title">同类房源</span>
         <div class="form-input">
-            <input type="text"/>
+            <input type="text" />套
         </div>
         <div class="clear"></div>
     </div>
@@ -279,10 +325,15 @@
                             <li class="place-text-li">
                                 <div class="place-text-li-div">
                                     <span class="place-header">详细地址</span>
-                                    <input type="text"/>
+                                    <input type="text" class="place-text-specific" />
                                 </div>
                             </li>
-                            <li class="place-map-li"></li>
+                            <li class="place-map-li">
+                                <div class="place-map-title">
+                                    <span>位置选择</span>
+                                </div>
+                                <div class="place-map-container" id="place-map-container"></div>
+                            </li>
                             <div class="clear"></div>
                         </ul>
                     </div>
@@ -298,9 +349,33 @@
 </form>
 
 @section otherScript{
-<script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
-    <link href="~/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=Nb9McbTaSsTNv4XDWwQOsYeE"></script>
+    <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
 
+    <script>
+        var map = new BMap.Map("place-map-container");          // 创建地图实例  
+        var point = new BMap.Point(121.573334, 25.043539);  // 创建点坐标  
+        map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别  
+        map.addControl(new BMap.NavigationControl());
+        map.setCurrentCity("台北");
+        var marker = new BMap.Marker(point);        // 创建标注    
+        map.addOverlay(marker);
+
+        marker.addEventListener("click", function (e) {
+            alert(e.point.lng + ',' + e.point.lat);
+        });
+
+        marker.enableDragging();
+        marker.addEventListener("dragend", function (e) {
+            alert("当前位置：" + e.point.lng + ", " + e.point.lat);
+        });
+
+        map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+        map.enableContinuousZoom();
+        $(function () {
+
+        });
+    </script>
 }
 
 
