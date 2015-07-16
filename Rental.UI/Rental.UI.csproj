@@ -135,6 +135,7 @@
     </Compile>
     <Compile Include="Models\AjaxResponseModel.cs" />
     <Compile Include="Models\GridData.cs" />
+    <Compile Include="Models\HotelAlbumModel.cs" />
     <Compile Include="Models\TreeNode.cs" />
     <Compile Include="Models\UploadResponeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

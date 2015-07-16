@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Configuration;
 namespace Rental.Service
 {
     public class SliderService
@@ -51,6 +51,25 @@ namespace Rental.Service
             dbModel.TitleTW = model.TitleTW;
             _unitOfWork.SliderRepository.Insert(dbModel);
             return _unitOfWork.Commit() > 0;
+        }
+
+        public List<SliderModel> GetHotelAlbumList()
+        {
+            
+            var hotelList = new List<SliderModel>();
+            var modelList = _unitOfWork.SliderRepository.Query().ToList();
+            if (modelList != null && modelList.Count > 0)
+            {
+                hotelList = modelList.Select(s => new SliderModel
+                {
+                    ID = s.Id,
+                    ImgUrl = s.ImgUrl,
+                    TitleCN = s.TitleCN,
+                    TitleEN = s.TitleEN,
+                    TitleTW = s.TitleTW
+                }).ToList();
+            }
+            return hotelList;
         }
 
     }

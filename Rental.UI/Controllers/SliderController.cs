@@ -76,7 +76,7 @@ namespace Rental.UI.Controllers
                     Utility.ImgHelper.GenerateThumbImg(originUrl, 54, 44, destUrl);
 
                     //response
-                    response.fils.Add(new UploadFileInfo
+                    response.files.Add(new UploadFileInfo
                     {
                         url = string.Format("{0}/Upoad/SliderImg/{1}.{2}", hostName, actualFileName, fileExtension),
                         name = string.Format("{0}.{1}", actualFileName, fileExtension),
