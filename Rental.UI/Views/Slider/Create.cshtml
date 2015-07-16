@@ -125,7 +125,6 @@
                 $.each(data.files, function (index, file) {
                     var node = $('<p/>')
                             .append($('<span/>').text(file.name));
-                    $('#ImgUrl').val(file.name);
                     //if (!index) {
                     //    node
                     //        .append('<br>')
@@ -164,6 +163,7 @@
                         var link = $('<a>')
                             .attr('target', '_blank')
                             .prop('href', file.url);
+                        $('#ImgUrl').val(file.name);
                         $(data.context.children()[index])
                             .wrap(link);
                     } else if (file.error) {

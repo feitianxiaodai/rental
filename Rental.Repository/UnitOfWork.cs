@@ -12,9 +12,35 @@ namespace Rental.Repository
 
         private RentalEntities _edm = null;
         private SliderRepository _sliderRepository = null;
+        private RoomRepository _roomRepository = null;
+        private AreaRepository _areaRepository = null;
         public UnitOfWork()
         {
             _edm = new RentalEntities();
+        }
+
+        public RoomRepository RoomRepository
+        {
+            get
+            {
+                if (_roomRepository == null)
+                {
+                    _roomRepository = new RoomRepository(_edm);
+                }
+                return _roomRepository;
+            }
+        }
+
+        public AreaRepository AreaRepository
+        {
+            get
+            {
+                if (_areaRepository == null)
+                {
+                    _areaRepository = new AreaRepository(_edm);
+                }
+                return _areaRepository;
+            }
         }
 
         public SliderRepository SliderRepository

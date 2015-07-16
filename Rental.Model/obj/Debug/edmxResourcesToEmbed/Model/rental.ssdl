@@ -1,5 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="RentalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AreaName" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="AreaParent" Type="int" Nullable="false" />
+    <Property Name="AreaLong" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="AreaLang" Type="varchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomType" Type="int" Nullable="false" />
+    <Property Name="IsBasement" Type="int" Nullable="false" />
+    <Property Name="RoomSpace" Type="float" Nullable="false" />
+    <Property Name="RoomShi" Type="int" Nullable="false" />
+    <Property Name="RoomTing" Type="int" />
+    <Property Name="RoomKitchen" Type="int" />
+    <Property Name="RoomBalcony" Type="int" />
+    <Property Name="PrivateBathroom" Type="int" />
+    <Property Name="PublicBathroom" Type="int" />
+    <Property Name="RoomCount" Type="int" Nullable="false" />
+    <Property Name="BedType1" Type="int" Nullable="false" />
+    <Property Name="BedType2" Type="int" />
+    <Property Name="BedType3" Type="int" />
+    <Property Name="BedType4" Type="int" />
+    <Property Name="Fridge" Type="bit" />
+    <Property Name="WashingMechine" Type="bit" />
+    <Property Name="Water" Type="bit" />
+    <Property Name="Intercom" Type="bit" />
+    <Property Name="Computer" Type="bit" />
+    <Property Name="Shower" Type="bit" />
+    <Property Name="Bathtub" Type="bit" />
+    <Property Name="Toiletries" Type="bit" />
+    <Property Name="Towel" Type="bit" />
+    <Property Name="Slippers" Type="bit" />
+    <Property Name="HotWater" Type="bit" />
+    <Property Name="Elevator" Type="bit" />
+    <Property Name="Police" Type="bit" />
+    <Property Name="Child" Type="bit" />
+    <Property Name="Older" Type="bit" />
+    <Property Name="AirportTransfer" Type="bit" />
+    <Property Name="LeftLuggage" Type="bit" />
+    <Property Name="Guide" Type="bit" />
+    <Property Name="RoomNumber" Type="int" Nullable="false" />
+    <Property Name="RoomCity" Type="int" Nullable="false" />
+    <Property Name="RoomArea" Type="int" Nullable="false" />
+    <Property Name="RoomDetailedAddress" Type="varchar(max)" Nullable="false" />
+    <Property Name="RoomLang" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="RoomLong" Type="varchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="RoomImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImgUrl" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoomId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Slider">
     <Key>
       <PropertyRef Name="Id" />
@@ -12,7 +74,26 @@
     <Property Name="TitleTW" Type="varchar" MaxLength="128" />
     <Property Name="TitleEN" Type="varchar" MaxLength="128" />
   </EntityType>
+  <Association Name="FK_RoomImageInfo_Room">
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="RoomImageInfo" Type="Self.RoomImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoomImageInfo">
+        <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="RentalModelStoreContainer">
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomImageInfo" EntityType="Self.RoomImageInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_RoomImageInfo_Room" Association="Self.FK_RoomImageInfo_Room">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="RoomImageInfo" EntitySet="RoomImageInfo" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

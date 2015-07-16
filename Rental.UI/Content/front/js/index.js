@@ -129,13 +129,13 @@ var indexSwiper = {
 function InitKv(type) {
     var datalist = [];
     var title = "";
+    GetHotelAlbumList();
+    
     switch (type) {
         case 0: datalist = HotelAlbumList; break;
         case 2: datalist = RoomList; title = "房型"; break;
         case 3: datalist = RestList; title = "餐厅"; break;
         case 4: datalist = IntroList; title = "设施"; break;
-        //case 5: datalist = MeetingList; title = "会议"; break;
-       // case 6: datalist = VideoList; title = "视频"; break;
     }
     $("ul.mb-gallery-scroll").empty();
     $("ul.ul-wrap").empty();

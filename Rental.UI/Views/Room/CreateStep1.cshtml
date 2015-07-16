@@ -77,7 +77,7 @@
             .palce-choose-div ul .place-text-li {
                 width: 550px;
                 height: 20px;
-                margin-bottom:10px;
+                margin-bottom: 10px;
             }
 
                 .palce-choose-div ul .place-text-li .place-text-li-div {
@@ -97,22 +97,23 @@
                         width: 350px;
                     }
 
-                    /*百度地图*/
+            /*百度地图*/
             .palce-choose-div ul .place-map-li {
                 width: 550px;
                 height: auto;
             }
-            .palce-choose-div ul .place-map-li .place-map-title {
-                width:80px;
-                height:20px;
-                line-height:20px;
-                margin-bottom:5px;
-            }
-            
-            .palce-choose-div ul .place-map-li .place-map-container {
-                width: 550px;
-                height: 500px;
-            }
+
+                .palce-choose-div ul .place-map-li .place-map-title {
+                    width: 80px;
+                    height: 20px;
+                    line-height: 20px;
+                    margin-bottom: 5px;
+                }
+
+                .palce-choose-div ul .place-map-li .place-map-container {
+                    width: 550px;
+                    height: 500px;
+                }
 </style>
 
 <div class="custome-page-header">
@@ -244,18 +245,18 @@
                 <li><input type="checkbox" />洗衣机</li>
                 <li><input type="checkbox" />饮水机</li>
                 <li><input type="checkbox" />对讲系统</li>
-                <li><input type="checkbox" />冰箱</li>
-                <li><input type="checkbox" />洗衣机</li>
-                <li><input type="checkbox" />饮水机</li>
-                <li><input type="checkbox" />对讲系统</li>
-                <li><input type="checkbox" />冰箱</li>
-                <li><input type="checkbox" />洗衣机</li>
-                <li><input type="checkbox" />饮水机</li>
-                <li><input type="checkbox" />对讲系统</li>
-                <li><input type="checkbox" />冰箱</li>
-                <li><input type="checkbox" />洗衣机</li>
-                <li><input type="checkbox" />饮水机</li>
-                <li><input type="checkbox" />对讲系统</li>
+                <li><input type="checkbox" />电脑</li>
+                <li><input type="checkbox" />淋浴</li>
+                <li><input type="checkbox" />浴缸</li>
+                <li><input type="checkbox" />24小时热水</li>
+                <li><input type="checkbox" />洗漱用品</li>
+                <li><input type="checkbox" />毛巾浴巾</li>
+                <li><input type="checkbox" />拖鞋</li>
+                <li><input type="checkbox" />可以吸烟</li>
+                <li><input type="checkbox" />电梯</li>
+                <li><input type="checkbox" />保安</li>
+                <li><input type="checkbox" />欢迎小孩</li>
+                <li><input type="checkbox" />欢迎老人</li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -264,9 +265,9 @@
         <span class="span-title">提供服务</span>
         <div class="form-multi-checkbox-service">
             <ul>
-                <li><input type="checkbox" />冰箱</li>
-                <li><input type="checkbox" />洗衣机</li>
-                <li><input type="checkbox" />饮水机</li>
+                <li><input type="checkbox" />机场车站接送</li>
+                <li><input type="checkbox" />行李寄存</li>
+                <li><input type="checkbox" />导游</li>
 
             </ul>
         </div>
@@ -301,24 +302,24 @@
                             <li class="place-choose-li">
                                 <div class="place-choose-li-div">
                                     <span class="place-header">地址选择</span>
-                                    <select>
-                                        <option>台湾</option>
-                                        <option>高雄</option>
-                                        <option>台南</option>
+                                    <select id="sel-city">
+                                        @*<option>高雄</option>
+                                            <option data-latitude="121.515672" data-longitude="25.067323">台北市</option>
+                                            <option>台南</option>*@
                                     </select>
                                     <span class="place-title">市</span>
+                                    <select id="sel-area">
+                                        <option>高雄</option>
+                                        <option data-latitude="121.553126" data-longitude="24.97212">新店区</option>
+                                        <option>台南</option>
+                                    </select>
+                                    <!--<span class="place-title">区</span>
                                     <select>
                                         <option>台湾</option>
                                         <option>高雄</option>
                                         <option>台南</option>
                                     </select>
-                                    <span class="place-title">区</span>
-                                    <select>
-                                        <option>台湾</option>
-                                        <option>高雄</option>
-                                        <option>台南</option>
-                                    </select>
-                                    <span class="place-title">地区</span>
+                                    <span class="place-title">地区</span>-->
                                     <div class="clear"></div>
                                 </div>
                             </li>
@@ -333,6 +334,10 @@
                                     <span>位置选择</span>
                                 </div>
                                 <div class="place-map-container" id="place-map-container"></div>
+
+                                <!--保存经纬度-->
+                                <input type="hidden" name="AreaLong" id="AreaLong" />
+                                <input type="hidden" name="AreaLang" id="AreaLang" />
                             </li>
                             <div class="clear"></div>
                         </ul>
@@ -353,12 +358,12 @@
     <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
 
     <script>
-        var map = new BMap.Map("place-map-container");          // 创建地图实例  
-        var point = new BMap.Point(121.573334, 25.043539);  // 创建点坐标  
-        map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别  
+        var map = new BMap.Map("place-map-container");          // 创建地图实例
+        var point = new BMap.Point(121.566349, 25.047042);  // 创建点坐标
+        //map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别
         map.addControl(new BMap.NavigationControl());
         map.setCurrentCity("台北");
-        var marker = new BMap.Marker(point);        // 创建标注    
+        var marker = new BMap.Marker(point);        // 创建标注
         map.addOverlay(marker);
 
         marker.addEventListener("click", function (e) {
@@ -374,7 +379,66 @@
         map.enableContinuousZoom();
         $(function () {
 
+            initCity();
+
+            $('#sel-city').change(function () {
+                var latitude = $(this).find("option:selected").attr("data-latitude");
+                var longitude = $(this).find("option:selected").attr("data-longitude");
+                var areaId = $(this).find("option:selected").attr("data-id");
+                var cityPoint = new BMap.Point(latitude, longitude);
+                //map.centerAndZoom(cityPoint, 15)
+                map.setCurrentCity("高雄");
+                map.addOverlay(new BMap.Marker(cityPoint));
+
+                //初始化区
+                initArea(areaId);
+            });
+
+            $('#sel-area').change(function () {
+                var latitude = $(this).find("option:selected").attr("data-latitude");
+                var longitude = $(this).find("option:selected").attr("data-longitude");
+                var cityPoint = new BMap.Point(latitude, longitude);
+                map.centerAndZoom(cityPoint, 15)
+                map.addOverlay(new BMap.Marker(cityPoint));
+            });
+
         });
+
+        //初始化市下拉框
+        function initCity(id) {
+            var area = '';
+            $.ajax({
+                url: '@Url.Action("_AjaxGetArea")',
+                type: 'POST',
+                success: function (data) {
+                    if (data != '') {
+                        $('#sel-city').empty();
+                        for (var i = 0; i < data.length; i++) {
+                            area += '<option data-id="' + data[i].Id + '" data-latitude="' + data[i].AreaLang + '"data-AreaLong="' + data[i].AreaName + '">' + data[i].AreaName + '</option>';
+                        }
+                        $('#sel-city').append(area);
+                    }
+                }
+            });
+        }
+
+        function initArea(id) {
+            var area = '';
+            $.ajax({
+                url: '@Url.Action("_AjaxGetArea")',
+                type: 'POST',
+                data: { Id: id },
+                success: function (data) {
+                    if (data != '') {
+                        $('#sel-area').empty();
+                        for (var i = 0; i < data.length; i++) {
+                            area += '<option data-latitude="' + data[i].AreaLang + '"data-AreaLong="' + data[i].AreaName + '">' + data[i].AreaName + '</option>';
+                        }
+                        $('#sel-area').append(area);
+                    }
+                }
+            });
+        }
     </script>
 }
 

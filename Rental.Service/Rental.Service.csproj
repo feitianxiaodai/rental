@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaService.cs" />
+    <Compile Include="domain\AreaModel.cs" />
     <Compile Include="domain\SliderModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SliderService.cs" />

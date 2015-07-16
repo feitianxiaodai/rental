@@ -10,9 +10,9 @@ namespace Rental.UI.Models
 
         public UploadResponeModel()
         {
-            fils = new List<UploadFileInfo>();
+            files = new List<UploadFileInfo>();
         }
-        public List<UploadFileInfo> fils { get; set; }
+        public List<UploadFileInfo> files { get; set; }
     }
 
     public class UploadFileInfo

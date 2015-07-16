@@ -1,0 +1,56 @@
+﻿@using Rental.UI.Utility
+@{
+    var title = Html.GetLanguageByKey("IndexPageName");
+    ViewBag.Title = title;
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@section breadUrl{
+<a class="tracks active" href="http://www.conrad.com.cn/">首页</a>
+<a class="tracks active" href="javascript:void(0)">台湾</a>
+<a class="tracks show" href="index.html">香港港丽酒店</a><span class="tracks">首页</span>
+}
+
+<div id="viewport" class="mainbody-gallery">
+    <div class="wrapper">
+        <div class="mb-gallery-outer">
+            <div class="mb-gallery-container">
+                <ul class="mb-gallery-scroll swiper-wrapper"></ul>
+            </div>
+            <a class="mb-gallery-lf" href="javascript:void(0);"><i></i></a>
+            <a class="mb-gallery-rg" href="javascript:void(0);"><i></i></a>
+        </div>
+        <div class="mb-gallery-nav">
+            <div class="sorts">
+                <a class="on" href="javascript:void(0);">全部</a>
+            </div>
+            <div class="mb-gallery-nav-details">
+                <div class="photos-wrapper">
+                    <div class="photos-wrapper-container">
+                        <ul class="ul-wrap">
+                            <li class="on"></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <a class="photos-wrapper-arrow left" href="javascript:void(0);">左</a>
+                    <a class="photos-wrapper-arrow right" href="javascript:void(0);">右</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+<script src="@Url.Content("~/Content/front/js/index.js")"></script>
+<script type="text/javascript">
+    var HotelName = "香港港丽酒店";
+    var HotelAlbumList;
+    function GetHotelAlbumList() {
+        $.ajax({
+            url:'@Url.Action("_AjaxGetHotelAlbumList")',
+        });
+
+        HotelAlbumList = [{ "ImageAlt": "酒店外观", "ImageSrc": "http://www.hilton.com.cn/file/images/20150507/20150507165653093WKUrZLE.jpg", "MiddleSrc": "http://www.hilton.com.cn/file/images/20150507/20150507165653093WKUrZLE_thum_mid.jpg", "ThumbSrc": "http://www.hilton.com.cn/file/images/20150507/20150507165653093WKUrZLE_thum_min.jpg", "ImageType": 0 }];
+    }
+
+    
+</script>
+}
