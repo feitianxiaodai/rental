@@ -61,11 +61,74 @@ namespace Rental.UI.Resources {
         }
         
         /// <summary>
-        ///   查找类似 首页台湾 的本地化字符串。
+        ///   查找类似 配套設施 的本地化字符串。
+        /// </summary>
+        public static string AncillaryFacility {
+            get {
+                return ResourceManager.GetString("AncillaryFacility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 基本信息 的本地化字符串。
+        /// </summary>
+        public static string BasicInfo {
+            get {
+                return ResourceManager.GetString("BasicInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 首頁 的本地化字符串。
         /// </summary>
         public static string IndexPageName {
             get {
                 return ResourceManager.GetString("IndexPageName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 房間信息 的本地化字符串。
+        /// </summary>
+        public static string IndexRoomName {
+            get {
+                return ResourceManager.GetString("IndexRoomName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 對不起，暫無信息 的本地化字符串。
+        /// </summary>
+        public static string NoResource {
+            get {
+                return ResourceManager.GetString("NoResource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 房間 的本地化字符串。
+        /// </summary>
+        public static string Room {
+            get {
+                return ResourceManager.GetString("Room", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 房間預覽 的本地化字符串。
+        /// </summary>
+        public static string RoomPrivew {
+            get {
+                return ResourceManager.GetString("RoomPrivew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 台灣 的本地化字符串。
+        /// </summary>
+        public static string TaiWan {
+            get {
+                return ResourceManager.GetString("TaiWan", resourceCulture);
             }
         }
     }

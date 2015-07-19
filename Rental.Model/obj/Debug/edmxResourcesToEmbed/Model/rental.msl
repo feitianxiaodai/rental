@@ -28,6 +28,10 @@
     <EntitySetMapping Name="Room">
       <EntityTypeMapping TypeName="RentalModel.Room">
         <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="Smoke" ColumnName="Smoke" />
+          <ScalarProperty Name="RoomNameEN" ColumnName="RoomNameEN" />
+          <ScalarProperty Name="RoomNameTW" ColumnName="RoomNameTW" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
           <ScalarProperty Name="RoomLong" ColumnName="RoomLong" />
           <ScalarProperty Name="RoomLang" ColumnName="RoomLang" />
           <ScalarProperty Name="RoomDetailedAddress" ColumnName="RoomDetailedAddress" />

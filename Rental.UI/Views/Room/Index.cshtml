@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "房屋信息列表";
+    Layout = "~/Views/Shared/_DataGridLayout.cshtml";
+    ViewBag.GridId = "users";
+    ViewBag.ToolbarItem = "cancel,delete,add,edit";
+    ViewBag.GridDataUrl = Url.Action("_AjaxRoomList");
+    ViewBag.DeleteUrl = Url.Action("_AjaxDeleteRoom");
+    ViewBag.EditUrl = Url.Action("EditStep1");
+    ViewBag.AddUrl = Url.Action("CreateStep1");
+}
+@section customScript
+{
+    <script type="text/javascript">
+        columns = [[
+            { field: "Id", title: "ID", halign: "center", align: "center", width: "100px" },
+            { field: "RoomName", title: "房屋名称", halign: "center", align: "center", width: "250px" },
+            { field: "RoomTypeName", title: "房屋类型", halign: "center", align: "center", width: "250px" },
+            { field: "RoomBaseName", title: "是否为地下室", halign: "center", align: "center", width: "250px" },
+            { field: "RoomSpace", title: "房屋面积", width: "250px", align: "center", width: "250px" },
+            { field: "RoomSpace", title: "房屋面积", width: "250px", align: "center", width: "250px" },
+            { field: "RoomCount", title: "可住人数", width: "250px", align: "center", width: "250px" },
+            
+        ]];
+    </script>
+}

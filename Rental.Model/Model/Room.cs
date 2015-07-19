@@ -58,6 +58,10 @@ namespace Rental.Model.Model
         public string RoomDetailedAddress { get; set; }
         public string RoomLang { get; set; }
         public string RoomLong { get; set; }
+        public string RoomName { get; set; }
+        public string RoomNameTW { get; set; }
+        public string RoomNameEN { get; set; }
+        public Nullable<bool> Smoke { get; set; }
     
         public virtual ICollection<RoomImageInfo> RoomImageInfo { get; set; }
     }

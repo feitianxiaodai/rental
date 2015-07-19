@@ -61,11 +61,74 @@ namespace Rental.UI.Resources {
         }
         
         /// <summary>
+        ///   查找类似 配套设施 的本地化字符串。
+        /// </summary>
+        public static string AncillaryFacility {
+            get {
+                return ResourceManager.GetString("AncillaryFacility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 基本信息 的本地化字符串。
+        /// </summary>
+        public static string BasicInfo {
+            get {
+                return ResourceManager.GetString("BasicInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 首页 的本地化字符串。
         /// </summary>
         public static string IndexPageName {
             get {
                 return ResourceManager.GetString("IndexPageName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 房间信息 的本地化字符串。
+        /// </summary>
+        public static string IndexRoomName {
+            get {
+                return ResourceManager.GetString("IndexRoomName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 对不起，暂无信息 的本地化字符串。
+        /// </summary>
+        public static string NoResource {
+            get {
+                return ResourceManager.GetString("NoResource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 房间 的本地化字符串。
+        /// </summary>
+        public static string Room {
+            get {
+                return ResourceManager.GetString("Room", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 房间预览 的本地化字符串。
+        /// </summary>
+        public static string RoomPrivew {
+            get {
+                return ResourceManager.GetString("RoomPrivew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 台湾 的本地化字符串。
+        /// </summary>
+        public static string TaiWan {
+            get {
+                return ResourceManager.GetString("TaiWan", resourceCulture);
             }
         }
     }

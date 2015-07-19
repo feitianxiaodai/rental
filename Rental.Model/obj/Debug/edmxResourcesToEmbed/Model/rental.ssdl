@@ -53,6 +53,10 @@
     <Property Name="RoomDetailedAddress" Type="varchar(max)" Nullable="false" />
     <Property Name="RoomLang" Type="varchar" MaxLength="64" Nullable="false" />
     <Property Name="RoomLong" Type="varchar" MaxLength="64" />
+    <Property Name="RoomName" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoomNameTW" Type="varchar" MaxLength="128" />
+    <Property Name="RoomNameEN" Type="varchar" MaxLength="128" />
+    <Property Name="Smoke" Type="bit" />
   </EntityType>
   <EntityType Name="RoomImageInfo">
     <Key>

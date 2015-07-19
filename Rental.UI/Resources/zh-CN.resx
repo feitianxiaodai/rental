@@ -117,7 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AncillaryFacility" xml:space="preserve">
+    <value>配套设施</value>
+  </data>
+  <data name="BasicInfo" xml:space="preserve">
+    <value>基本信息</value>
+    <comment>房间的基本信息</comment>
+  </data>
   <data name="IndexPageName" xml:space="preserve">
     <value>首页</value>
+  </data>
+  <data name="IndexRoomName" xml:space="preserve">
+    <value>房间信息</value>
+  </data>
+  <data name="NoResource" xml:space="preserve">
+    <value>对不起，暂无信息</value>
+    <comment>暂无信息</comment>
+  </data>
+  <data name="Room" xml:space="preserve">
+    <value>房间</value>
+    <comment>房间</comment>
+  </data>
+  <data name="RoomPrivew" xml:space="preserve">
+    <value>房间预览</value>
+    <comment>房间预览</comment>
+  </data>
+  <data name="TaiWan" xml:space="preserve">
+    <value>台湾</value>
   </data>
 </root>

@@ -76,6 +76,10 @@
     <Property Name="RoomLang" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
     <Property Name="RoomLong" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="RoomImageInfo" Relationship="RentalModel.FK_RoomImageInfo_Room" FromRole="Room" ToRole="RoomImageInfo" />
+    <Property Name="RoomName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="RoomNameTW" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="RoomNameEN" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Smoke" Type="Boolean" />
   </EntityType>
   <EntityType Name="RoomImageInfo">
     <Key>

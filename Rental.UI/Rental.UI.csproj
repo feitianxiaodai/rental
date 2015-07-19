@@ -440,6 +440,9 @@
     <Content Include="Content\easyui\themes\metro\tree.css" />
     <Content Include="Content\easyui\themes\metro\validatebox.css" />
     <Content Include="Content\easyui\themes\metro\window.css" />
+    <Content Include="Content\gouxuan.png" />
+    <Content Include="Scripts\sweetalert-dev.js" />
+    <Content Include="Content\sweetalert.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap.css" />
@@ -855,9 +858,17 @@
     <Content Include="Views\Room\CreateStep1.cshtml" />
     <Content Include="Views\Room\CreateStep2.cshtml" />
     <Content Include="Views\Room\CreateStep3.cshtml" />
+    <Content Include="Views\Room\Index.cshtml" />
+    <Content Include="Views\Home\Room.cshtml" />
+    <Content Include="Views\Home\RoomList.cshtml" />
+    <Content Include="Views\Home\RoomPreview.cshtml" />
+    <Content Include="Views\Room\EditStep1.cshtml" />
+    <Content Include="Views\Room\EditStep2.cshtml" />
+    <Content Include="Views\Room\EditStep3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\RoomImg\thumb\" />
     <Folder Include="Upload\SliderImg\thumb\" />
   </ItemGroup>
   <ItemGroup>

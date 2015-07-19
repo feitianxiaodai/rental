@@ -13,6 +13,7 @@ namespace Rental.UI.Controllers
     {
         string cultureName = Thread.CurrentThread.CurrentCulture.Name;
         SliderService sliderSer = new SliderService();
+        RoomService roomSer = new RoomService();
         public ActionResult Index()
         {
             return View();
@@ -63,6 +64,28 @@ namespace Rental.UI.Controllers
             return Json(result);
         }
 
+        public ActionResult Room()
+        {
+            return View();
+        }
+
+        public ActionResult RoomList(int id)
+        {
+            //根据地区选择该地区所有的房间信息
+            var roomViewModels = roomSer.GetRoomInfoList(id);
+            return View(roomViewModels);
+        }
+
+        /// <summary>
+        /// 得到房间的详细信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult RoomPreview(int id)
+        {
+            var room = roomSer.GetPreviewRoomInfo(id);
+            return View(room);
+        }
 
 
     }

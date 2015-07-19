@@ -58,6 +58,10 @@
           <Property Name="RoomDetailedAddress" Type="varchar(max)" Nullable="false" />
           <Property Name="RoomLang" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="RoomLong" Type="varchar" MaxLength="64" />
+          <Property Name="RoomName" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoomNameTW" Type="varchar" MaxLength="128" />
+          <Property Name="RoomNameEN" Type="varchar" MaxLength="128" />
+          <Property Name="Smoke" Type="bit" />
         </EntityType>
         <EntityType Name="RoomImageInfo">
           <Key>
@@ -181,6 +185,10 @@
           <Property Name="RoomLang" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Name="RoomLong" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RoomImageInfo" Relationship="RentalModel.FK_RoomImageInfo_Room" FromRole="Room" ToRole="RoomImageInfo" />
+          <Property Name="RoomName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="RoomNameTW" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="RoomNameEN" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Smoke" Type="Boolean" />
         </EntityType>
         <EntityType Name="RoomImageInfo">
           <Key>
@@ -236,6 +244,10 @@
           <EntitySetMapping Name="Room">
             <EntityTypeMapping TypeName="RentalModel.Room">
               <MappingFragment StoreEntitySet="Room">
+                <ScalarProperty Name="Smoke" ColumnName="Smoke" />
+                <ScalarProperty Name="RoomNameEN" ColumnName="RoomNameEN" />
+                <ScalarProperty Name="RoomNameTW" ColumnName="RoomNameTW" />
+                <ScalarProperty Name="RoomName" ColumnName="RoomName" />
                 <ScalarProperty Name="RoomLong" ColumnName="RoomLong" />
                 <ScalarProperty Name="RoomLang" ColumnName="RoomLang" />
                 <ScalarProperty Name="RoomDetailedAddress" ColumnName="RoomDetailedAddress" />
