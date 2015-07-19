@@ -142,6 +142,10 @@
     <value>房间预览</value>
     <comment>房间预览</comment>
   </data>
+  <data name="Service" xml:space="preserve">
+    <value>服务设施</value>
+    <comment>服务设施</comment>
+  </data>
   <data name="TaiWan" xml:space="preserve">
     <value>台湾</value>
   </data>

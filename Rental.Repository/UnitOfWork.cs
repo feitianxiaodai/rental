@@ -14,11 +14,36 @@ namespace Rental.Repository
         private SliderRepository _sliderRepository = null;
         private RoomRepository _roomRepository = null;
         private AreaRepository _areaRepository = null;
+        private ServiceRepository _serviceRepository = null;
+        private FoodRepository _foodRepository = null;
         public UnitOfWork()
         {
             _edm = new RentalEntities();
         }
 
+        public ServiceRepository ServiceRepository
+        {
+            get
+            {
+                if (_serviceRepository == null)
+                {
+                    _serviceRepository = new ServiceRepository(_edm);
+                }
+                return _serviceRepository;
+            }
+        }
+
+        public FoodRepository FoodRepository
+        {
+            get
+            {
+                if (_foodRepository == null)
+                {
+                    _foodRepository = new FoodRepository(_edm);
+                }
+                return _foodRepository;
+            }
+        }
         public RoomRepository RoomRepository
         {
             get

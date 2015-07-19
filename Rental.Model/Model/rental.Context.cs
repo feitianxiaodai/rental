@@ -29,5 +29,9 @@ namespace Rental.Model.Model
         public DbSet<Area> Area { get; set; }
         public DbSet<Room> Room { get; set; }
         public DbSet<RoomImageInfo> RoomImageInfo { get; set; }
+        public DbSet<Food> Food { get; set; }
+        public DbSet<FoodImageInfo> FoodImageInfo { get; set; }
+        public DbSet<Service> Service { get; set; }
+        public DbSet<ServiceImageInfo> ServiceImageInfo { get; set; }
     }
 }

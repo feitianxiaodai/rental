@@ -10,6 +10,27 @@
     <Property Name="AreaLong" Type="varchar" MaxLength="256" Nullable="false" />
     <Property Name="AreaLang" Type="varchar" MaxLength="256" Nullable="false" />
   </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TitleCN" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="TitleTW" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="TtitleEN" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="ContentCN" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentTW" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentEN" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FoodImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImgUrl" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="FoodId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Room">
     <Key>
       <PropertyRef Name="Id" />
@@ -66,6 +87,26 @@
     <Property Name="ImgUrl" Type="varchar" MaxLength="128" Nullable="false" />
     <Property Name="RoomId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TitleCN" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="TitleTW" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="TtitleEN" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="ContentCN" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentTW" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentEN" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImgUrl" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Slider">
     <Key>
       <PropertyRef Name="Id" />
@@ -78,8 +119,22 @@
     <Property Name="TitleTW" Type="varchar" MaxLength="128" />
     <Property Name="TitleEN" Type="varchar" MaxLength="128" />
   </EntityType>
+  <Association Name="FK_FoodImageInfo_Food">
+    <End Role="Food" Type="Self.Food" Multiplicity="1" />
+    <End Role="FoodImageInfo" Type="Self.FoodImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FoodImageInfo">
+        <PropertyRef Name="FoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RoomImageInfo_Room">
-    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="Room" Type="Self.Room" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="RoomImageInfo" Type="Self.RoomImageInfo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Room">
@@ -90,14 +145,40 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ServiceImageInfo_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ServiceImageInfo" Type="Self.ServiceImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceImageInfo">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="RentalModelStoreContainer">
     <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FoodImageInfo" EntityType="Self.FoodImageInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoomImageInfo" EntityType="Self.RoomImageInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceImageInfo" EntityType="Self.ServiceImageInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_FoodImageInfo_Food" Association="Self.FK_FoodImageInfo_Food">
+      <End Role="Food" EntitySet="Food" />
+      <End Role="FoodImageInfo" EntitySet="FoodImageInfo" />
+    </AssociationSet>
     <AssociationSet Name="FK_RoomImageInfo_Room" Association="Self.FK_RoomImageInfo_Room">
       <End Role="Room" EntitySet="Room" />
       <End Role="RoomImageInfo" EntitySet="RoomImageInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceImageInfo_Service" Association="Self.FK_ServiceImageInfo_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="ServiceImageInfo" EntitySet="ServiceImageInfo" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

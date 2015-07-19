@@ -9,6 +9,18 @@
       <End Role="Room" EntitySet="Room" />
       <End Role="RoomImageInfo" EntitySet="RoomImageInfo" />
     </AssociationSet>
+    <EntitySet Name="Food" EntityType="RentalModel.Food" />
+    <EntitySet Name="FoodImageInfo" EntityType="RentalModel.FoodImageInfo" />
+    <AssociationSet Name="FK_FoodImageInfo_Food" Association="RentalModel.FK_FoodImageInfo_Food">
+      <End Role="Food" EntitySet="Food" />
+      <End Role="FoodImageInfo" EntitySet="FoodImageInfo" />
+    </AssociationSet>
+    <EntitySet Name="Service" EntityType="RentalModel.Service" />
+    <EntitySet Name="ServiceImageInfo" EntityType="RentalModel.ServiceImageInfo" />
+    <AssociationSet Name="FK_ServiceImageInfo_Service" Association="RentalModel.FK_ServiceImageInfo_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="ServiceImageInfo" EntitySet="ServiceImageInfo" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Slider">
     <Key>
@@ -99,6 +111,77 @@
       </Principal>
       <Dependent Role="RoomImageInfo">
         <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TitleCN" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="TitleTW" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="TtitleEN" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="ContentCN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentTW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="FoodImageInfo" Relationship="RentalModel.FK_FoodImageInfo_Food" FromRole="Food" ToRole="FoodImageInfo" />
+  </EntityType>
+  <EntityType Name="FoodImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="FoodId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Food" Relationship="RentalModel.FK_FoodImageInfo_Food" FromRole="FoodImageInfo" ToRole="Food" />
+  </EntityType>
+  <Association Name="FK_FoodImageInfo_Food">
+    <End Type="RentalModel.Food" Role="Food" Multiplicity="1" />
+    <End Type="RentalModel.FoodImageInfo" Role="FoodImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FoodImageInfo">
+        <PropertyRef Name="FoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TitleCN" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="TitleTW" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="TtitleEN" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ContentCN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentTW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ServiceImageInfo" Relationship="RentalModel.FK_ServiceImageInfo_Service" FromRole="Service" ToRole="ServiceImageInfo" />
+  </EntityType>
+  <EntityType Name="ServiceImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Service" Relationship="RentalModel.FK_ServiceImageInfo_Service" FromRole="ServiceImageInfo" ToRole="Service" />
+  </EntityType>
+  <Association Name="FK_ServiceImageInfo_Service">
+    <End Type="RentalModel.Service" Role="Service" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RentalModel.ServiceImageInfo" Role="ServiceImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceImageInfo">
+        <PropertyRef Name="ServiceId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -83,5 +83,50 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Food">
+      <EntityTypeMapping TypeName="RentalModel.Food">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
+          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+          <ScalarProperty Name="TtitleEN" ColumnName="TtitleEN" />
+          <ScalarProperty Name="TitleTW" ColumnName="TitleTW" />
+          <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodImageInfo">
+      <EntityTypeMapping TypeName="RentalModel.FoodImageInfo">
+        <MappingFragment StoreEntitySet="FoodImageInfo">
+          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="RentalModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
+          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+          <ScalarProperty Name="TtitleEN" ColumnName="TtitleEN" />
+          <ScalarProperty Name="TitleTW" ColumnName="TitleTW" />
+          <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceImageInfo">
+      <EntityTypeMapping TypeName="RentalModel.ServiceImageInfo">
+        <MappingFragment StoreEntitySet="ServiceImageInfo">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

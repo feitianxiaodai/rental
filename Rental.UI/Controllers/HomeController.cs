@@ -14,6 +14,7 @@ namespace Rental.UI.Controllers
         string cultureName = Thread.CurrentThread.CurrentCulture.Name;
         SliderService sliderSer = new SliderService();
         RoomService roomSer = new RoomService();
+        ServiceService serviceSer = new ServiceService();
         public ActionResult Index()
         {
             return View();
@@ -87,6 +88,17 @@ namespace Rental.UI.Controllers
             return View(room);
         }
 
+        public ActionResult Service()
+        {
+            var viewModel = serviceSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult ServiceInfo(int id)
+        {
+            var viewModel = serviceSer.GetServiceViewModelById(id, cultureName);
+            return View(viewModel);
+        }
 
     }
 }

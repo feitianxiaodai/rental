@@ -138,6 +138,9 @@
   <data name="RoomPrivew" xml:space="preserve">
     <value>Room Preview</value>
   </data>
+  <data name="Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
   <data name="TaiWan" xml:space="preserve">
     <value>TaiWan</value>
   </data>

@@ -10,6 +10,12 @@
         <EntityTypeShape EntityType="RentalModel.Room" Width="1.5" PointX="3.75" PointY="1.25" />
         <EntityTypeShape EntityType="RentalModel.RoomImageInfo" Width="1.5" PointX="6" PointY="4.625" />
         <AssociationConnector Association="RentalModel.FK_RoomImageInfo_Room" />
+        <EntityTypeShape EntityType="RentalModel.Food" Width="1.5" PointX="6.375" PointY="8" />
+        <EntityTypeShape EntityType="RentalModel.FoodImageInfo" Width="1.5" PointX="8.625" PointY="8.375" />
+        <AssociationConnector Association="RentalModel.FK_FoodImageInfo_Food" />
+        <EntityTypeShape EntityType="RentalModel.Service" Width="1.5" PointX="6.375" PointY="1" />
+        <EntityTypeShape EntityType="RentalModel.ServiceImageInfo" Width="1.5" PointX="8.625" PointY="1.375" />
+        <AssociationConnector Association="RentalModel.FK_ServiceImageInfo_Service" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

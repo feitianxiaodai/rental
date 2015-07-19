@@ -25,8 +25,9 @@ namespace Rental.UI.Controllers
                     Children = new List<TreeNode>()
                     {
                         new TreeNode() { Text = "幻灯片管理", IconCls = "pic_5", Url = Url.Action("Index", "Slider") },
-                        new TreeNode() { Text = "角色管理", IconCls = "pic_198", Url = Url.Action("Index", "Roles") },
+                        new TreeNode() { Text = "服务设置", IconCls = "pic_198", Url = Url.Action("Index", "Service") },
                         new TreeNode() { Text = "房间管理", IconCls = "pic_93", Url = Url.Action("Index", "Room") },
+                        new TreeNode() { Text = "美食管理", IconCls = "pic_93", Url = Url.Action("Index", "Food") },
                     }
                 },
                 new TreeNode()

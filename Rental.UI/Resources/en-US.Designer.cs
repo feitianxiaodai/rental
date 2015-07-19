@@ -124,6 +124,15 @@ namespace Rental.UI.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Service 的本地化字符串。
+        /// </summary>
+        public static string Service {
+            get {
+                return ResourceManager.GetString("Service", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 TaiWan 的本地化字符串。
         /// </summary>
         public static string TaiWan {

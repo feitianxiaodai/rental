@@ -138,6 +138,9 @@
   <data name="RoomPrivew" xml:space="preserve">
     <value>房間預覽</value>
   </data>
+  <data name="Service" xml:space="preserve">
+    <value>服務設施</value>
+  </data>
   <data name="TaiWan" xml:space="preserve">
     <value>台灣</value>
   </data>
