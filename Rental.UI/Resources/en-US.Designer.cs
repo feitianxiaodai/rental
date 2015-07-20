@@ -88,6 +88,33 @@ namespace Rental.UI.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Guidance 的本地化字符串。
+        /// </summary>
+        public static string Guidance {
+            get {
+                return ResourceManager.GetString("Guidance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Home Page 的本地化字符串。
+        /// </summary>
+        public static string HomePage {
+            get {
+                return ResourceManager.GetString("HomePage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hotel Profile 的本地化字符串。
+        /// </summary>
+        public static string HotelProfile {
+            get {
+                return ResourceManager.GetString("HotelProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Index 的本地化字符串。
         /// </summary>
         public static string IndexPageName {
@@ -120,6 +147,15 @@ namespace Rental.UI.Resources {
         public static string Preference {
             get {
                 return ResourceManager.GetString("Preference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Preference 的本地化字符串。
+        /// </summary>
+        public static string PreferenceSelection {
+            get {
+                return ResourceManager.GetString("PreferenceSelection", resourceCulture);
             }
         }
         

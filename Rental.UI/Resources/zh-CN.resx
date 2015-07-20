@@ -125,7 +125,17 @@
     <comment>房间的基本信息</comment>
   </data>
   <data name="Food" xml:space="preserve">
-    <value>美食</value>
+    <value>品味美食</value>
+  </data>
+  <data name="Guidance" xml:space="preserve">
+    <value>到达指引</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>首页</value>
+    <comment>首页</comment>
+  </data>
+  <data name="HotelProfile" xml:space="preserve">
+    <value>酒店介绍</value>
   </data>
   <data name="IndexPageName" xml:space="preserve">
     <value>首页</value>
@@ -140,6 +150,9 @@
   <data name="Preference" xml:space="preserve">
     <value>优惠精选</value>
     <comment>优惠精选</comment>
+  </data>
+  <data name="PreferenceSelection" xml:space="preserve">
+    <value>精选优惠</value>
   </data>
   <data name="Room" xml:space="preserve">
     <value>房间</value>

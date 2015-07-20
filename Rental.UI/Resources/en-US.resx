@@ -126,6 +126,15 @@
   <data name="Food" xml:space="preserve">
     <value>Delicious Food</value>
   </data>
+  <data name="Guidance" xml:space="preserve">
+    <value>Guidance</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Home Page</value>
+  </data>
+  <data name="HotelProfile" xml:space="preserve">
+    <value>Hotel Profile</value>
+  </data>
   <data name="IndexPageName" xml:space="preserve">
     <value>Index</value>
   </data>
@@ -137,6 +146,9 @@
   </data>
   <data name="Preference" xml:space="preserve">
     <value>Preferential Selection</value>
+  </data>
+  <data name="PreferenceSelection" xml:space="preserve">
+    <value>Preference</value>
   </data>
   <data name="Room" xml:space="preserve">
     <value>Room</value>

@@ -126,6 +126,15 @@
   <data name="Food" xml:space="preserve">
     <value>美食</value>
   </data>
+  <data name="Guidance" xml:space="preserve">
+    <value>到達指引</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>首頁</value>
+  </data>
+  <data name="HotelProfile" xml:space="preserve">
+    <value>酒店簡介</value>
+  </data>
   <data name="IndexPageName" xml:space="preserve">
     <value>首頁</value>
   </data>
@@ -137,6 +146,9 @@
   </data>
   <data name="Preference" xml:space="preserve">
     <value>優惠精選</value>
+  </data>
+  <data name="PreferenceSelection" xml:space="preserve">
+    <value>精選優惠</value>
   </data>
   <data name="Room" xml:space="preserve">
     <value>房間</value>

@@ -79,11 +79,38 @@ namespace Rental.UI.Resources {
         }
         
         /// <summary>
-        ///   查找类似 美食 的本地化字符串。
+        ///   查找类似 品味美食 的本地化字符串。
         /// </summary>
         public static string Food {
             get {
                 return ResourceManager.GetString("Food", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 到达指引 的本地化字符串。
+        /// </summary>
+        public static string Guidance {
+            get {
+                return ResourceManager.GetString("Guidance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 首页 的本地化字符串。
+        /// </summary>
+        public static string HomePage {
+            get {
+                return ResourceManager.GetString("HomePage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 酒店介绍 的本地化字符串。
+        /// </summary>
+        public static string HotelProfile {
+            get {
+                return ResourceManager.GetString("HotelProfile", resourceCulture);
             }
         }
         
@@ -120,6 +147,15 @@ namespace Rental.UI.Resources {
         public static string Preference {
             get {
                 return ResourceManager.GetString("Preference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 精选优惠 的本地化字符串。
+        /// </summary>
+        public static string PreferenceSelection {
+            get {
+                return ResourceManager.GetString("PreferenceSelection", resourceCulture);
             }
         }
         

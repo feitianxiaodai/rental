@@ -444,6 +444,9 @@
     <Content Include="Content\easyui\themes\metro\validatebox.css" />
     <Content Include="Content\easyui\themes\metro\window.css" />
     <Content Include="Content\gouxuan.png" />
+    <Content Include="Content\hotel_huanying.gif" />
+    <Content Include="Content\logo_best_rates_sm.png" />
+    <Content Include="Content\qq.gif" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
