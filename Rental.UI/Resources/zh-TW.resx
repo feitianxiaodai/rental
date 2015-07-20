@@ -135,6 +135,9 @@
   <data name="NoResource" xml:space="preserve">
     <value>對不起，暫無信息</value>
   </data>
+  <data name="Preference" xml:space="preserve">
+    <value>優惠精選</value>
+  </data>
   <data name="Room" xml:space="preserve">
     <value>房間</value>
   </data>

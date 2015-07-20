@@ -85,7 +85,7 @@
                     <a class="hd-mb-hotline-tel pc" href="javascript:void(0);"></a>
                     <a class="hd-mb-hotline-tel mobile" href="javascript:void(0);">免费订房热线</a>
                 </span>
-                <span class="hd-mb-lang pc"><a href="javascript:void(0);">简体</a> <a href="javascript:void(0);">繁体</a> <a href="javascript:void(0);">EN</a></span>
+                <span class="hd-mb-lang pc"><a href="@Url.Content("~/zh-CN/Home/Index")">简体</a> <a href="@Url.Content("~/zh-TW/Home/Index")" >繁体</a> <a href="@Url.Content("~/en-US/Home/Index")" >EN</a></span>
                 <span class="hd-mb-xin pc"><a href="javascript:void(0);">weixin</a></span>
             </div>
 
@@ -132,7 +132,7 @@
                 <li class="hotel-nav-item index-li"><a class="hotel-nav-links l1  active" href="@Url.Action("Index","Home")">首页</a></li>
                 <li class="hotel-nav-item introduce-li"><a class="hotel-nav-links l2 " href="about.html">酒店简介</a></li>
                 <li class="hotel-nav-item arrive-li"><a class="hotel-nav-links l3 " href="maps-directions.html">到达指引</a></li>
-                <li class="hotel-nav-item yh-li"><a class="hotel-nav-links l4 " href="offers.html">精选优惠</a></li>
+                <li class="hotel-nav-item yh-li"><a class="hotel-nav-links l4 " href="@Url.Action("Preference","Home")">精选优惠</a></li>
                 <li class="hotel-nav-item room-li"><a class="hotel-nav-links l5 " href="@Url.Action("Room","Home")">房间预览</a></li>
                 <li class="hotel-nav-item food-li"><a class="hotel-nav-links l6 " href="@Url.Action("Food","Home")">品味美食</a></li>
                 <li class="hotel-nav-item service-li"><a class="hotel-nav-links l7 " href="@Url.Action("Service","Home")">服务设施</a></li>
@@ -174,3 +174,15 @@
 </body>
 </html>
 @RenderSection("scripts", required: false)
+<script>
+    $(function () {
+        var pageUrl = window.location.href;
+        if (pageUrl.toLowerCase().indexOf("en-us")>0) {
+            $('.hd-mb-lang a:eq(2)').addClass('on').siblings().removeClass("on");
+        } else if (pageUrl.toLowerCase().indexOf("zh-tw")>0) {
+            $('.hd-mb-lang a:eq(1)').addClass('on').siblings().removeClass("on");
+        } else {
+            $('.hd-mb-lang a:eq(0)').addClass('on').siblings().removeClass("on");
+        }
+    });
+</script>

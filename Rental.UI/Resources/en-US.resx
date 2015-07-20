@@ -135,6 +135,9 @@
   <data name="NoResource" xml:space="preserve">
     <value>Sorry,No Resource</value>
   </data>
+  <data name="Preference" xml:space="preserve">
+    <value>Preferential Selection</value>
+  </data>
   <data name="Room" xml:space="preserve">
     <value>Room</value>
   </data>

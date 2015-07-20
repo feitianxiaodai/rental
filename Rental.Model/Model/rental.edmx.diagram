@@ -16,6 +16,9 @@
         <EntityTypeShape EntityType="RentalModel.Food" Width="1.5" PointX="6.375" PointY="8" />
         <EntityTypeShape EntityType="RentalModel.FoodImageInfo" Width="1.5" PointX="8.625" PointY="8.375" />
         <AssociationConnector Association="RentalModel.FK_FoodImageInfo_Food" />
+        <EntityTypeShape EntityType="RentalModel.PreferenImageInfo" Width="1.5" PointX="10.625" PointY="5.375" />
+        <EntityTypeShape EntityType="RentalModel.Preferential" Width="1.5" PointX="8.375" PointY="5" />
+        <AssociationConnector Association="RentalModel.FK_PreferenImageInfo_Preferential" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

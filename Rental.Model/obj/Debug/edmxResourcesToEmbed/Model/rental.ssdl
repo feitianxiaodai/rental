@@ -30,6 +30,26 @@
     <Property Name="ImgUrl" Type="varchar" MaxLength="512" Nullable="false" />
     <Property Name="FoodId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="PreferenImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImgUrl" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="PreferenId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Preferential">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TitleCN" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="TtitleTW" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="TtitleEN" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="ContentCN" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentTW" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentEN" Type="varchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="Room">
     <Key>
       <PropertyRef Name="Id" />
@@ -119,9 +139,7 @@
     <Property Name="TitleEN" Type="varchar" MaxLength="128" />
   </EntityType>
   <Association Name="FK_FoodImageInfo_Food">
-    <End Role="Food" Type="Self.Food" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="Food" Type="Self.Food" Multiplicity="1" />
     <End Role="FoodImageInfo" Type="Self.FoodImageInfo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Food">
@@ -129,6 +147,20 @@
       </Principal>
       <Dependent Role="FoodImageInfo">
         <PropertyRef Name="FoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PreferenImageInfo_Preferential">
+    <End Role="Preferential" Type="Self.Preferential" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PreferenImageInfo" Type="Self.PreferenImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Preferential">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PreferenImageInfo">
+        <PropertyRef Name="PreferenId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -164,6 +196,8 @@
     <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FoodImageInfo" EntityType="Self.FoodImageInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PreferenImageInfo" EntityType="Self.PreferenImageInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Preferential" EntityType="Self.Preferential" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoomImageInfo" EntityType="Self.RoomImageInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
@@ -172,6 +206,10 @@
     <AssociationSet Name="FK_FoodImageInfo_Food" Association="Self.FK_FoodImageInfo_Food">
       <End Role="Food" EntitySet="Food" />
       <End Role="FoodImageInfo" EntitySet="FoodImageInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PreferenImageInfo_Preferential" Association="Self.FK_PreferenImageInfo_Preferential">
+      <End Role="Preferential" EntitySet="Preferential" />
+      <End Role="PreferenImageInfo" EntitySet="PreferenImageInfo" />
     </AssociationSet>
     <AssociationSet Name="FK_RoomImageInfo_Room" Association="Self.FK_RoomImageInfo_Room">
       <End Role="Room" EntitySet="Room" />

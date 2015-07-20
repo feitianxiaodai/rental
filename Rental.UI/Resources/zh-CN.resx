@@ -137,6 +137,10 @@
     <value>对不起，暂无信息</value>
     <comment>暂无信息</comment>
   </data>
+  <data name="Preference" xml:space="preserve">
+    <value>优惠精选</value>
+    <comment>优惠精选</comment>
+  </data>
   <data name="Room" xml:space="preserve">
     <value>房间</value>
     <comment>房间</comment>

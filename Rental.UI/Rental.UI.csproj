@@ -129,6 +129,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PreferenceController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
@@ -879,10 +880,16 @@
     <Content Include="Views\Home\Food.cshtml" />
     <Content Include="Views\Home\FoodInfo.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Preference\Create.cshtml" />
+    <Content Include="Views\Preference\Edit.cshtml" />
+    <Content Include="Views\Preference\Index.cshtml" />
+    <Content Include="Views\Home\Preference.cshtml" />
+    <Content Include="Views\Home\PreferenceInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Upload\FoodImg\thumb\" />
+    <Folder Include="Upload\PreferenceImg\thumb\" />
     <Folder Include="Upload\RoomImg\thumb\" />
     <Folder Include="Upload\ServiceImg\thumb\" />
     <Folder Include="Upload\SliderImg\thumb\" />

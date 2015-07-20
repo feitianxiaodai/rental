@@ -33,5 +33,7 @@ namespace Rental.Model.Model
         public DbSet<ServiceImageInfo> ServiceImageInfo { get; set; }
         public DbSet<Food> Food { get; set; }
         public DbSet<FoodImageInfo> FoodImageInfo { get; set; }
+        public DbSet<PreferenImageInfo> PreferenImageInfo { get; set; }
+        public DbSet<Preferential> Preferential { get; set; }
     }
 }

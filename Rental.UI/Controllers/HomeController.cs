@@ -16,6 +16,7 @@ namespace Rental.UI.Controllers
         RoomService roomSer = new RoomService();
         ServiceService serviceSer = new ServiceService();
         FoodService foodSer = new FoodService();
+        PreferenceService prefenceSer = new PreferenceService();
         public ActionResult Index()
         {
             return View();
@@ -110,6 +111,18 @@ namespace Rental.UI.Controllers
         public ActionResult FoodInfo(int id)
         {
             var viewModel = foodSer.GetServiceViewModelById(id, cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult Preference()
+        {
+            var viewModel = prefenceSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult PreferenceInfo(int id)
+        {
+            var viewModel = prefenceSer.GetServiceViewModelById(id, cultureName);
             return View(viewModel);
         }
 

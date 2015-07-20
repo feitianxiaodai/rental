@@ -42,17 +42,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaService.cs" />
+    <Compile Include="convertor\PreferenceModelConvertor.cs" />
     <Compile Include="convertor\FoodModelConvertor.cs" />
     <Compile Include="convertor\RoomModelConvertor.cs" />
     <Compile Include="convertor\ServiceModelConvertor.cs" />
     <Compile Include="domain\AreaModel.cs" />
     <Compile Include="domain\FoodCultureModel.cs" />
     <Compile Include="domain\FoodModel.cs" />
+    <Compile Include="domain\PreferenceModel.cs" />
     <Compile Include="domain\RoomModel.cs" />
+    <Compile Include="domain\PreferenceCultureModel.cs" />
     <Compile Include="domain\ServiceCultureModel.cs" />
     <Compile Include="domain\ServiceModel.cs" />
     <Compile Include="domain\SliderModel.cs" />
     <Compile Include="FoodService.cs" />
+    <Compile Include="PreferenceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomService.cs" />
     <Compile Include="ServiceService.cs" />

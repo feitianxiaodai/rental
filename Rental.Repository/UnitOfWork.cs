@@ -16,9 +16,22 @@ namespace Rental.Repository
         private AreaRepository _areaRepository = null;
         private ServiceRepository _serviceRepository = null;
         private FoodRepository _foodRepository = null;
+        private PreferenceRepository _preferenceRepository = null;
         public UnitOfWork()
         {
             _edm = new RentalEntities();
+        }
+
+        public PreferenceRepository PreferenceRepository
+        {
+            get
+            {
+                if (_preferenceRepository == null)
+                {
+                    _preferenceRepository = new PreferenceRepository(_edm);
+                }
+                return _preferenceRepository;
+            }
         }
 
         public ServiceRepository ServiceRepository

@@ -21,6 +21,12 @@
       <End Role="Food" EntitySet="Food" />
       <End Role="FoodImageInfo" EntitySet="FoodImageInfo" />
     </AssociationSet>
+    <EntitySet Name="PreferenImageInfo" EntityType="RentalModel.PreferenImageInfo" />
+    <EntitySet Name="Preferential" EntityType="RentalModel.Preferential" />
+    <AssociationSet Name="FK_PreferenImageInfo_Preferential" Association="RentalModel.FK_PreferenImageInfo_Preferential">
+      <End Role="Preferential" EntitySet="Preferential" />
+      <End Role="PreferenImageInfo" EntitySet="PreferenImageInfo" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Slider">
     <Key>
@@ -181,6 +187,42 @@
       </Principal>
       <Dependent Role="FoodImageInfo">
         <PropertyRef Name="FoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PreferenImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="PreferenId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Preferential" Relationship="RentalModel.FK_PreferenImageInfo_Preferential" FromRole="PreferenImageInfo" ToRole="Preferential" />
+  </EntityType>
+  <EntityType Name="Preferential">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TitleCN" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="TtitleTW" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="TtitleEN" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="ContentCN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentTW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PreferenImageInfo" Relationship="RentalModel.FK_PreferenImageInfo_Preferential" FromRole="Preferential" ToRole="PreferenImageInfo" />
+  </EntityType>
+  <Association Name="FK_PreferenImageInfo_Preferential">
+    <End Type="RentalModel.Preferential" Role="Preferential" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RentalModel.PreferenImageInfo" Role="PreferenImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Preferential">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PreferenImageInfo">
+        <PropertyRef Name="PreferenId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

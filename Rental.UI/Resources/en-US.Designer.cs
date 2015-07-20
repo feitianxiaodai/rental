@@ -115,6 +115,15 @@ namespace Rental.UI.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Preferential Selection 的本地化字符串。
+        /// </summary>
+        public static string Preference {
+            get {
+                return ResourceManager.GetString("Preference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Room 的本地化字符串。
         /// </summary>
         public static string Room {
