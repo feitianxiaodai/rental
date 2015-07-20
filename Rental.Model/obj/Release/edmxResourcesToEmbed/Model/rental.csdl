@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="RentalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Slider" EntityType="RentalModel.Slider" />
+    <EntitySet Name="Area" EntityType="RentalModel.Area" />
+    <EntitySet Name="Room" EntityType="RentalModel.Room" />
+    <EntitySet Name="RoomImageInfo" EntityType="RentalModel.RoomImageInfo" />
+    <AssociationSet Name="FK_RoomImageInfo_Room" Association="RentalModel.FK_RoomImageInfo_Room">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="RoomImageInfo" EntitySet="RoomImageInfo" />
+    </AssociationSet>
+    <EntitySet Name="Service" EntityType="RentalModel.Service" />
+    <EntitySet Name="ServiceImageInfo" EntityType="RentalModel.ServiceImageInfo" />
+    <AssociationSet Name="FK_ServiceImageInfo_Service" Association="RentalModel.FK_ServiceImageInfo_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="ServiceImageInfo" EntitySet="ServiceImageInfo" />
+    </AssociationSet>
+    <EntitySet Name="Food" EntityType="RentalModel.Food" />
+    <EntitySet Name="FoodImageInfo" EntityType="RentalModel.FoodImageInfo" />
+    <AssociationSet Name="FK_FoodImageInfo_Food" Association="RentalModel.FK_FoodImageInfo_Food">
+      <End Role="Food" EntitySet="Food" />
+      <End Role="FoodImageInfo" EntitySet="FoodImageInfo" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TitleCN" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="TitleTW" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="TitleEN" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AreaName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="AreaParent" Type="Int32" Nullable="false" />
+    <Property Name="AreaLong" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="AreaLang" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomType" Type="Int32" Nullable="false" />
+    <Property Name="IsBasement" Type="Int32" Nullable="false" />
+    <Property Name="RoomSpace" Type="Double" Nullable="false" />
+    <Property Name="RoomShi" Type="Int32" Nullable="false" />
+    <Property Name="RoomTing" Type="Int32" />
+    <Property Name="RoomKitchen" Type="Int32" />
+    <Property Name="RoomBalcony" Type="Int32" />
+    <Property Name="PrivateBathroom" Type="Int32" />
+    <Property Name="PublicBathroom" Type="Int32" />
+    <Property Name="RoomCount" Type="Int32" Nullable="false" />
+    <Property Name="BedType1" Type="Int32" Nullable="false" />
+    <Property Name="BedType2" Type="Int32" />
+    <Property Name="BedType3" Type="Int32" />
+    <Property Name="BedType4" Type="Int32" />
+    <Property Name="Fridge" Type="Boolean" />
+    <Property Name="WashingMechine" Type="Boolean" />
+    <Property Name="Water" Type="Boolean" />
+    <Property Name="Intercom" Type="Boolean" />
+    <Property Name="Computer" Type="Boolean" />
+    <Property Name="Shower" Type="Boolean" />
+    <Property Name="Bathtub" Type="Boolean" />
+    <Property Name="Toiletries" Type="Boolean" />
+    <Property Name="Towel" Type="Boolean" />
+    <Property Name="Slippers" Type="Boolean" />
+    <Property Name="HotWater" Type="Boolean" />
+    <Property Name="Elevator" Type="Boolean" />
+    <Property Name="Police" Type="Boolean" />
+    <Property Name="Child" Type="Boolean" />
+    <Property Name="Older" Type="Boolean" />
+    <Property Name="AirportTransfer" Type="Boolean" />
+    <Property Name="LeftLuggage" Type="Boolean" />
+    <Property Name="Guide" Type="Boolean" />
+    <Property Name="RoomNumber" Type="Int32" Nullable="false" />
+    <Property Name="RoomCity" Type="Int32" Nullable="false" />
+    <Property Name="RoomArea" Type="Int32" Nullable="false" />
+    <Property Name="RoomDetailedAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RoomLang" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="RoomLong" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RoomImageInfo" Relationship="RentalModel.FK_RoomImageInfo_Room" FromRole="Room" ToRole="RoomImageInfo" />
+    <Property Name="RoomName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="RoomNameTW" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="RoomNameEN" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Smoke" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="RoomImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Room" Relationship="RentalModel.FK_RoomImageInfo_Room" FromRole="RoomImageInfo" ToRole="Room" />
+  </EntityType>
+  <Association Name="FK_RoomImageInfo_Room">
+    <End Type="RentalModel.Room" Role="Room" Multiplicity="1" />
+    <End Type="RentalModel.RoomImageInfo" Role="RoomImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoomImageInfo">
+        <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TitleCN" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="TitleTW" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="TtitleEN" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ContentCN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentTW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ServiceImageInfo" Relationship="RentalModel.FK_ServiceImageInfo_Service" FromRole="Service" ToRole="ServiceImageInfo" />
+  </EntityType>
+  <EntityType Name="ServiceImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Service" Relationship="RentalModel.FK_ServiceImageInfo_Service" FromRole="ServiceImageInfo" ToRole="Service" />
+  </EntityType>
+  <Association Name="FK_ServiceImageInfo_Service">
+    <End Type="RentalModel.Service" Role="Service" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RentalModel.ServiceImageInfo" Role="ServiceImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceImageInfo">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TitleCN" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="TitleTW" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="TtitleEN" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="ContentCN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentTW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FoodImageInfo" Relationship="RentalModel.FK_FoodImageInfo_Food" FromRole="Food" ToRole="FoodImageInfo" />
+  </EntityType>
+  <EntityType Name="FoodImageInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="FoodId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Food" Relationship="RentalModel.FK_FoodImageInfo_Food" FromRole="FoodImageInfo" ToRole="Food" />
+  </EntityType>
+  <Association Name="FK_FoodImageInfo_Food">
+    <End Type="RentalModel.Food" Role="Food" Multiplicity="1" />
+    <End Type="RentalModel.FoodImageInfo" Role="FoodImageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FoodImageInfo">
+        <PropertyRef Name="FoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

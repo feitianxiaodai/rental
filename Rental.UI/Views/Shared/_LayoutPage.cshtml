@@ -129,13 +129,13 @@
         @RenderBody()
         <div class="mainbody-sub">
             <ul class="hotel-nav">
-                <li class="hotel-nav-item"><a class="hotel-nav-links l1  active" href="index.html">首页</a></li>
-                <li class="hotel-nav-item"><a class="hotel-nav-links l2 " href="about.html">酒店简介</a></li>
-                <li class="hotel-nav-item"><a class="hotel-nav-links l3 " href="maps-directions.html">到达指引</a></li>
-                <li class="hotel-nav-item"><a class="hotel-nav-links l4 " href="offers.html">精选优惠</a></li>
-                <li class="hotel-nav-item"><a class="hotel-nav-links l5 " href="rooms.html">房间预览</a></li>
-                <li class="hotel-nav-item"><a class="hotel-nav-links l6 " href="dinings.html">品味美食</a></li>
-                <li class="hotel-nav-item"><a class="hotel-nav-links l7 " href="services.html">服务设施</a></li>
+                <li class="hotel-nav-item index-li"><a class="hotel-nav-links l1  active" href="@Url.Action("Index","Home")">首页</a></li>
+                <li class="hotel-nav-item introduce-li"><a class="hotel-nav-links l2 " href="about.html">酒店简介</a></li>
+                <li class="hotel-nav-item arrive-li"><a class="hotel-nav-links l3 " href="maps-directions.html">到达指引</a></li>
+                <li class="hotel-nav-item yh-li"><a class="hotel-nav-links l4 " href="offers.html">精选优惠</a></li>
+                <li class="hotel-nav-item room-li"><a class="hotel-nav-links l5 " href="@Url.Action("Room","Home")">房间预览</a></li>
+                <li class="hotel-nav-item food-li"><a class="hotel-nav-links l6 " href="@Url.Action("Food","Home")">品味美食</a></li>
+                <li class="hotel-nav-item service-li"><a class="hotel-nav-links l7 " href="@Url.Action("Service","Home")">服务设施</a></li>
             </ul>
         </div>
         <!--hotelleftmenu.html-->

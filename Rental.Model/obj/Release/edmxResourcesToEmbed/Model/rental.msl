@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentalModelStoreContainer" CdmEntityContainer="RentalEntities">
+    <EntitySetMapping Name="Slider">
+      <EntityTypeMapping TypeName="RentalModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
+          <ScalarProperty Name="TitleTW" ColumnName="TitleTW" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Area">
+      <EntityTypeMapping TypeName="RentalModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="AreaLang" ColumnName="AreaLang" />
+          <ScalarProperty Name="AreaLong" ColumnName="AreaLong" />
+          <ScalarProperty Name="AreaParent" ColumnName="AreaParent" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Room">
+      <EntityTypeMapping TypeName="RentalModel.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="Smoke" ColumnName="Smoke" />
+          <ScalarProperty Name="RoomNameEN" ColumnName="RoomNameEN" />
+          <ScalarProperty Name="RoomNameTW" ColumnName="RoomNameTW" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="RoomLong" ColumnName="RoomLong" />
+          <ScalarProperty Name="RoomLang" ColumnName="RoomLang" />
+          <ScalarProperty Name="RoomDetailedAddress" ColumnName="RoomDetailedAddress" />
+          <ScalarProperty Name="RoomArea" ColumnName="RoomArea" />
+          <ScalarProperty Name="RoomCity" ColumnName="RoomCity" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="Guide" ColumnName="Guide" />
+          <ScalarProperty Name="LeftLuggage" ColumnName="LeftLuggage" />
+          <ScalarProperty Name="AirportTransfer" ColumnName="AirportTransfer" />
+          <ScalarProperty Name="Older" ColumnName="Older" />
+          <ScalarProperty Name="Child" ColumnName="Child" />
+          <ScalarProperty Name="Police" ColumnName="Police" />
+          <ScalarProperty Name="Elevator" ColumnName="Elevator" />
+          <ScalarProperty Name="HotWater" ColumnName="HotWater" />
+          <ScalarProperty Name="Slippers" ColumnName="Slippers" />
+          <ScalarProperty Name="Towel" ColumnName="Towel" />
+          <ScalarProperty Name="Toiletries" ColumnName="Toiletries" />
+          <ScalarProperty Name="Bathtub" ColumnName="Bathtub" />
+          <ScalarProperty Name="Shower" ColumnName="Shower" />
+          <ScalarProperty Name="Computer" ColumnName="Computer" />
+          <ScalarProperty Name="Intercom" ColumnName="Intercom" />
+          <ScalarProperty Name="Water" ColumnName="Water" />
+          <ScalarProperty Name="WashingMechine" ColumnName="WashingMechine" />
+          <ScalarProperty Name="Fridge" ColumnName="Fridge" />
+          <ScalarProperty Name="BedType4" ColumnName="BedType4" />
+          <ScalarProperty Name="BedType3" ColumnName="BedType3" />
+          <ScalarProperty Name="BedType2" ColumnName="BedType2" />
+          <ScalarProperty Name="BedType1" ColumnName="BedType1" />
+          <ScalarProperty Name="RoomCount" ColumnName="RoomCount" />
+          <ScalarProperty Name="PublicBathroom" ColumnName="PublicBathroom" />
+          <ScalarProperty Name="PrivateBathroom" ColumnName="PrivateBathroom" />
+          <ScalarProperty Name="RoomBalcony" ColumnName="RoomBalcony" />
+          <ScalarProperty Name="RoomKitchen" ColumnName="RoomKitchen" />
+          <ScalarProperty Name="RoomTing" ColumnName="RoomTing" />
+          <ScalarProperty Name="RoomShi" ColumnName="RoomShi" />
+          <ScalarProperty Name="RoomSpace" ColumnName="RoomSpace" />
+          <ScalarProperty Name="IsBasement" ColumnName="IsBasement" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomImageInfo">
+      <EntityTypeMapping TypeName="RentalModel.RoomImageInfo">
+        <MappingFragment StoreEntitySet="RoomImageInfo">
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="RentalModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
+          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+          <ScalarProperty Name="TtitleEN" ColumnName="TtitleEN" />
+          <ScalarProperty Name="TitleTW" ColumnName="TitleTW" />
+          <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceImageInfo">
+      <EntityTypeMapping TypeName="RentalModel.ServiceImageInfo">
+        <MappingFragment StoreEntitySet="ServiceImageInfo">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Food">
+      <EntityTypeMapping TypeName="RentalModel.Food">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
+          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+          <ScalarProperty Name="TtitleEN" ColumnName="TtitleEN" />
+          <ScalarProperty Name="TitleTW" ColumnName="TitleTW" />
+          <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodImageInfo">
+      <EntityTypeMapping TypeName="RentalModel.FoodImageInfo">
+        <MappingFragment StoreEntitySet="FoodImageInfo">
+          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

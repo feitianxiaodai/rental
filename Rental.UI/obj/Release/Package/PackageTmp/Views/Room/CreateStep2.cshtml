@@ -1,0 +1,185 @@
+﻿@{
+    ViewBag.Title = "CreateStep2";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="@Url.Content("~/Content/customformstep.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/sweetalert.css")" rel="stylesheet" />
+<div class="custome-page-header">
+    <h1>上传照片</h1>
+</div>
+<div class="form-progress">
+    <ul>
+        <li>1.房源信息</li>
+        <li class="second active">2.房源图片</li>
+        <li>3.发布成功</li>
+    </ul>
+</div>
+
+@using (Html.BeginForm("CreateStep2", "Room", FormMethod.Post, new { @class = "custome-form" }))
+{
+    <div class="form-div">
+        <span class="span-title">上传图片</span>
+        <div class="form-input">
+            <span class="btn btn-success fileinput-button">
+                <i class="glyphicon glyphicon-plus"></i>
+                <span>Add files...</span>
+                <!-- The file input field used as target for the file upload widget -->
+                <input id="fileupload" type="file" name="file">
+            </span>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="files" class="files"></div>
+    <div class="form-div">
+        <span class="span-title"></span>
+        <div class="form-input">
+            <div id="progress" class="progress">
+                <div class="progress-bar progress-bar-success"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="op-div">
+        <div class="op-container" id="comfirmdiv">
+            <button type="button" id="saveandnext2" class="btn btn-success">确定</button>
+        </div>
+
+    </div>
+
+}
+
+<!-- The global progress bar -->
+@section otherScript{
+    <link href="~/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/file-upload/jquery.fileupload.css" rel="stylesheet" />
+    <script src="~/Scripts/file-upload/load-image.all.min.js"></script>
+    <script src="~/Scripts/file-upload/canvas-to-blob.min.js"></script>
+    <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/file-upload/jquery.iframe-transport.js"></script>
+    <script src="~/Scripts/file-upload/jquery.fileupload.js"></script>
+    <script src="~/Scripts/file-upload/jquery.fileupload-process.js"></script>
+
+    <script src="~/Scripts/file-upload/jquery.fileupload-image.js"></script>
+
+    <link href="~/Scripts/file-upload/jquery.fileupload.css" rel="stylesheet" />
+    <link href="~/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/sweetalert-dev.js"></script>
+    <script>
+        document.querySelector('#saveandnext2').onclick = function () {
+            var imgCount = $('.roomImg').length;
+
+            if (imgCount == 0) {
+                swal("提示!", '请至少上传一张图片');
+            } else {
+                $('.custome-form').submit();
+            }
+
+        };
+        $(function () {
+            'use strict';
+            // Change this to the location of your server-side upload handler:
+            var url = '@Url.Action("Save")',
+                uploadButton = $('<button/>')
+                    .addClass('btn btn-primary')
+                    .prop('disabled', true)
+                    .text('Processing...')
+                    .on('click', function () {
+                        var $this = $(this),
+                            data = $this.data();
+                        $this
+                            .off('click')
+                            .text('Abort')
+                            .on('click', function () {
+                                $this.remove();
+                                data.abort();
+                            });
+                        data.submit().always(function () {
+                            $this.remove();
+                        });
+                    });
+            $('#fileupload').fileupload({
+                url: '@Url.Action("_AjaxSaveRoomImg")',
+                dataType: 'json',
+                autoUpload: true,
+                acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+                maxNumberOfFiles: 1,
+                maxFileSize: 999000,
+                // Enable image resizing, except for Android and Opera,
+                // which actually support image resizing, but fail to
+                // send Blob objects via XHR requests:
+                disableImageResize: /Android(?!.*Chrome)|Opera/
+                    .test(window.navigator.userAgent),
+                previewMaxWidth: 100,
+                previewMaxHeight: 100,
+                previewCrop: true
+            }).on('fileuploadadd', function (e, data) {
+                data.context = $('<div/>').appendTo('#files');
+                $.each(data.files, function (index, file) {
+                    var node = $('<p/>')
+                            .append($('<span/>').text(file.name));
+                    //if (!index) {
+                    //    node
+                    //        .append('<br>')
+                    //        .append(uploadButton.clone(true).data(data));
+                    //}
+                    node.appendTo(data.context);
+                });
+            }).on('fileuploadprocessalways', function (e, data) {
+                var index = data.index,
+                    file = data.files[index],
+                    node = $(data.context.children()[index]);
+                if (file.preview) {
+                    node
+                        .prepend('<br>')
+                        .prepend(file.preview);
+                }
+                if (file.error) {
+                    node
+                        .append('<br>')
+                        .append($('<span class="text-danger"/>').text(file.error));
+                }
+                if (index + 1 === data.files.length) {
+                    data.context.find('button')
+                        .text('Upload')
+                        .prop('disabled', !!data.files.error);
+                }
+            }).on('fileuploadprogressall', function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $('#progress .progress-bar').css(
+                    'width',
+                    progress + '%'
+                );
+            }).on('fileuploaddone', function (e, data) {
+                $.each(data.result.files, function (index, file) {
+                    if (file.url) {
+                        var link = $('<a>')
+                            .attr('target', '_blank')
+                            .prop('href', file.url);
+                        $(data.context.children()[index])
+                            .wrap(link);
+                        createImgHidden(file.name);
+                    } else if (file.error) {
+                        var error = $('<span class="text-danger"/>').text(file.error);
+                        $(data.context.children()[index])
+                            .append('<br>')
+                            .append(error);
+                    }
+                });
+            }).on('fileuploadfail', function (e, data) {
+                $.each(data.files, function (index) {
+                    var error = $('<span class="text-danger"/>').text('File upload failed.');
+                    $(data.context.children()[index])
+                        .append('<br>')
+                        .append(error);
+                });
+            }).prop('disabled', !$.support.fileInput)
+                .parent().addClass($.support.fileInput ? undefined : 'disabled');
+        });
+        //uploader.find("input:file").removeAttr('disabled');
+        function createImgHidden(name) {
+            var html = '<input type="hidden" class="roomImg" name="roomImg" value="' + name + '"/>';
+            $('#comfirmdiv').append(html);
+        }
+    </script>
+}

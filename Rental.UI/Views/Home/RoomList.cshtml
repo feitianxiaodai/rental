@@ -1,0 +1,57 @@
+﻿@using Rental.UI.Utility
+@model List<Rental.Service.domain.RoomModel>
+@{
+    var title = Html.GetLanguageByKey("IndexRoomName");
+    ViewBag.Title = title;
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@section breadUrl{
+    <a class="tracks active" href="http://www.conrad.com.cn/">@Html.GetLanguageByKey("IndexPageName")</a>
+    <a class="tracks active" href="javascript:void(0)">@Html.GetLanguageByKey("TaiWan")</a>
+    <a class="tracks show" href="@Url.Action("Room")">@Html.GetLanguageByKey("RoomPrivew")</a><span class="tracks">@Html.GetLanguageByKey("Room")</span>
+}
+
+<div class="hotel-details">
+    <div class="comtemplate">
+        @{
+            if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    var imgUrl = item.RoomImageInfo.FirstOrDefault().ImgUrl;
+                    
+                    <div class="comtemplate-panel" data-id="142" style="width:553px;">
+                        <a href="@Url.Action("RoomPreview", new { id=@item.Id})" class="">
+                            <img class="comtemplate-panel-img imgauto"
+                                 src="@imgUrl"
+                                 data-small-src="@imgUrl"
+                                 data-big-src="@imgUrl"
+                                 data-ratio="0.618" alt="">
+                            <h2 class="comtemplate-panel-cap">@item.RoomName</h2>
+                        </a>
+                        <p class="comtemplate-panel-intro">@item.RoomName</p>
+                    </div>
+                }
+            }
+            else
+            {
+                var tip = Html.GetLanguageByKey("NoResource");
+                <div>@tip</div>
+            }
+        }
+
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $('.index-li a').removeClass('active');
+            $('.introduce-li a').removeClass('active');
+            $('.arrive-li a').removeClass('active');
+            $('.yh-li a').removeClass('active');
+            $('.food-li a').removeClass('active');
+            $('.service-li a').removeClass('active');
+            $('.room-li a').addClass('active');
+        });
+    </script>
+}

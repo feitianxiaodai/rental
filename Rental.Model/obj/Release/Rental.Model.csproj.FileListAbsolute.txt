@@ -1,0 +1,8 @@
+E:\rental\rental\Rental.Model\bin\Release\Rental.Model.dll.config
+E:\rental\rental\Rental.Model\bin\Release\Rental.Model.dll
+E:\rental\rental\Rental.Model\bin\Release\Rental.Model.pdb
+E:\rental\rental\Rental.Model\bin\Release\EntityFramework.dll
+E:\rental\rental\Rental.Model\bin\Release\EntityFramework.xml
+E:\rental\rental\Rental.Model\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\rental\rental\Rental.Model\obj\Release\Rental.Model.dll
+E:\rental\rental\Rental.Model\obj\Release\Rental.Model.pdb

@@ -1,10 +1,11 @@
-﻿@{
+﻿@model Rental.Service.domain.RoomModel
+@{
     ViewBag.Title = "CreateStep1";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <link href="@Url.Content("~/Content/customformstep.css")" rel="stylesheet" />
 <link href="@Url.Content("~/Scripts/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
-
+<link href="@Url.Content("~/Content/sweetalert.css")" rel="stylesheet" />
 <style>
     .btn-primary {
         background-color: #5CB85C;
@@ -77,7 +78,7 @@
             .palce-choose-div ul .place-text-li {
                 width: 550px;
                 height: 20px;
-                margin-bottom:10px;
+                margin-bottom: 10px;
             }
 
                 .palce-choose-div ul .place-text-li .place-text-li-div {
@@ -97,22 +98,23 @@
                         width: 350px;
                     }
 
-                    /*百度地图*/
+            /*百度地图*/
             .palce-choose-div ul .place-map-li {
                 width: 550px;
                 height: auto;
             }
-            .palce-choose-div ul .place-map-li .place-map-title {
-                width:80px;
-                height:20px;
-                line-height:20px;
-                margin-bottom:5px;
-            }
-            
-            .palce-choose-div ul .place-map-li .place-map-container {
-                width: 550px;
-                height: 500px;
-            }
+
+                .palce-choose-div ul .place-map-li .place-map-title {
+                    width: 80px;
+                    height: 20px;
+                    line-height: 20px;
+                    margin-bottom: 5px;
+                }
+
+                .palce-choose-div ul .place-map-li .place-map-container {
+                    width: 550px;
+                    height: 500px;
+                }
 </style>
 
 <div class="custome-page-header">
@@ -126,7 +128,7 @@
     </ul>
 </div>
 <div class="clear"></div>
-<form class="custome-form">
+<form class="custome-form" method="post" action="@Url.Action("CreateStep1")">
     <div class="form-div">
         <span class="span-title">地理位置</span>
         <div class="form-input">
@@ -138,11 +140,30 @@
         <div class="clear"></div>
     </div>
     <div class="form-div">
+        <span class="span-title">房间名称</span>
+        <div class="form-input">
+            <input type="text" style="width:400px;" name="RoomName" id="RoomName" />
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-div">
         <span class="span-title">房屋类型</span>
         <div class="form-input">
-            <select class="normalSel">
-                <option>民居</option>
-                <option>公寓</option>
+            <select class="normalSel" name="RoomType">
+                <option value="1">民居</option>
+                <option value="2">公寓</option>
+                <option value="3">独栋别墅</option>
+                <option value="4">客栈</option>
+                <option value="5">阁楼</option>
+                <option value="6">四合院</option>
+                <option value="7">海边小屋</option>
+                <option value="8">林间小屋</option>
+                <option value="9">豪宅</option>
+                <option value="10">城堡</option>
+                <option value="11">树屋</option>
+                <option value="12">船舱</option>
+                <option value="13">房车</option>
+                <option value="14">冰屋</option>
             </select>
         </div>
         <div class="clear"></div>
@@ -150,10 +171,10 @@
     <div class="form-div">
         <span class="span-title">是否为地下室</span>
         <div class="form-input">
-            <select class="normalSel">
-                <option>否</option>
-                <option>地下室</option>
-                <option>半地下室</option>
+            <select class="normalSel" name="IsBasement">
+                <option value="0">否</option>
+                <option value="1">地下室</option>
+                <option value="2">半地下室</option>
             </select>
         </div>
         <div class="clear"></div>
@@ -161,28 +182,62 @@
     <div class="form-div">
         <span class="span-title">房屋面积</span>
         <div class="form-input">
-            <input type="text" style="width:400px;" />平米
+            <input type="text" style="width:400px;" name="RoomSpace" id="RoomSpace"/>平米
         </div>
         <div class="clear"></div>
     </div>
     <div class="form-div">
         <span class="span-title">户型</span>
         <div class="form-input">
-            <select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            <select class="standSel" name="RoomShi">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>室
-            <select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            <select class="standSel" name="RoomTing">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>厅
-            <select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            <select class="standSel" name="RoomKitchen">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>厨房
-            <select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            <select class="standSel" name="RoomBalcony">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>阳台
         </div>
         <div class="clear"></div>
@@ -190,13 +245,31 @@
     <div class="form-div">
         <span class="span-title">卫生间数</span>
         <div class="form-input">
-            独立<select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            独立<select class="standSel" name="PrivateBathroom">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>
-            公共<select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            公共<select class="standSel" name="PublicBathroom">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>
 
         </div>
@@ -205,10 +278,17 @@
     <div class="form-div">
         <span class="span-title">可住人数</span>
         <div class="form-input">
-            <select class="normalSel">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
+            <select class="normalSel" name="RoomCount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>
         </div>
         <div class="clear"></div>
@@ -216,21 +296,57 @@
     <div class="form-div" style="height:80px;">
         <span class="span-title" style="line-height:80px;">床数</span>
         <div class="form-input" style="height:80px;">
-            双人床<select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            双人床<select class="standSel" name="BedType1">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>
-            单人床<select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            单人床<select class="standSel" name="BedType2">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>
-            双层床<select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            双层床<select class="standSel" name="BedType3">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>
-            单人沙发<select class="standSel">
-                <option>0</option>
-                <option>1</option>
+            沙发<select class="standSel" name="BedType4">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">9+</option>
             </select>
 
         </div>
@@ -240,22 +356,54 @@
         <span class="span-title">配套设施</span>
         <div class="form-multi-checkbox">
             <ul>
-                <li><input type="checkbox" class="checkboxnew" />冰箱</li>
-                <li><input type="checkbox" />洗衣机</li>
-                <li><input type="checkbox" />饮水机</li>
-                <li><input type="checkbox" />对讲系统</li>
-                <li><input type="checkbox" />冰箱</li>
-                <li><input type="checkbox" />洗衣机</li>
-                <li><input type="checkbox" />饮水机</li>
-                <li><input type="checkbox" />对讲系统</li>
-                <li><input type="checkbox" />冰箱</li>
-                <li><input type="checkbox" />洗衣机</li>
-                <li><input type="checkbox" />饮水机</li>
-                <li><input type="checkbox" />对讲系统</li>
-                <li><input type="checkbox" />冰箱</li>
-                <li><input type="checkbox" />洗衣机</li>
-                <li><input type="checkbox" />饮水机</li>
-                <li><input type="checkbox" />对讲系统</li>
+                <li>
+                    @Html.CheckBox("Fridge", new { @class = "checkboxnew" })冰箱
+                </li>
+                <li>
+                    @Html.CheckBox("WashingMechine", new { @class = "checkboxnew" })洗衣机
+                </li>
+                <li>
+                    @Html.CheckBox("Water", new { @class = "checkboxnew" })饮水机
+                </li>
+                <li>
+                    @Html.CheckBox("Intercom", new { @class = "checkboxnew" })对讲系统
+                </li>
+                <li>
+                    @Html.CheckBox("Computer", new { @class = "checkboxnew" })电脑
+                </li>
+                <li>
+                    @Html.CheckBox("Shower", new { @class = "checkboxnew" })淋浴
+                </li>
+                <li>
+                    @Html.CheckBox("Bathtub", new { @class = "checkboxnew" })浴缸
+                </li>
+                <li>
+                    @Html.CheckBox("HotWater", new { @class = "checkboxnew" })24小时热水
+                </li>
+                <li>
+                    @Html.CheckBox("Toiletries", new { @class = "checkboxnew" })洗漱用品
+                </li>
+                <li>
+                    @Html.CheckBox("Towel", new { @class = "checkboxnew" })毛巾浴巾
+                </li>
+                <li>
+                    @Html.CheckBox("Slippers", new { @class = "checkboxnew" })拖鞋
+                </li>
+                <li>
+                    @Html.CheckBox("Smoke", new { @class = "checkboxnew" })可以吸烟
+                </li>
+                <li>
+                    @Html.CheckBox("Elevator", new { @class = "checkboxnew" })电梯
+                </li>
+                <li>
+                    @Html.CheckBox("Police", new { @class = "checkboxnew" })保安
+                </li>
+                <li>
+                    @Html.CheckBox("Child", new { @class = "checkboxnew" })欢迎小孩
+                </li>
+                <li>
+                    @Html.CheckBox("Older", new { @class = "checkboxnew" })欢迎老人
+                </li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -264,10 +412,15 @@
         <span class="span-title">提供服务</span>
         <div class="form-multi-checkbox-service">
             <ul>
-                <li><input type="checkbox" />冰箱</li>
-                <li><input type="checkbox" />洗衣机</li>
-                <li><input type="checkbox" />饮水机</li>
-
+                <li>
+                    @Html.CheckBox("AirportTransfer")机场车站接送
+                </li>
+                <li>
+                    @Html.CheckBox("LeftLuggage")行李寄存
+                </li>
+                <li>
+                    @Html.CheckBox("Guide")导游
+                </li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -275,14 +428,14 @@
     <div class="form-div">
         <span class="span-title">同类房源</span>
         <div class="form-input">
-            <input type="text" />套
+            <input type="text" name="RoomNumber" id="RoomNumber" />套
         </div>
         <div class="clear"></div>
     </div>
     <div class="clear"></div>
     <div class="op-div" style="margin-top:10px;">
         <div class="op-container">
-            <button type="submit" class="btn btn-success">保存,下一步</button>
+            <button type="button" id="saveandnext" class="btn btn-success">保存,下一步</button>
         </div>
 
     </div>
@@ -301,31 +454,24 @@
                             <li class="place-choose-li">
                                 <div class="place-choose-li-div">
                                     <span class="place-header">地址选择</span>
-                                    <select id="sel-city">
-                                        <option>高雄</option>
-                                        <option data-latitude="121.515672" data-longitude="25.067323">台北市</option>
-                                        <option>台南</option>
-                                    </select>
+                                    <select id="sel-city" name="RoomCity"></select>
                                     <span class="place-title">市</span>
-                                    <select id="sel-area">
-                                        <option>高雄</option>
-                                        <option data-latitude="121.553126" data-longitude="24.97212">新店区</option>
-                                        <option>台南</option>
+                                    <select id="sel-area" name="RoomArea">
                                     </select>
-                                    <span class="place-title">区</span>
+                                    <!--<span class="place-title">区</span>
                                     <select>
                                         <option>台湾</option>
                                         <option>高雄</option>
                                         <option>台南</option>
                                     </select>
-                                    <span class="place-title">地区</span>
+                                    <span class="place-title">地区</span>-->
                                     <div class="clear"></div>
                                 </div>
                             </li>
                             <li class="place-text-li">
                                 <div class="place-text-li-div">
                                     <span class="place-header">详细地址</span>
-                                    <input type="text" class="place-text-specific" />
+                                    <input type="text" class="place-text-specific" name="RoomDetailedAddress" id="RoomDetailedAddress" />
                                 </div>
                             </li>
                             <li class="place-map-li">
@@ -333,6 +479,10 @@
                                     <span>位置选择</span>
                                 </div>
                                 <div class="place-map-container" id="place-map-container"></div>
+
+                                <!--保存经纬度-->
+                                <input type="hidden" name="RoomLong" id="AreaLong" />
+                                <input type="hidden" name="RoomLang" id="AreaLang" />
                             </li>
                             <div class="clear"></div>
                         </ul>
@@ -340,7 +490,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">确定</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
                 </div>
             </div>
         </div>
@@ -351,14 +501,45 @@
 @section otherScript{
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=Nb9McbTaSsTNv4XDWwQOsYeE"></script>
     <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
-
+    <script src="~/Scripts/sweetalert-dev.js"></script>
     <script>
-        var map = new BMap.Map("place-map-container");          // 创建地图实例  
-        var point = new BMap.Point(121.566349, 25.047042);  // 创建点坐标  
-        map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别  
+        //检查是否内容完整
+        document.querySelector('#saveandnext').onclick = function () {
+            var roomName = $('#RoomName').val();
+            var roomSpace = $('#RoomSpace').val();
+            var roomNumber = $('#RoomNumber').val();
+            var roomAddress = $('#RoomDetailedAddress').val();
+            var roomLang = $('#AreaLong').val();
+            var roomLong = $('#AreaLang').val();
+            var tip = '';
+            if (roomName == '') {
+                tip += '请填写房间名称\n';
+            }
+            if (roomSpace == '') {
+                tip += '请填写房间面积\n';
+            }
+            if (roomNumber == '') {
+                tip += '请填写房源数量\n';
+            }
+            if (roomAddress == '') {
+                tip += '请填写房间详细地址\n';
+            }
+            if (roomLang == '') {
+                tip += '请选择地区\n';
+            }
+            if (tip != '') {
+                swal("提示!", tip);
+            } else {
+                $('.custome-form').submit();
+            }
+            
+        };
+        var map = new BMap.Map("place-map-container");          // 创建地图实例
+        var point = new BMap.Point(121.566349, 25.047042);  // 创建点坐标
+        //map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别
         map.addControl(new BMap.NavigationControl());
-        //map.setCurrentCity("台北市");
-        var marker = new BMap.Marker(point);        // 创建标注    
+        map.setCurrentCity("台北");
+        var marker = new BMap.Marker(point);        // 创建标注
         map.addOverlay(marker);
 
         marker.addEventListener("click", function (e) {
@@ -373,14 +554,68 @@
         map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
         map.enableContinuousZoom();
         $(function () {
+            initCity();
             $('#sel-city').change(function () {
+                var latitude = $(this).find("option:selected").attr("data-latitude");
+                var longitude = $(this).find("option:selected").attr("data-longitude");
+                var areaId = $(this).find("option:selected").attr("data-id");
+                var cityPoint = new BMap.Point(latitude, longitude);
+                //map.centerAndZoom(cityPoint, 15)
+                map.setCurrentCity("高雄");
+                map.addOverlay(new BMap.Marker(cityPoint));
+                //初始化区
+                initArea(areaId);
+            });
+
+            $('#sel-area').change(function () {
                 var latitude = $(this).find("option:selected").attr("data-latitude");
                 var longitude = $(this).find("option:selected").attr("data-longitude");
                 var cityPoint = new BMap.Point(latitude, longitude);
                 map.centerAndZoom(cityPoint, 15)
                 map.addOverlay(new BMap.Marker(cityPoint));
+                alert(latitude + ',' + longitude);
+                $('#AreaLong').val(longitude);
+                $('#AreaLang').val(latitude);
             });
+
         });
+        //初始化市下拉框
+        function initCity(id) {
+            var area = '';
+            $.ajax({
+                url: '@Url.Action("_AjaxGetArea")',
+                type: 'POST',
+                success: function (data) {
+                    if (data != '') {
+                        $('#sel-city').empty();
+                        area += '<option>请选择</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            area += '<option value="' + data[i].Id + '" data-id="' + data[i].Id + '" data-latitude="' + data[i].AreaLang + '"data-AreaLong="' + data[i].AreaName + '">' + data[i].AreaName + '</option>';
+                        }
+                        $('#sel-city').append(area);
+                    }
+                }
+            });
+        }
+
+        function initArea(id) {
+            var area = '';
+            $.ajax({
+                url: '@Url.Action("_AjaxGetArea")',
+                type: 'POST',
+                data: { Id: id },
+                success: function (data) {
+                    if (data != '') {
+                        $('#sel-area').empty();
+                        area += '<option>请选择</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            area += '<option value="' + data[i].Id + '"  data-latitude="' + data[i].AreaLang + '"data-longitude="' + data[i].AreaLong + '">' + data[i].AreaName + '</option>';
+                        }
+                        $('#sel-area').append(area);
+                    }
+                }
+            });
+        }
     </script>
 }
 

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "CreateStep3";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="@Url.Content("~/Content/customformstep.css")" rel="stylesheet" />
+<style>
+    .contain{ width:600px; height:50px; margin:0px auto;}
+</style>
+<div class="custome-page-header">
+    <h1>发布成功</h1>
+</div>
+<div class="form-progress">
+    <ul>
+        <li>1.房源信息</li>
+        <li class="second">2.房源图片</li>
+        <li class="active">3.发布成功</li>
+    </ul>
+</div>
+<div class="contain">
+    <h2>发布成功</h2>
+    <input type="button" value="确定" id="confirm"/>
+</div>
+
+@section otherScript{
+    <script>
+        $('#confirm').click(function () {
+            window.location = '@Url.Action("Index")';
+        });
+    </script>
+
+}

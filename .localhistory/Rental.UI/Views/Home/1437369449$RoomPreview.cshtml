@@ -1,0 +1,367 @@
+﻿@using Rental.UI.Utility
+@model Rental.Service.domain.RoomModel
+@{
+    var title = Html.GetLanguageByKey("RoomPrivew");
+    ViewBag.Title = title;
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@section breadUrl{
+    <a class="tracks active" href="http://www.conrad.com.cn/">@Html.GetLanguageByKey("IndexPageName")</a>
+    <a class="tracks active" href="javascript:void(0)">@Html.GetLanguageByKey("TaiWan")</a>
+    <a class="tracks show" href="@Url.Action("Room")">@Html.GetLanguageByKey("RoomPrivew")</a><span class="tracks">@Html.GetLanguageByKey("Room")</span>
+}
+
+<div id="viewport" class="hotel-details">
+    <div class="comtemplate">
+        <h3 class="mb-comtemplate-profile-title"><a href="javascript:void(0);"></a></h3>
+        <div class="comtemplate-kv">
+            <ul class="comtemplate-kv-wrapper swiper-wrapper">
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var item in Model.RoomImageInfo)
+                        {
+                            var imgUrl = item.ImgUrl;
+                            <li class="comtemplate-kv-items swiper-slide">
+                                <img class="comtemplate-detail-panel-img imgauto"
+                                     src=""
+                                     data-small-src="@imgUrl"
+                                     data-big-src="@imgUrl"
+                                     data-ratio="0.618" alt="">
+                                <!--<div class="comtemplate-kv-items-intro">
+                                    豪华海景行政套房<span>豪华海景行政套房</span>
+                                </div>-->
+                            </li>
+                        }
+                    }
+                }
+            </ul>
+            <div class="comtemplate-kv-list"></div>
+            <div class="mb-gallery-nav-details comtemplate-kv-thumb">
+                <div class="photos-wrapper">
+                    <div class="photos-wrapper-container">
+                        <ul class="ul-wrap swiper-wrapper">
+                            @{
+                                if (Model != null)
+                                {
+                                    int i = 0;
+                                    foreach (var item in Model.RoomImageInfo)
+                                    {
+                                        var imgUrl = item.ImgUrlThumb;
+                                        if (i == 0)
+                                        {
+                                            <li class="on">
+                                                <img style="width:100%;height:100%" src="@imgUrl" alt="">
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li>
+                                                <img style="width:100%;height:100%" src="@imgUrl" alt="">
+                                            </li>
+                                        }
+                                        i++;
+                                    }
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <a class="photos-wrapper-arrow left" href="javascript:void(0);">左</a>
+                    <a class="photos-wrapper-arrow right" href="javascript:void(0);">右</a>
+                </div>
+            </div>
+            <a class="mb-gallery-lf" href="javascript:void(0);"><i></i></a>
+            <a class="mb-gallery-rg" href="javascript:void(0);"><i></i></a>
+        </div>
+        <div class="comtemplate-profile">
+            <h3 class="t"><a href="javascript:void(0);">@Model.RoomName</a></h3>
+            <div id="roomInfo">
+                <p>@Html.GetLanguageByKey("BasicInfo")</p>
+                <ul class="table">
+                    <li>
+                        <div class="grounp">
+                            <b class="shuxing">房屋类型</b>
+                            <p class="shuxingzhi">@Model.RoomTypeName</p>
+                        </div>
+                        <div class="grounp">
+                            <b class="shuxing">地下室</b>
+                            <p class="shuxingzhi">@Model.RoomBaseName</p>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <div class="grounp">
+                            <b class="shuxing">面积</b>
+                            <p class="shuxingzhi">@(Model.RoomSpace)平</p>
+                        </div>
+                        <div class="grounp">
+                            <b class="shuxing">户型</b>
+                            <p class="shuxingzhi">@(Model.RoomShi)室@(Model.RoomTing)厅@(Model.RoomKitchen)厨@(Model.RoomBalcony)阳台</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="grounp">
+                            <b class="shuxing">卫生间</b>
+                            <p class="shuxingzhi">@(Model.PrivateBathroom)*独立 @(Model.PublicBathroom)*公共</p>
+                        </div>
+                        <div class="grounp">
+                            <b class="shuxing">可住人数</b>
+                            <p class="shuxingzhi">@Model.RoomCount</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="grounp">
+                            <b class="shuxing">双人床</b>
+                            <p class="shuxingzhi">@(Model.BedType1)张</p>
+                        </div>
+                        <div class="grounp">
+                            <b class="shuxing">单人床</b>
+                            <p class="shuxingzhi">@(Model.BedType2)张</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="grounp">
+                            <b class="shuxing">双层床</b>
+                            <p class="shuxingzhi">@(Model.BedType3)张</p>
+                        </div>
+                        <div class="grounp">
+                            <b class="shuxing">沙发</b>
+                            <p class="shuxingzhi">@(Model.BedType4)张</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="service">
+                <p class="updetail">@Html.GetLanguageByKey("AncillaryFacility")</p>
+                <ul class="forfree">
+                    @{
+                        if(Model.Fridge.GetValueOrDefault())
+                        {
+                             <li class="yes">冰箱</li>
+                        }
+                        else
+                        {
+                            <li class="no">冰箱</li>
+                        }
+                        if (Model.WashingMechine.GetValueOrDefault())
+                        {
+                             <li class="yes">洗衣机</li>
+                        }
+                        else
+                        {
+                            <li class="no">洗衣机</li>
+                        }
+                        if (Model.Water.GetValueOrDefault())
+                        {
+                             <li class="yes">饮水机</li>
+                        }
+                        else
+                        {
+                            <li class="no">饮水机</li>
+                        }
+                        if (Model.Intercom.GetValueOrDefault())
+                        {
+                             <li class="yes">对讲系统</li>
+                        }
+                        else
+                        {
+                            <li class="no">对讲系统</li>
+                        }
+                        if(Model.Computer.GetValueOrDefault())
+                        {
+                             <li class="yes">电脑</li>
+                        }
+                        else
+                        {
+                            <li class="no">电脑</li>
+                        }
+                        if (Model.Shower.GetValueOrDefault())
+                        {
+                             <li class="yes">淋浴</li>
+                        }
+                        else
+                        {
+                            <li class="no">淋浴</li>
+                        }
+                        if (Model.Bathtub.GetValueOrDefault())
+                        {
+                             <li class="yes">浴缸</li>
+                        }
+                        else
+                        {
+                            <li class="no">浴缸</li>
+                        }
+                        if (Model.HotWater.GetValueOrDefault())
+                        {
+                             <li class="yes">24小时热水</li>
+                        }
+                        else
+                        {
+                            <li class="no">24小时热水</li>
+                        }
+                        if (Model.Toiletries.GetValueOrDefault())
+                        {
+                             <li class="yes">洗漱用品</li>
+                        }
+                        else
+                        {
+                            <li class="no">洗漱用品</li>
+                        }
+                        if (Model.Towel.GetValueOrDefault())
+                        {
+                             <li class="yes">毛巾浴巾</li>
+                        }
+                        else
+                        {
+                            <li class="no">毛巾浴巾</li>
+                        }
+                        if (Model.Slippers.GetValueOrDefault())
+                        {
+                             <li class="yes">拖鞋</li>
+                        }
+                        else
+                        {
+                            <li class="no">拖鞋</li>
+                        }
+                        if(Model.Smoke.GetValueOrDefault())
+                        {
+                             <li class="yes">可以吸烟</li>
+                        }
+                        else
+                        {
+                            <li class="no">可以吸烟</li>
+                        }
+                        if (Model.Elevator.GetValueOrDefault())
+                        {
+                             <li class="yes">电梯</li>
+                        }
+                        else
+                        {
+                            <li class="no">电梯</li>
+                        }
+                        if (Model.Police.GetValueOrDefault())
+                        {
+                             <li class="yes">保安</li>
+                        }
+                        else
+                        {
+                            <li class="no">保安</li>
+                        }
+                        if (Model.Child.GetValueOrDefault())
+                        {
+                             <li class="yes">欢迎儿童</li>
+                        }
+                        else
+                        {
+                            <li class="no">欢迎儿童</li>
+                        }
+                        if (Model.Older.GetValueOrDefault())
+                        {
+                             <li class="yes">欢迎老人</li>
+                        }
+                        else
+                        {
+                            <li class="no">欢迎老人</li>
+                        }
+                    }
+                   
+                    
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #roomInfo{ width:390px;height:auto; margin-left:5px;}
+    #service {width:390px;height:auto; margin-left:5px;}
+    #roomInfo p {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #e6e6e6;
+        font-weight: bold;
+        color: #313442;
+    }
+    #roomInfo .table {
+        border: 1px solid #e4e4e4;
+        border-bottom: none;
+        display: table-cell;
+        margin-top: 20px;
+        width:380px;
+        height:auto;
+        list-style:none;
+    }
+    #roomInfo .table li {
+            float: left;
+            line-height: 40px;
+            width: 380px;
+            height: 40px;
+            border-bottom: 1px solid #e4e4e4;
+        }
+    #roomInfo .table li .grounp {
+                float: left;
+                width: 190px;
+                height: 40px;
+                text-align: center;
+            }
+    #roomInfo .table li .grounp b {
+                    height: 40px;
+                    width: 80px;
+                    float: left;
+                    font-weight: normal;
+                    color: #575C76;
+                }
+    #roomInfo .table li .grounp .shuxingzhi {
+                    width: 100px;
+                    float: left;
+                }
+    #service .updetail {
+        border-bottom: 1px solid #e6e6e6;
+        font-weight: bold;
+        color: #313442;
+        display: inline-table;
+        line-height: 40px;
+    }
+    #service .forfree{
+        width:510px;
+        height:auto;
+    }
+    #service .forfree li {
+        width: 25%;
+        float: left;
+        text-align: left;
+        position: relative;
+        line-height: 40px;
+        padding-left: 25px;
+        box-sizing: border-box;
+        height: 40px;
+    }
+    #service .forfree .yes:before {
+        background: url("/Content/gouxuan.png") no-repeat;
+        width: 14px;
+        height: 12px;
+        content: "";
+        float: left;
+        margin-top: 15px;
+        margin-right: 5px;
+    }
+    #service .forfree .no {
+        color: #999;
+        text-decoration: line-through;
+        padding-left: 42px;
+    }
+</style>
+@section scripts{
+    <script src="~/Content/front/js/rooms.js"></script>
+    <script>
+        $(function () {
+            $('.index-li a').removeClass('active');
+            $('.introduce-li a').removeClass('active');
+            $('.arrive-li a').removeClass('active');
+            $('.yh-li a').removeClass('active');
+            $('.food-li a').removeClass('active');
+            $('.service-li a').removeClass('active');
+            $('.room-li a').addClass('active');
+        });
+    </script>
+}

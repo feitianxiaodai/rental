@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "图片信息列表";
+    Layout = "~/Views/Shared/_DataGridLayout.cshtml";
+    ViewBag.GridId = "users";
+    ViewBag.ToolbarItem = "cancel,delete,add";
+    ViewBag.GridDataUrl = Url.Action("_AjaxGetAllSlider");
+    ViewBag.DeleteUrl = Url.Action("_AjaxDeleteSlider");
+    ViewBag.EditUrl = Url.Action("Edit");
+    ViewBag.AddUrl = Url.Action("Create");
+}
+@section customScript
+{
+    <script type="text/javascript">
+        columns = [[
+            { field: "Id", title: "ID", halign: "center", align: "center", width: "100px" },
+            { field: "TitleCN", title: "图片名称(简体)", halign: "center", align: "center", width: "250px" },
+            { field: "TitleTW", title: "图片名称(繁体)", halign: "center", align: "center", width: "250px" },
+            { field: "TitleEN", title: "图片名称(英文)", halign: "center", align: "center", width: "250px" },
+            { field: "CreateTime", title: "创建时间", width: "250px", align: "center", formatter: function (value) { return $.osharp.tools.formatDate(value); } }
+        ]];
+    </script>
+}

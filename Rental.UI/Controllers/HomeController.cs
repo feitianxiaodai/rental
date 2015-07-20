@@ -13,6 +13,9 @@ namespace Rental.UI.Controllers
     {
         string cultureName = Thread.CurrentThread.CurrentCulture.Name;
         SliderService sliderSer = new SliderService();
+        RoomService roomSer = new RoomService();
+        ServiceService serviceSer = new ServiceService();
+        FoodService foodSer = new FoodService();
         public ActionResult Index()
         {
             return View();
@@ -63,6 +66,52 @@ namespace Rental.UI.Controllers
             return Json(result);
         }
 
+        public ActionResult Room()
+        {
+            return View();
+        }
+
+        public ActionResult RoomList(int id)
+        {
+            //根据地区选择该地区所有的房间信息
+            var roomViewModels = roomSer.GetRoomInfoList(id);
+            return View(roomViewModels);
+        }
+
+        /// <summary>
+        /// 得到房间的详细信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult RoomPreview(int id)
+        {
+            var room = roomSer.GetPreviewRoomInfo(id);
+            return View(room);
+        }
+
+        public ActionResult Service()
+        {
+            var viewModel = serviceSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult ServiceInfo(int id)
+        {
+            var viewModel = serviceSer.GetServiceViewModelById(id, cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult Food()
+        {
+            var viewModel = foodSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult FoodInfo(int id)
+        {
+            var viewModel = foodSer.GetServiceViewModelById(id, cultureName);
+            return View(viewModel);
+        }
 
 
     }

@@ -1,0 +1,66 @@
+﻿.clear {
+    clear: both;
+}
+
+.custome-page-header {
+    margin: 10px 0 12px 10px;
+    border-bottom: 1px dotted #e2e2e2;
+    padding-bottom: 16px;
+    padding-top: 7px;
+}
+
+    .custome-page-header h1 {
+        padding: 0px;
+        margin: 0 8px;
+        font-size: 24px;
+        font-weight: lighter;
+        color: #2679b5;
+    }
+
+.custome-form {
+    width: 960px;
+    margin: 0px auto;
+}
+
+    .custome-form .form-div {
+        width: 930px;
+        margin: 0px auto;
+        height: auto;
+        margin-top: 10px;
+    }
+
+        .custome-form .form-div .span-title {
+            display: block;
+            float: left;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            margin-right: 15px;
+        }
+
+        .custome-form .form-div .form-input {
+            float: left;
+            width: 500px;
+            height: 40px;
+        }
+
+            .custome-form .form-div .form-input input {
+                width: 480px;
+                line-height: 30px;
+            }
+
+.tip {
+    color: #ff0000;
+}
+
+.op-div {
+    width: 900px;
+    height: 40px;
+    margin: 0px auto;
+}
+.op-div .op-container{
+    width:300px;
+    float:right;
+    height:40px;    
+    margin-right:10px;
+}

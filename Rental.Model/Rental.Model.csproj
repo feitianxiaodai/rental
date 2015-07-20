@@ -47,6 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Area.cs">
+      <DependentUpon>rental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Food.cs">
+      <DependentUpon>rental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FoodImageInfo.cs">
+      <DependentUpon>rental.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\rental.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -61,6 +70,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rental.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Room.cs">
+      <DependentUpon>rental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RoomImageInfo.cs">
+      <DependentUpon>rental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Service.cs">
+      <DependentUpon>rental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ServiceImageInfo.cs">
+      <DependentUpon>rental.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Slider.cs">
       <DependentUpon>rental.tt</DependentUpon>
