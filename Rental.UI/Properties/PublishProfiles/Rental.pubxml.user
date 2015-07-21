@@ -964,7 +964,7 @@
       <publishTime>07/13/2015 12:33:29</publishTime>
     </File>
     <File Include="Content/front/css/style.css">
-      <publishTime>07/21/2015 07:39:45</publishTime>
+      <publishTime>07/22/2015 07:15:39</publishTime>
     </File>
     <File Include="Content/front/js/about.js">
       <publishTime>07/13/2015 12:33:29</publishTime>
@@ -2485,7 +2485,7 @@
       <publishTime>07/20/2015 21:16:51</publishTime>
     </File>
     <File Include="Views/Home/RoomPreview.cshtml">
-      <publishTime>07/20/2015 21:16:51</publishTime>
+      <publishTime>07/21/2015 23:26:11</publishTime>
     </File>
     <File Include="Views/Home/Service.cshtml">
       <publishTime>07/21/2015 20:59:37</publishTime>
@@ -2545,7 +2545,7 @@
       <publishTime>07/13/2015 12:33:30</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutPage.cshtml">
-      <publishTime>07/21/2015 22:13:13</publishTime>
+      <publishTime>07/22/2015 07:17:00</publishTime>
     </File>
     <File Include="Views/Slider/Create.cshtml">
       <publishTime>07/16/2015 21:36:14</publishTime>

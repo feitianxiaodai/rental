@@ -66,7 +66,7 @@ body{ font:12px/1.5 "Microsoft Yahei", Helvetica, Arial, sans-serif; color:#3030
 .hd-mb-search a:before,.hd-mb-search a:after{ position:absolute; right:3px; top:50%; content:""; border:solid transparent;}
 .hd-mb-search a:before{ margin-top:-5px; border-width:5px; border-left-color:#8f5822;}
 .hd-mb-search a:after{ margin-top:-4px; margin-right:3px; border-width:4px; border-left-color:#fff;}
-.hd-mb-title{ width:100%; margin-top:30px; padding-left:10px;}
+.hd-mb-title{ width:100%; margin-top:10px; padding-left:10px;}
 .hd-mb-title .t{ margin-top:25px; font-size:24px;}
 .hd-mb-title .t span{ display:inline-block; margin-right:10px; font-size:50%;}
 .hd-mb-track{ width:100%; position:absolute; left:0; top:80px; background-color:#eaeaea;}
@@ -652,7 +652,7 @@ body{ font:12px/1.5 "Microsoft Yahei", Helvetica, Arial, sans-serif; color:#3030
 	bottom: -11px;	
 }
 /* footer global */
-.global{ padding:20px 0 60px; text-align:center; }
+.global{ /*padding:20px 0 60px;*/ text-align:center; }
 .global li{ display:inline-block; height:22px; margin-right:18px; overflow:hidden;}
 .global li a { font-size:12px; color:#303030; text-decoration:none; }
 .global li span { margin-left:15px; color:#303030; }
@@ -717,7 +717,7 @@ body{ font-size:13px;}
 .city-items{ width:33.333%; float:left; margin-bottom:0; padding:10px 0 0 10px;}
 .computer .img-wrap img{ width:auto;}
 .computer .city-booking{ margin-top:0; padding:7px 30px 7px 20px;}
-.hd-wrap-logo{ width:12.5%; margin-top:50px;}
+.hd-wrap-logo{ width:12.5%; /*margin-top:50px;*/}
 .hd-mb-hotline{ width:87.5%; margin-top:0; position:relative;}
 .hd-mb-search a{ margin:0 15px 0 0; padding:2px 80px 2px 20px; font-size:15px;}
 .hd-mb-search a:before{ margin-top:-7px; border-width:7px;}
