@@ -149,5 +149,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="About">
+      <EntityTypeMapping TypeName="RentalModel.About">
+        <MappingFragment StoreEntitySet="About">
+          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

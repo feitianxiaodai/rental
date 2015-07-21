@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "优惠精选列表";
+    Layout = "~/Views/Shared/_DataGridLayout.cshtml";
+    ViewBag.GridId = "users";
+    ViewBag.ToolbarItem = "cancel,delete,add,edit";
+    ViewBag.GridDataUrl = Url.Action("_AjaxFoodList", "Preference");
+    ViewBag.DeleteUrl = Url.Action("_AjaxDeleteFood", "Preference");
+    ViewBag.EditUrl = Url.Action("Edit");
+    ViewBag.AddUrl = Url.Action("Create");
+}
+@section customScript
+{
+    <script type="text/javascript">
+        columns = [[
+            { field: "Id", title: "ID", halign: "center", align: "center", width: "100px" },
+            { field: "TitleCN", title: "美食名称(简体)", halign: "center", align: "center", width: "250px" },
+            { field: "TtitleTW", title: "美食名称(繁体)", halign: "center", align: "center", width: "250px" },
+            { field: "TtitleEN", title: "美食名称(英文)", halign: "center", align: "center", width: "250px" },
+        ]];
+    </script>
+}

@@ -875,7 +875,7 @@ display:block;
 /*20150506*/
 .hotelwechat {  background: url("http://conrad.hilton.com.cn/zh-cn/css/../images/icon-wechat.png") no-repeat;  width: 25px;  height: 20px;}
 .hotelweibo {  background: url("http://conrad.hilton.com.cn/zh-cn/css/../images/icon-weibo.png") no-repeat;  width: 24px;  height: 20px;  margin-left: 5px;}
-
+.hotelqq {background: url("/Content/qq.gif") no-repeat;  width: 25px;  height: 20px;}
 /* meeting 2015-05-05 */
 .meeting-down{
 	display: block;

@@ -19,6 +19,7 @@
         <EntityTypeShape EntityType="RentalModel.PreferenImageInfo" Width="1.5" PointX="10.625" PointY="5.375" />
         <EntityTypeShape EntityType="RentalModel.Preferential" Width="1.5" PointX="8.375" PointY="5" />
         <AssociationConnector Association="RentalModel.FK_PreferenImageInfo_Preferential" />
+        <EntityTypeShape EntityType="RentalModel.About" Width="1.5" PointX="0.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

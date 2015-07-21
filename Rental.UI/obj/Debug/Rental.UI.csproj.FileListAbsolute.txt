@@ -139,3 +139,9 @@ D:\VSCode\rentalsite\rental\Rental.UI\obj\Debug\Rental.UI.Resources.zh-TW.resour
 D:\VSCode\rentalsite\rental\Rental.UI\obj\Debug\Rental.UI.csproj.GenerateResource.Cache
 D:\VSCode\rentalsite\rental\Rental.UI\obj\Debug\Rental.UI.dll
 D:\VSCode\rentalsite\rental\Rental.UI\obj\Debug\Rental.UI.pdb
+E:\rental\rental\Rental.UI\bin\System.Net.Http.dll
+E:\rental\rental\Rental.UI\bin\System.Net.Http.WebRequest.dll
+E:\rental\rental\Rental.UI\bin\System.Net.Http.xml
+E:\rental\rental\Rental.UI\bin\System.Net.Http.WebRequest.xml
+E:\rental\rental\Rental.UI\bin\zh-Hans\System.Net.Http.resources.dll
+E:\rental\rental\Rental.UI\bin\zh-Hans\System.Net.Http.WebRequest.resources.dll

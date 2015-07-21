@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="RentalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContentEN" Type="varchar(max)" Nullable="false" />
+          <Property Name="ContentTW" Type="varchar(max)" Nullable="false" />
+          <Property Name="ContentCN" Type="varchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="Area">
           <Key>
             <PropertyRef Name="Id" />
@@ -198,6 +207,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="RentalModelStoreContainer">
+          <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FoodImageInfo" EntityType="Self.FoodImageInfo" Schema="dbo" store:Type="Tables" />
@@ -256,6 +266,7 @@
             <End Role="Preferential" EntitySet="Preferential" />
             <End Role="PreferenImageInfo" EntitySet="PreferenImageInfo" />
           </AssociationSet>
+          <EntitySet Name="About" EntityType="RentalModel.About" />
         </EntityContainer>
         <EntityType Name="Slider">
           <Key>
@@ -455,6 +466,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContentEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ContentTW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ContentCN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -605,6 +625,16 @@
                 <ScalarProperty Name="TtitleEN" ColumnName="TtitleEN" />
                 <ScalarProperty Name="TtitleTW" ColumnName="TtitleTW" />
                 <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="About">
+            <EntityTypeMapping TypeName="RentalModel.About">
+              <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+                <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+                <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
