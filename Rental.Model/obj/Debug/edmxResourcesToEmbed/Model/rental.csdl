@@ -27,6 +27,8 @@
       <End Role="Preferential" EntitySet="Preferential" />
       <End Role="PreferenImageInfo" EntitySet="PreferenImageInfo" />
     </AssociationSet>
+    <EntitySet Name="About" EntityType="RentalModel.About" />
+    <EntitySet Name="User" EntityType="RentalModel.User" />
   </EntityContainer>
   <EntityType Name="Slider">
     <Key>
@@ -226,4 +228,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentTW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentCN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="UserPwd" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

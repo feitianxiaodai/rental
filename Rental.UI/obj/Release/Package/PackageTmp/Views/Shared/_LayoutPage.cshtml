@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-
+﻿@using Rental.UI.Utility
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -14,7 +14,7 @@
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/front/css/idangerous.swiper.css")">
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/front/css/style.css")">
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/front/js/datepicker/jquery-ui.min.css")">
-    <title>香港港丽酒店</title>
+    <title>Home9000酒店</title>
     <!--[if lt IE 9]>
         <script src="/js/html5shiv.js"></script>
         <script src="/js/respond.min.js"></script>
@@ -75,22 +75,22 @@
                     <div class="code">
                         <img src="http://www.hilton.com.cn/file/images/20150506/20150506185602725bfOEHAt.jpg" alt="" style="width: 100%; height: 100%">
                     </div>
-                    <p>香港港丽酒店<img class="img" src="../../../images/hotel_huanying.gif" alt="无论哪里同一份中式礼遇" title="无论哪里同一份中式礼遇"></p>
+                    <p>Home9000酒店</p>
                 </div>
                 <!-- 微信 end -->
                 <span class="hd-mb-hotline-w">
-                    <a class="hd-mb-hotline-pro" href="http://hhonors.hilton.com.cn/ourbestrates.html" target="_blank">
-                        <img src="../../../images/logo_best_rates_sm.png" alt="">
+                    <a class="hd-mb-hotline-pro" href="javascript:void(0);">
+                        <img src="~/Content/logo_best_rates_sm.png" />
                     </a>
                     <a class="hd-mb-hotline-tel pc" href="javascript:void(0);"></a>
                     <a class="hd-mb-hotline-tel mobile" href="javascript:void(0);">免费订房热线</a>
                 </span>
-                <span class="hd-mb-lang pc"><a href="javascript:void(0);">简体</a> <a href="javascript:void(0);">繁体</a> <a href="javascript:void(0);">EN</a></span>
+                <span class="hd-mb-lang pc"><a href="@Url.Content("~/zh-CN/Home/Index")">简体</a> <a href="@Url.Content("~/zh-TW/Home/Index")" >繁体</a> <a href="@Url.Content("~/en-US/Home/Index")" >EN</a></span>
                 <span class="hd-mb-xin pc"><a href="javascript:void(0);">weixin</a></span>
             </div>
 
             <div class="hd-mb-title ht-title">
-                <h1 class="t" data-id="13">香港港丽酒店<img class="img" src="../../../images/hotel_huanying.gif" alt="无论哪里同一份中式礼遇" title="无论哪里同一份中式礼遇"></h1>
+                <h1 class="t" data-id="13">Home9000酒店</h1>
                 <div class="ht-head-commu fix">
                     <span class="addr">香港金钟道88号太古广场</span>
                     <span class="tel tel-pc">00852-2521 3838</span>
@@ -129,13 +129,13 @@
         @RenderBody()
         <div class="mainbody-sub">
             <ul class="hotel-nav">
-                <li class="hotel-nav-item index-li"><a class="hotel-nav-links l1  active" href="@Url.Action("Index","Home")">首页</a></li>
-                <li class="hotel-nav-item introduce-li"><a class="hotel-nav-links l2 " href="about.html">酒店简介</a></li>
-                <li class="hotel-nav-item arrive-li"><a class="hotel-nav-links l3 " href="maps-directions.html">到达指引</a></li>
-                <li class="hotel-nav-item yh-li"><a class="hotel-nav-links l4 " href="offers.html">精选优惠</a></li>
-                <li class="hotel-nav-item room-li"><a class="hotel-nav-links l5 " href="@Url.Action("Room","Home")">房间预览</a></li>
-                <li class="hotel-nav-item food-li"><a class="hotel-nav-links l6 " href="@Url.Action("Food","Home")">品味美食</a></li>
-                <li class="hotel-nav-item service-li"><a class="hotel-nav-links l7 " href="@Url.Action("Service","Home")">服务设施</a></li>
+                <li class="hotel-nav-item index-li"><a class="hotel-nav-links l1  active" href="@Url.Action("Index","Home")">@Html.GetLanguageByKey("HomePage")</a></li>
+                <li class="hotel-nav-item introduce-li"><a class="hotel-nav-links l2 " href="@Url.Action("About")">@Html.GetLanguageByKey("HotelProfile")</a></li>
+                <li class="hotel-nav-item arrive-li"><a class="hotel-nav-links l3 " href="javascript:void(0);">@Html.GetLanguageByKey("Guidance")</a></li>
+                <li class="hotel-nav-item yh-li"><a class="hotel-nav-links l4 " href="@Url.Action("Preference","Home")">@Html.GetLanguageByKey("PreferenceSelection")</a></li>
+                <li class="hotel-nav-item room-li"><a class="hotel-nav-links l5 " href="@Url.Action("Room","Home")">@Html.GetLanguageByKey("RoomPrivew")</a></li>
+                <li class="hotel-nav-item food-li"><a class="hotel-nav-links l6 " href="@Url.Action("Food","Home")">@Html.GetLanguageByKey("Food")</a></li>
+                <li class="hotel-nav-item service-li"><a class="hotel-nav-links l7 " href="@Url.Action("Service","Home")">@Html.GetLanguageByKey("Service")</a></li>
             </ul>
         </div>
         <!--hotelleftmenu.html-->
@@ -143,27 +143,21 @@
     <!-- page body end -->
     <!-- frame footer begin-->
     <div class="subscribe">
-        <span class="sub-cols">接收到来自康莱德的电子新闻及促销活动</span> <span class="sub-cols">
-            <input class="inp" type="text" placeholder="请输入您的Email地址">
-            <a class="conf" href="javascript:void(0);" onclick="SubmitEDM('2','2',false)">确 定</a>
-        </span><span class="sub-cols"><i class="on"></i>我已阅读并接受<a href="http://hhonors3.hilton.com/en/promotions/privacy-policy/chinese.html" target="_blank">隐私权条款</a></span>
+        <div class="ht-head-commu fix">
+            <span class="addr">香港金钟道88号太古广场</span>
+            <span class="tel tel-pc">00852-2521 3838</span>
+            <a class="tel" href="tel:00852-2521 3838">00852-2521 3838</a>
+            <a class="email" href="mailto:hongkonginfo@conradhotels.com">邮箱</a>
+            <a class="email email-pc" href="mailto:hongkonginfo@conradhotels.com">hongkonginfo@conradhotels.com</a>
+            <a class="hotelqq" href="javascript:void(0);"></a>
+        </div>
     </div>
 
     <!-- footer others brands links begin -->
     <div class="global">
         <ul>
-            <li><a href="http://www1.hilton.com/en_US/hi/index.do" target="_blank">全球网站(Global Site)</a><span>|</span></li>
-            <li><a href="http://www.hilton.com.cn/" target="_blank">希尔顿中国网站</a><span>|</span></li>
-            <li><a href="http://www.waldorfastoriahotels.com.cn" target="_blank">华尔道夫中国网站</a><span>|</span></li>
-            <li><a href="http://www.conrad.com.cn/" target="_blank">康莱德中国网站</a><span>|</span></li>
-            <li><a href="http://www.doubletree.com.cn/" target="_blank">希尔顿逸林中国网站</a><span>|</span></li>
-            <li><a href="http://gardeninn.hilton.com.cn/" target="_blank">希尔顿花园酒店中国网站</a><span>|</span></li>
-            <li><a href="http://hhonors.hilton.com.cn/portfolio.html" target="_blank">关于我们</a></li>
-            <br>
-            <li><a href="http://hhonors3.hilton.com/en/promotions/privacy-policy/chinese.html" target="_blank">全球隐私权声明（2015 年 5 月更新）</a><span>|</span></li>
-            <li><a href="http://hhonors3.hilton.com/en/policy/cookies-statement/chinese-simplified.html" target="_blank">Cookie 技术声明（2015 年 5 月更新）</a><span>|</span></li>
-            <li><a href="http://hhonors3.hilton.com/zh_CN/policy/site-usage-agreement/english.html" target="_blank">网站使用协议</a><span>|</span></li>
-            <li><a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备09095413 Hilton Worldwide</a></li>
+            <li>电话:00833423333</li>
+            <li>地址:台湾高雄市</li>
         </ul>
     </div>
     <!-- footer others brands links end -->
@@ -174,3 +168,15 @@
 </body>
 </html>
 @RenderSection("scripts", required: false)
+<script>
+    $(function () {
+        var pageUrl = window.location.href;
+        if (pageUrl.toLowerCase().indexOf("en-us")>0) {
+            $('.hd-mb-lang a:eq(2)').addClass('on').siblings().removeClass("on");
+        } else if (pageUrl.toLowerCase().indexOf("zh-tw")>0) {
+            $('.hd-mb-lang a:eq(1)').addClass('on').siblings().removeClass("on");
+        } else {
+            $('.hd-mb-lang a:eq(0)').addClass('on').siblings().removeClass("on");
+        }
+    });
+</script>

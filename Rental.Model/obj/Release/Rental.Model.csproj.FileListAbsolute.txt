@@ -6,3 +6,13 @@ E:\rental\rental\Rental.Model\bin\Release\EntityFramework.xml
 E:\rental\rental\Rental.Model\bin\Release\zh-Hans\EntityFramework.resources.dll
 E:\rental\rental\Rental.Model\obj\Release\Rental.Model.dll
 E:\rental\rental\Rental.Model\obj\Release\Rental.Model.pdb
+E:\rental\rental\Rental.Model\obj\Release\Rental.Model.csprojResolveAssemblyReference.cache
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Release\Rental.Model.dll.config
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Release\Rental.Model.dll
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Release\Rental.Model.pdb
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Release\EntityFramework.dll
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Release\EntityFramework.xml
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\VSCode\rentalsite\rental\Rental.Model\obj\Release\Rental.Model.csprojResolveAssemblyReference.cache
+D:\VSCode\rentalsite\rental\Rental.Model\obj\Release\Rental.Model.dll
+D:\VSCode\rentalsite\rental\Rental.Model\obj\Release\Rental.Model.pdb

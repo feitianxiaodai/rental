@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutRepository.cs" />
     <Compile Include="AreaRepository.cs" />
     <Compile Include="FoodRepository.cs" />
     <Compile Include="PreferenceRepository.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="ServiceRepository.cs" />
     <Compile Include="SliderRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
+    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rental.Model\Rental.Model.csproj">

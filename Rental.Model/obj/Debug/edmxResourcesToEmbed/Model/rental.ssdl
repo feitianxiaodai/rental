@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="RentalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentEN" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentTW" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentCN" Type="varchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="Area">
     <Key>
       <PropertyRef Name="Id" />
@@ -138,6 +147,14 @@
     <Property Name="TitleTW" Type="varchar" MaxLength="128" />
     <Property Name="TitleEN" Type="varchar" MaxLength="128" />
   </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="UserPwd" Type="varchar" MaxLength="128" Nullable="false" />
+  </EntityType>
   <Association Name="FK_FoodImageInfo_Food">
     <End Role="Food" Type="Self.Food" Multiplicity="1" />
     <End Role="FoodImageInfo" Type="Self.FoodImageInfo" Multiplicity="*" />
@@ -193,6 +210,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="RentalModelStoreContainer">
+    <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FoodImageInfo" EntityType="Self.FoodImageInfo" Schema="dbo" store:Type="Tables" />
@@ -203,6 +221,7 @@
     <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ServiceImageInfo" EntityType="Self.ServiceImageInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_FoodImageInfo_Food" Association="Self.FK_FoodImageInfo_Food">
       <End Role="Food" EntitySet="Food" />
       <End Role="FoodImageInfo" EntitySet="FoodImageInfo" />

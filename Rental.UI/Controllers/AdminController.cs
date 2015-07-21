@@ -29,6 +29,7 @@ namespace Rental.UI.Controllers
                         new TreeNode() { Text = "房间管理", IconCls = "pic_93", Url = Url.Action("Index", "Room") },
                         new TreeNode() { Text = "美食管理", IconCls = "pic_93", Url = Url.Action("Index", "Food") },
                          new TreeNode() { Text = "优惠精选", IconCls = "pic_93", Url = Url.Action("Index", "Preference") },
+                         new TreeNode() { Text = "酒店介绍", IconCls = "pic_93", Url = Url.Action("Create", "About") }
                     }
                 },
                 new TreeNode()

@@ -17,6 +17,7 @@ namespace Rental.UI.Controllers
         ServiceService serviceSer = new ServiceService();
         FoodService foodSer = new FoodService();
         PreferenceService prefenceSer = new PreferenceService();
+        AboutService aboutSer = new AboutService();
         public ActionResult Index()
         {
             return View();
@@ -126,6 +127,11 @@ namespace Rental.UI.Controllers
             return View(viewModel);
         }
 
+        public ActionResult About()
+        {
+            var viewModel = aboutSer.GetAboutViewModel(cultureName);
+            return View(viewModel);
+        }
 
     }
 }

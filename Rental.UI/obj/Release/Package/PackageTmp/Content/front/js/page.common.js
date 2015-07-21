@@ -14,38 +14,6 @@
 11.全局ajax域名 AjaxDomain
 */
 
-//设置全局简繁体
-function SetGlobalLang() {
-    window.GlobalLangIsHK = false;//是否为繁体；
-    var pageUrl = window.location.href;
-    var langIndex_hk = pageUrl.toLowerCase().indexOf("zh-hk");
-    if (langIndex_hk > 0) {
-        var cnUrl = pageUrl.substring(0, langIndex_hk) + 'zh-CN' + pageUrl.substring(langIndex_hk + 5);
-        window.GlobalLangIsHK = true;
-        $('.hd-mb-lang a:eq(0),.jiant a').on("click", function () {
-            //if (typeof (_gaq) != "undefined")
-            //    _gaq.push(['_trackEvent', 'hilton', 'language', 'simplified']);
-            window.location.href = cnUrl;
-        });
-        $('.hd-mb-lang a:eq(1),.fant a').addClass('on').siblings().removeClass("on");
-        //设置页脚希尔顿酒店官网Url
-        $('div.global a:eq(1)').attr('href', '/zh-HK/index.html');
-    }
-    else {
-        var langIndex_cn = pageUrl.toLowerCase().indexOf("zh-cn");
-        if (langIndex_cn > 0) {
-            var hkUrl = pageUrl.substring(0, langIndex_cn) + 'zh-HK' + pageUrl.substring(langIndex_cn + 5);
-            window.GlobalLangIsHK = false;
-            $('.hd-mb-lang a:eq(1),.fant a').on("click", function () {
-                //if (typeof (_gaq) != "undefined")
-                //    _gaq.push(['_trackEvent', 'hilton', 'language', 'traditional']);
-                window.location.href = hkUrl;
-            });
-            $('.hd-mb-lang a:eq(0),.jiant a').addClass('on').siblings().removeClass("on");
-        }
-    }
-}
-
 //根据搜索引擎设置电话
 function SetTelephone() {
     var $ele = $(".hd-mb-hotline-tel");
@@ -393,7 +361,6 @@ function OpenBookingUrl() {
 $(document).ready(function () {
     $("a[href='http://hhonors.hilton.com.cn/portfolio.html']").attr("href", "javascript:void(0);");
     //window.AjaxDomain = "http://www.hilton.com.cn";
-    SetGlobalLang();
     SetTelephone();
     CreateQrcode();
     //initDatePick();

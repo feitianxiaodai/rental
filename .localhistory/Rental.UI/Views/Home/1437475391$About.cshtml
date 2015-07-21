@@ -1,0 +1,33 @@
+﻿@using Rental.UI.Utility
+@model Rental.Service.domain.AboutCultureModel
+@{
+    var title = Html.GetLanguageByKey("IndexRoomName");
+    ViewBag.Title = title;
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@section breadUrl{
+    <a class="tracks active" href="http://www.conrad.com.cn/">@Html.GetLanguageByKey("IndexPageName")</a>
+    <a class="tracks active" href="javascript:void(0)">@Html.GetLanguageByKey("TaiWan")</a>
+    <a class="tracks show" href="@Url.Action("About")">@Html.GetLanguageByKey("HotelProfile")</a>
+}
+
+<div class="hotel-details">
+    <div class="comtemplate">
+        <div>
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $('.index-li a').removeClass('active');
+            $('.introduce-li a').addClass('active');
+            $('.arrive-li a').removeClass('active');
+            $('.yh-li a').removeClass('active');
+            $('.food-li a').removeClass('active');
+            $('.service-li a').removeClass('active');
+            $('.room-li a').removeClass('active');
+        });
+    </script>
+}

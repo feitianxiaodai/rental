@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+@model Rental.Service.domain.UserModel
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录</title>
+
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/body.css" rel="stylesheet" />
+    <style>
+        .error {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section id="content">
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+            {
+                <h1>管理员登录</h1>
+                <div>
+                    @Html.TextBoxFor(s => s.UserName, new { placeholder = "用户名", required = "" })
+                </div>
+                <div>
+                    @Html.PasswordFor(s => s.UserPwd, new { placeholder = "密码", required = "" })
+                </div>
+                <div class="">
+                    <span class="help-block u-errormessage" id="js-server-helpinfo">&nbsp;</span>
+
+                    @Html.ValidationMessage("error", new { @class = "error" })
+                </div>
+                <div>
+                    <!-- <input type="submit" value="Log in" /> -->
+                    <input type="submit" value="登录" class="btn btn-primary" id="js-btn-login" />
+
+                </div>
+            }
+
+        </section><!-- content -->
+    </div>
+    <!-- container -->
+</body>
+</html>

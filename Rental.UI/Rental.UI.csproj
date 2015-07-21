@@ -126,6 +126,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -157,11 +159,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>zh-TW.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\DataHelper.cs" />
     <Compile Include="Utility\ImgHelper.cs" />
     <Compile Include="Utility\LanguageHelper.cs" />
     <Compile Include="Utility\MuliLanguageRouteHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\body.css" />
     <Content Include="Content\customformstep.css" />
     <Content Include="Content\customform.css" />
     <Content Include="Content\easyui\images\checkmark.gif" />
@@ -447,6 +451,7 @@
     <Content Include="Content\hotel_huanying.gif" />
     <Content Include="Content\logo_best_rates_sm.png" />
     <Content Include="Content\qq.gif" />
+    <Content Include="Content\style.css" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
@@ -843,7 +848,104 @@
     <Content Include="Scripts\plupload\plupload.full.min.js" />
     <Content Include="Scripts\plupload\plupload.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Upload\AboutImg\635731002306947596.jpg" />
+    <Content Include="Upload\FoodImg\635729898460135797.jpg" />
+    <Content Include="Upload\FoodImg\635729898501138143.png" />
+    <Content Include="Upload\FoodImg\thumb\635729898460135797.jpg" />
+    <Content Include="Upload\FoodImg\thumb\635729898501138143.png" />
+    <Content Include="Upload\PreferenceImg\635730270457616057.jpg" />
+    <Content Include="Upload\PreferenceImg\635730270489015786.jpg" />
+    <Content Include="Upload\PreferenceImg\thumb\635730270457616057.jpg" />
+    <Content Include="Upload\PreferenceImg\thumb\635730270489015786.jpg" />
+    <Content Include="Upload\RoomImg\635729001544746123.jpg" />
+    <Content Include="Upload\RoomImg\635729001660706118.jpg" />
+    <Content Include="Upload\RoomImg\635729002489599157.jpg" />
+    <Content Include="Upload\RoomImg\635729002533052831.jpg" />
+    <Content Include="Upload\RoomImg\635729013288506183.jpg" />
+    <Content Include="Upload\RoomImg\635729013356746328.jpg" />
+    <Content Include="Upload\RoomImg\635729014162489712.jpg" />
+    <Content Include="Upload\RoomImg\635729014201252101.jpg" />
+    <Content Include="Upload\RoomImg\635729023182582748.jpg" />
+    <Content Include="Upload\RoomImg\635729023242168665.jpg" />
+    <Content Include="Upload\RoomImg\635729212973416419.jpg" />
+    <Content Include="Upload\RoomImg\635729213036314691.jpg" />
+    <Content Include="Upload\RoomImg\635729221038126330.jpg" />
+    <Content Include="Upload\RoomImg\635729266721717248.jpg" />
+    <Content Include="Upload\RoomImg\635729948640155930.jpg" />
+    <Content Include="Upload\RoomImg\635729948678478122.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729001544746123.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729001660706118.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729002489599157.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729002533052831.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729013288506183.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729013356746328.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729014162489712.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729014201252101.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729023182582748.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729023242168665.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729212973416419.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729213036314691.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729221038126330.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729266721717248.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729948640155930.jpg" />
+    <Content Include="Upload\RoomImg\thumb\635729948678478122.jpg" />
+    <Content Include="Upload\ServiceImg\635729367174334591.jpg" />
+    <Content Include="Upload\ServiceImg\635729368355729364.jpg" />
+    <Content Include="Upload\ServiceImg\635729368397488863.jpg" />
+    <Content Include="Upload\ServiceImg\635729370019725125.jpg" />
+    <Content Include="Upload\ServiceImg\635729370055700563.jpg" />
+    <Content Include="Upload\ServiceImg\635729376388415199.jpg" />
+    <Content Include="Upload\ServiceImg\635729376423740159.jpg" />
+    <Content Include="Upload\ServiceImg\635729377256738919.jpg" />
+    <Content Include="Upload\ServiceImg\635729377285208868.jpg" />
+    <Content Include="Upload\ServiceImg\635729379098790336.jpg" />
+    <Content Include="Upload\ServiceImg\635729379347365992.jpg" />
+    <Content Include="Upload\ServiceImg\635729380045999672.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729367174334591.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729368355729364.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729368397488863.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729370019725125.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729370055700563.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729376388415199.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729376423740159.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729377256738919.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729377285208868.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729379098790336.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729379347365992.jpg" />
+    <Content Include="Upload\ServiceImg\thumb\635729380045999672.jpg" />
+    <Content Include="Upload\SliderImg\635724799804104210.jpg" />
+    <Content Include="Upload\SliderImg\635724851305979299.jpg" />
+    <Content Include="Upload\SliderImg\635724851745071575.jpg" />
+    <Content Include="Upload\SliderImg\635725100840514277.jpg" />
+    <Content Include="Upload\SliderImg\635725106343857651.jpg" />
+    <Content Include="Upload\SliderImg\635726419319278758.jpg" />
+    <Content Include="Upload\SliderImg\635726498381162512.jpg" />
+    <Content Include="Upload\SliderImg\635726499044460451.jpg" />
+    <Content Include="Upload\SliderImg\635726499931621194.jpg" />
+    <Content Include="Upload\SliderImg\635726500326943805.jpg" />
+    <Content Include="Upload\SliderImg\635726501906514151.jpg" />
+    <Content Include="Upload\SliderImg\635726502196310726.jpg" />
+    <Content Include="Upload\SliderImg\635726503540287597.jpg" />
+    <Content Include="Upload\SliderImg\635726504341113402.jpg" />
+    <Content Include="Upload\SliderImg\635726829301496894.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635724799804104210.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635724851305979299.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635724851745071575.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635725100840514277.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635725106343857651.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726419319278758.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726498381162512.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726499044460451.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726499931621194.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726500326943805.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726501906514151.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726502196310726.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726503540287597.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726504341113402.jpg" />
+    <Content Include="Upload\SliderImg\thumb\635726829301496894.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -888,14 +990,12 @@
     <Content Include="Views\Preference\Index.cshtml" />
     <Content Include="Views\Home\Preference.cshtml" />
     <Content Include="Views\Home\PreferenceInfo.cshtml" />
+    <Content Include="Views\About\Create.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Upload\FoodImg\thumb\" />
-    <Folder Include="Upload\PreferenceImg\thumb\" />
-    <Folder Include="Upload\RoomImg\thumb\" />
-    <Folder Include="Upload\ServiceImg\thumb\" />
-    <Folder Include="Upload\SliderImg\thumb\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

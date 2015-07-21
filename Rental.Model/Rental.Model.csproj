@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\About.cs">
+      <DependentUpon>rental.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Area.cs">
       <DependentUpon>rental.tt</DependentUpon>
     </Compile>
@@ -91,6 +94,9 @@
       <DependentUpon>rental.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Slider.cs">
+      <DependentUpon>rental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
       <DependentUpon>rental.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

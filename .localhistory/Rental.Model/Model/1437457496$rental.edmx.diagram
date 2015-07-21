@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8618f1225c764e97819dc63b41e824d3" Name="Diagram1">
+        <EntityTypeShape EntityType="RentalModel.Slider" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RentalModel.Area" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="RentalModel.Room" Width="1.5" PointX="3.75" PointY="1.25" />
+        <EntityTypeShape EntityType="RentalModel.RoomImageInfo" Width="1.5" PointX="6" PointY="4.625" />
+        <AssociationConnector Association="RentalModel.FK_RoomImageInfo_Room" />
+        <EntityTypeShape EntityType="RentalModel.Service" Width="1.5" PointX="6.375" PointY="1" />
+        <EntityTypeShape EntityType="RentalModel.ServiceImageInfo" Width="1.5" PointX="8.625" PointY="1.375" />
+        <AssociationConnector Association="RentalModel.FK_ServiceImageInfo_Service" />
+        <EntityTypeShape EntityType="RentalModel.Food" Width="1.5" PointX="6.375" PointY="8" />
+        <EntityTypeShape EntityType="RentalModel.FoodImageInfo" Width="1.5" PointX="8.625" PointY="8.375" />
+        <AssociationConnector Association="RentalModel.FK_FoodImageInfo_Food" />
+        <EntityTypeShape EntityType="RentalModel.PreferenImageInfo" Width="1.5" PointX="10.625" PointY="5.375" />
+        <EntityTypeShape EntityType="RentalModel.Preferential" Width="1.5" PointX="8.375" PointY="5" />
+        <AssociationConnector Association="RentalModel.FK_PreferenImageInfo_Preferential" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
