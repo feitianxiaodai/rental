@@ -124,5 +124,10 @@ namespace Rental.UI.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult test()
+        {
+            return View();
+        }
+
     }
 }

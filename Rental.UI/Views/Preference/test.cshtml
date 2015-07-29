@@ -1,0 +1,78 @@
+﻿@using Rental.UI.Utility
+@{
+    ViewBag.Title = "test";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@section breadUrl{
+    <a class="tracks active" href="http://www.conrad.com.cn/">@Html.GetLanguageByKey("IndexPageName")</a>
+    <a class="tracks active" href="javascript:void(0)">@Html.GetLanguageByKey("TaiWan")</a>
+    <a class="tracks show" href="@Url.Action("Food")">@Html.GetLanguageByKey("Food")</a>
+}
+<div id="viewport" class="hotel-details">
+    <div class="comtemplate">
+        <h3 class="mb-comtemplate-profile-title"><a href="rooms.html">豪华海景行政套房</a></h3>
+        <div class="comtemplate-kv">
+            <ul class="comtemplate-kv-wrapper swiper-wrapper">
+
+                <li class="comtemplate-kv-items swiper-slide">
+                    <img class="comtemplate-detail-panel-img imgauto"
+                         src="/images/LOADING.gif"
+                         data-small-src="http://www.hilton.com.cn/file/images/20150419/20150419174259310LnB21nF_thum_mid.jpg"
+                         data-big-src="http://www.hilton.com.cn/file/images/20150419/20150419174259310LnB21nF.jpg"
+                         data-ratio="0.618" alt="豪华海景行政套房">
+                    <div class="comtemplate-kv-items-intro">
+                        豪华海景行政套房<span>豪华海景行政套房</span>
+                    </div>
+                </li>
+                <li class="comtemplate-kv-items swiper-slide">
+                    <img class="comtemplate-detail-panel-img imgauto"
+                         src="/images/LOADING.gif"
+                         data-small-src="http://www.hilton.com.cn/file/images/20150419/20150419174258917cWUUYUR_thum_mid.jpg"
+                         data-big-src="http://www.hilton.com.cn/file/images/20150419/20150419174258917cWUUYUR.jpg"
+                         data-ratio="0.618" alt="豪华海景客房">
+                    <div class="comtemplate-kv-items-intro">
+                        豪华海景行政套房<span>豪华海景行政套房</span>
+                    </div>
+                </li>
+                <li class="comtemplate-kv-items swiper-slide">
+                    <img class="comtemplate-detail-panel-img imgauto"
+                         src="/images/LOADING.gif"
+                         data-small-src="http://www.hilton.com.cn/file/images/20150419/20150419174258917cWUUYUR_thum_mid.jpg"
+                         data-big-src="http://www.hilton.com.cn/file/images/20150419/20150419174258917cWUUYUR.jpg"
+                         data-ratio="0.618" alt="豪华海景客房">
+                    <div class="comtemplate-kv-items-intro">
+                        豪华海景行政套房<span>豪华海景行政套房</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="comtemplate-kv-list"></div>
+            <div class="mb-gallery-nav-details comtemplate-kv-thumb">
+                <div class="photos-wrapper">
+                    <div class="photos-wrapper-container">
+                        <ul class="ul-wrap swiper-wrapper">
+                            <li class="on">
+                                <img style="width:100%;height:100%" src="http://www.hilton.com.cn/file/images/20150419/20150419174259310LnB21nF_thum_min.jpg" alt="豪华海景行政套房">
+                            </li>
+                            <li>
+                                <img style="width:100%;height:100%" src="http://www.hilton.com.cn/file/images/20150419/20150419174258917cWUUYUR_thum_min.jpg" alt="豪华海景客房">
+                            </li>
+                            <li>
+                                <img style="width:100%;height:100%" src="http://www.hilton.com.cn/file/images/20150419/20150419174258917cWUUYUR_thum_min.jpg" alt="豪华海景客房">
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="photos-wrapper-arrow left" href="javascript:void(0);">左</a>
+                    <a class="photos-wrapper-arrow right" href="javascript:void(0);">右</a>
+                </div>
+            </div>
+            <a class="mb-gallery-lf" href="javascript:void(0);"><i></i></a>
+            <a class="mb-gallery-rg" href="javascript:void(0);"><i></i></a>
+        </div>
+        <div class="comtemplate-profile">
+            <h3 class="t"><a href="rooms.html">豪华海景行政套房</a></h3>
+            <div class="inner">
+                <p><span style="font-family:黑体, SimHei">尊享70平方米的宽敞空间，位于行政樓层, 设有独立起居室，配上維港景緻，绝对是尊贵客人的不二之选。客人更可使用行政贵宾廊的尊贵服务。</span> </p><h4 class="links">豪华海景行政套房  ( 大床 ) <a class="b" href="https://secure3.hilton.com/zh_CN/ch/reservation/book.htm?ctyhocn=HKGHCCI&enhancedCode=K1EVU1" target="_blank">立即预订</a></h4><h4 class="links">豪华海景行政套房  ( 双床 ) <a class="b" href="https://secure3.hilton.com/zh_CN/ch/reservation/book.htm?ctyhocn=HKGHCCI&enhancedCode=T2EVU1" target="_blank">立即预订</a></h4>
+            </div>
+        </div>
+    </div>
+</div>

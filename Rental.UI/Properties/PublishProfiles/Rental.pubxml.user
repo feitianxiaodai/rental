@@ -25,16 +25,16 @@
       <publishTime>07/13/2015 12:33:31</publishTime>
     </File>
     <File Include="bin/Rental.Model.dll">
-      <publishTime>07/21/2015 21:47:59</publishTime>
+      <publishTime>07/30/2015 01:00:27</publishTime>
     </File>
     <File Include="bin/Rental.Repository.dll">
-      <publishTime>07/21/2015 21:47:59</publishTime>
+      <publishTime>07/30/2015 01:00:27</publishTime>
     </File>
     <File Include="bin/Rental.Service.dll">
-      <publishTime>07/21/2015 21:48:00</publishTime>
+      <publishTime>07/30/2015 01:00:27</publishTime>
     </File>
     <File Include="bin/Rental.UI.dll">
-      <publishTime>07/21/2015 21:48:00</publishTime>
+      <publishTime>07/30/2015 01:00:28</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
       <publishTime>07/09/2013 11:04:48</publishTime>
@@ -964,7 +964,10 @@
       <publishTime>07/13/2015 12:33:29</publishTime>
     </File>
     <File Include="Content/front/css/style.css">
-      <publishTime>07/22/2015 07:15:39</publishTime>
+      <publishTime>07/30/2015 01:00:07</publishTime>
+    </File>
+    <File Include="Content/front/css/style_back.css">
+      <publishTime>07/30/2015 00:13:00</publishTime>
     </File>
     <File Include="Content/front/js/about.js">
       <publishTime>07/13/2015 12:33:29</publishTime>
@@ -2455,7 +2458,7 @@
       <publishTime>07/20/2015 21:16:51</publishTime>
     </File>
     <File Include="Views/Food/Edit.cshtml">
-      <publishTime>07/20/2015 21:16:51</publishTime>
+      <publishTime>07/29/2015 23:44:22</publishTime>
     </File>
     <File Include="Views/Food/Index.cshtml">
       <publishTime>07/20/2015 21:16:51</publishTime>
@@ -2479,7 +2482,7 @@
       <publishTime>07/21/2015 07:12:23</publishTime>
     </File>
     <File Include="Views/Home/Room.cshtml">
-      <publishTime>07/21/2015 20:59:37</publishTime>
+      <publishTime>07/30/2015 01:00:02</publishTime>
     </File>
     <File Include="Views/Home/RoomList.cshtml">
       <publishTime>07/20/2015 21:16:51</publishTime>
@@ -2491,16 +2494,19 @@
       <publishTime>07/21/2015 20:59:37</publishTime>
     </File>
     <File Include="Views/Home/ServiceInfo.cshtml">
-      <publishTime>07/21/2015 20:59:37</publishTime>
+      <publishTime>07/30/2015 00:59:20</publishTime>
     </File>
     <File Include="Views/Preference/Create.cshtml">
-      <publishTime>07/20/2015 22:09:48</publishTime>
+      <publishTime>07/29/2015 23:45:48</publishTime>
     </File>
     <File Include="Views/Preference/Edit.cshtml">
-      <publishTime>07/20/2015 22:09:59</publishTime>
+      <publishTime>07/29/2015 23:45:37</publishTime>
     </File>
     <File Include="Views/Preference/Index.cshtml">
       <publishTime>07/20/2015 22:11:09</publishTime>
+    </File>
+    <File Include="Views/Preference/test.cshtml">
+      <publishTime>07/30/2015 00:33:04</publishTime>
     </File>
     <File Include="Views/Room/CreateStep1.cshtml">
       <publishTime>07/19/2015 17:02:56</publishTime>
@@ -2527,7 +2533,7 @@
       <publishTime>07/20/2015 21:16:51</publishTime>
     </File>
     <File Include="Views/Service/Edit.cshtml">
-      <publishTime>07/20/2015 21:16:51</publishTime>
+      <publishTime>07/29/2015 22:52:55</publishTime>
     </File>
     <File Include="Views/Service/Index.cshtml">
       <publishTime>07/19/2015 21:44:32</publishTime>

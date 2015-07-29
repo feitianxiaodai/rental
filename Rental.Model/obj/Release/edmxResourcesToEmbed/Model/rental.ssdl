@@ -37,7 +37,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ImgUrl" Type="varchar" MaxLength="512" Nullable="false" />
-    <Property Name="FoodId" Type="int" Nullable="false" />
+    <Property Name="FoodId" Type="int" />
   </EntityType>
   <EntityType Name="PreferenImageInfo">
     <Key>
@@ -45,7 +45,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ImgUrl" Type="varchar" MaxLength="512" Nullable="false" />
-    <Property Name="PreferenId" Type="int" Nullable="false" />
+    <Property Name="PreferenId" Type="int" />
   </EntityType>
   <EntityType Name="Preferential">
     <Key>
@@ -113,7 +113,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ImgUrl" Type="varchar" MaxLength="128" Nullable="false" />
-    <Property Name="RoomId" Type="int" Nullable="false" />
+    <Property Name="RoomId" Type="int" />
   </EntityType>
   <EntityType Name="Service">
     <Key>
@@ -133,7 +133,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ImgUrl" Type="varchar" MaxLength="512" Nullable="false" />
-    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="ServiceId" Type="int" />
   </EntityType>
   <EntityType Name="Slider">
     <Key>
@@ -156,7 +156,7 @@
     <Property Name="UserPwd" Type="varchar" MaxLength="128" Nullable="false" />
   </EntityType>
   <Association Name="FK_FoodImageInfo_Food">
-    <End Role="Food" Type="Self.Food" Multiplicity="1" />
+    <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
     <End Role="FoodImageInfo" Type="Self.FoodImageInfo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Food">
@@ -168,7 +168,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PreferenImageInfo_Preferential">
-    <End Role="Preferential" Type="Self.Preferential" Multiplicity="1">
+    <End Role="Preferential" Type="Self.Preferential" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
     <End Role="PreferenImageInfo" Type="Self.PreferenImageInfo" Multiplicity="*" />
@@ -182,7 +182,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_RoomImageInfo_Room">
-    <End Role="Room" Type="Self.Room" Multiplicity="1">
+    <End Role="Room" Type="Self.Room" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
     <End Role="RoomImageInfo" Type="Self.RoomImageInfo" Multiplicity="*" />
@@ -196,7 +196,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ServiceImageInfo_Service">
-    <End Role="Service" Type="Self.Service" Multiplicity="1">
+    <End Role="Service" Type="Self.Service" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
     <End Role="ServiceImageInfo" Type="Self.ServiceImageInfo" Multiplicity="*" />

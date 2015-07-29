@@ -447,6 +447,7 @@
     <Content Include="Content\easyui\themes\metro\tree.css" />
     <Content Include="Content\easyui\themes\metro\validatebox.css" />
     <Content Include="Content\easyui\themes\metro\window.css" />
+    <Content Include="Content\front\css\style.css" />
     <Content Include="Content\gouxuan.png" />
     <Content Include="Content\hotel_huanying.gif" />
     <Content Include="Content\logo_best_rates_sm.png" />
@@ -672,7 +673,7 @@
     <Content Include="Scripts\file-upload\jquery.fileupload.js" />
     <Content Include="Scripts\file-upload\jquery.iframe-transport.js" />
     <Content Include="Content\front\css\idangerous.swiper.css" />
-    <Content Include="Content\front\css\style.css" />
+    <Content Include="Content\front\css\style_back.css" />
     <Content Include="Content\front\js\about.js" />
     <Content Include="Content\front\js\common-func.js" />
     <Content Include="Content\front\js\datepicker\datepicker_cn.js" />
@@ -993,6 +994,7 @@
     <Content Include="Views\About\Create.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Preference\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

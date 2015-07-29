@@ -901,3 +901,9 @@ display:block;
     .mb-gallery-destine { font: 14px/1.2em "microsoft yahei";  }
     .mb-gallery-destine span { width: 75%; float: left; }
 }
+
+    .comtemplate-kv{width:68% !important;}
+    .comtemplate-profile{width:32% !important;}
+    .comtemplate-panel {
+        width: 33.33333% !important;
+    }
