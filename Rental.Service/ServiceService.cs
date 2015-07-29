@@ -69,7 +69,13 @@ namespace Rental.Service
                 model.ContentEN = service.ContentEN;
                 model.ContentCN = service.ContentCN;
                 model.ContentTW = service.ContentTW;
+                if (service.ServiceImageInfo != null && service.ServiceImageInfo.Count > 0)
+                {
+                    model.ServiceImageInfo.Clear();
+                    model.ServiceImageInfo = service.ServiceImageInfo.Select(s => new Rental.Model.Model.ServiceImageInfo { ImgUrl = s.ImgUrl }).ToList(); ;
+                }
             }
+
             return _unitOfWork.Commit() > 0;
         }
 

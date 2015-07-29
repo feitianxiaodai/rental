@@ -10,7 +10,7 @@
 <div class="custome-page-header">
     <h1>修改优惠精选</h1>
 </div>
-@using (Html.BeginForm("Create", "Preference", FormMethod.Post, new { @class = "custome-form" }))
+@using (Html.BeginForm("Edit", "Preference", FormMethod.Post, new { @class = "custome-form" }))
 {
     <div class="form-div">
         @Html.HiddenFor(s=>s.Id)
@@ -137,7 +137,7 @@
                         });
                     });
             $('#fileupload').fileupload({
-                url: '@Url.Action("_AjaxSaveServiceImg","Preference")',
+                url: '@Url.Action("_AjaxSaveFoodImg", "Preference")',
                 dataType: 'json',
                 autoUpload: true,
                 acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,

@@ -30,5 +30,6 @@ namespace Rental.Repository
         {
             _context.Set<T>().Remove(entity);
         }
+
     }
 }

@@ -16,7 +16,7 @@ namespace Rental.Model.Model
     {
         public int Id { get; set; }
         public string ImgUrl { get; set; }
-        public int PreferenId { get; set; }
+        public Nullable<int> PreferenId { get; set; }
     
         public virtual Preferential Preferential { get; set; }
     }

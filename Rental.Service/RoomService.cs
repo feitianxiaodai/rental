@@ -85,17 +85,16 @@ namespace Rental.Service
             {
                 var model = _unitOfWork.RoomRepository.Query().FirstOrDefault(s => s.Id == id);
 
-                //model.RoomImageInfo.Clear();
-                //model.RoomImageInfo = room.RoomImageInfo.Select(b => new RoomImageInfo
-                //{
-                //    ImgUrl = b.ImgUrl,
-                //}).ToList();
-                foreach(var item in room.RoomImageInfo)
+                if (room.RoomImageInfo != null && room.RoomImageInfo.Count > 0)
+                {
+                    room.RoomImageInfo.ToList().Clear();
+                }
+                foreach (var item in room.RoomImageInfo)
                 {
                     model.RoomImageInfo.Add(new RoomImageInfo
                     {
                         ImgUrl = item.ImgUrl,
-                        Id= room.Id,
+                        Id = room.Id,
                     });
                 }
                 model.RoomArea = room.RoomArea;

@@ -70,6 +70,11 @@ namespace Rental.Service
                 model.ContentEN = service.ContentEN;
                 model.ContentCN = service.ContentCN;
                 model.ContentTW = service.ContentTW;
+                if (service.FoodImageInfo != null && service.FoodImageInfo.Count > 0)
+                {
+                    model.FoodImageInfo.ToList().Clear();
+                    model.FoodImageInfo = service.FoodImageInfo.Select(s => new Rental.Model.Model.FoodImageInfo { ImgUrl = s.ImgUrl }).ToList();
+                }
             }
             return _unitOfWork.Commit() > 0;
         }

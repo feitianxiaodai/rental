@@ -1,15 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="RentalModelStoreContainer" CdmEntityContainer="RentalEntities">
-    <EntitySetMapping Name="Slider">
-      <EntityTypeMapping TypeName="RentalModel.Slider">
-        <MappingFragment StoreEntitySet="Slider">
-          <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
-          <ScalarProperty Name="TitleTW" ColumnName="TitleTW" />
-          <ScalarProperty Name="Remark" ColumnName="Remark" />
-          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
-          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
-          <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
+    <EntitySetMapping Name="About">
+      <EntityTypeMapping TypeName="RentalModel.About">
+        <MappingFragment StoreEntitySet="About">
+          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -21,6 +18,50 @@
           <ScalarProperty Name="AreaLong" ColumnName="AreaLong" />
           <ScalarProperty Name="AreaParent" ColumnName="AreaParent" />
           <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Food">
+      <EntityTypeMapping TypeName="RentalModel.Food">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
+          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+          <ScalarProperty Name="TtitleEN" ColumnName="TtitleEN" />
+          <ScalarProperty Name="TitleTW" ColumnName="TitleTW" />
+          <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodImageInfo">
+      <EntityTypeMapping TypeName="RentalModel.FoodImageInfo">
+        <MappingFragment StoreEntitySet="FoodImageInfo">
+          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PreferenImageInfo">
+      <EntityTypeMapping TypeName="RentalModel.PreferenImageInfo">
+        <MappingFragment StoreEntitySet="PreferenImageInfo">
+          <ScalarProperty Name="PreferenId" ColumnName="PreferenId" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preferential">
+      <EntityTypeMapping TypeName="RentalModel.Preferential">
+        <MappingFragment StoreEntitySet="Preferential">
+          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
+          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+          <ScalarProperty Name="TtitleEN" ColumnName="TtitleEN" />
+          <ScalarProperty Name="TtitleTW" ColumnName="TtitleTW" />
+          <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -105,56 +146,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Food">
-      <EntityTypeMapping TypeName="RentalModel.Food">
-        <MappingFragment StoreEntitySet="Food">
-          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
-          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
-          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
-          <ScalarProperty Name="TtitleEN" ColumnName="TtitleEN" />
+    <EntitySetMapping Name="Slider">
+      <EntityTypeMapping TypeName="RentalModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
           <ScalarProperty Name="TitleTW" ColumnName="TitleTW" />
-          <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="FoodImageInfo">
-      <EntityTypeMapping TypeName="RentalModel.FoodImageInfo">
-        <MappingFragment StoreEntitySet="FoodImageInfo">
-          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
           <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PreferenImageInfo">
-      <EntityTypeMapping TypeName="RentalModel.PreferenImageInfo">
-        <MappingFragment StoreEntitySet="PreferenImageInfo">
-          <ScalarProperty Name="PreferenId" ColumnName="PreferenId" />
-          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Preferential">
-      <EntityTypeMapping TypeName="RentalModel.Preferential">
-        <MappingFragment StoreEntitySet="Preferential">
-          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
-          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
-          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
-          <ScalarProperty Name="TtitleEN" ColumnName="TtitleEN" />
-          <ScalarProperty Name="TtitleTW" ColumnName="TtitleTW" />
           <ScalarProperty Name="TitleCN" ColumnName="TitleCN" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="About">
-      <EntityTypeMapping TypeName="RentalModel.About">
-        <MappingFragment StoreEntitySet="About">
-          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
-          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
-          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

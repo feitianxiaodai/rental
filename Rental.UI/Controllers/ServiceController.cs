@@ -114,8 +114,15 @@ namespace Rental.UI.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(Rental.Service.domain.ServiceModel model)
+        public ActionResult Edit(Rental.Service.domain.ServiceModel model, string[] ImgUrl)
         {
+            if (ImgUrl != null && ImgUrl.Count() > 0)
+            {
+                foreach (var item in ImgUrl)
+                {
+                    model.ServiceImageInfo.Add(new Service.domain.ServiceImageInfoModel { ImgUrl = item });
+                }
+            }
             serviceSer.Update(model);
             return RedirectToAction("Index");
         }

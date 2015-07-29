@@ -111,8 +111,15 @@ namespace Rental.UI.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(Rental.Service.domain.FoodModel model)
+        public ActionResult Edit(Rental.Service.domain.FoodModel model, string[] ImgUrl)
         {
+            if (ImgUrl != null && ImgUrl.Count() > 0)
+            {
+                foreach (var item in ImgUrl)
+                {
+                    model.FoodImageInfo.Add(new Service.domain.FoodImageInfoModel { ImgUrl = item });
+                }
+            }
             foodSer.Update(model);
             return RedirectToAction("Index");
         }

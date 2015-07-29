@@ -16,7 +16,7 @@ namespace Rental.Model.Model
     {
         public int Id { get; set; }
         public string ImgUrl { get; set; }
-        public int FoodId { get; set; }
+        public Nullable<int> FoodId { get; set; }
     
         public virtual Food Food { get; set; }
     }

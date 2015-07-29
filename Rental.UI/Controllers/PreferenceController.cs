@@ -111,8 +111,15 @@ namespace Rental.UI.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(Rental.Service.domain.PreferenceModel model)
+        public ActionResult Edit(Rental.Service.domain.PreferenceModel model, string[] ImgUrl)
         {
+            if (ImgUrl != null && ImgUrl.Count() > 0)
+            {
+                foreach (var item in ImgUrl)
+                {
+                    model.PreferenImageInfo.Add(new Service.domain.PreferenceImageInfo { ImgUrl = item });
+                }
+            }
             preferneceSer.Update(model);
             return RedirectToAction("Index");
         }

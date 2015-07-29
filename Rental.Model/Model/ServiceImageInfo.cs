@@ -16,7 +16,7 @@ namespace Rental.Model.Model
     {
         public int Id { get; set; }
         public string ImgUrl { get; set; }
-        public int ServiceId { get; set; }
+        public Nullable<int> ServiceId { get; set; }
     
         public virtual Service Service { get; set; }
     }

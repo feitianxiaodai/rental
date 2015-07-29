@@ -9,8 +9,8 @@ namespace Rental.Service
 {
     public class PreferenceService
     {
-          private UnitOfWork _unitOfWork = null;
-          public PreferenceService()
+        private UnitOfWork _unitOfWork = null;
+        public PreferenceService()
         {
             _unitOfWork = new UnitOfWork();
         }
@@ -68,6 +68,11 @@ namespace Rental.Service
                 model.ContentEN = service.ContentEN;
                 model.ContentCN = service.ContentCN;
                 model.ContentTW = service.ContentTW;
+                if (service.PreferenImageInfo != null && service.PreferenImageInfo.Count > 0)
+                {
+                    model.PreferenImageInfo.ToList().Clear();
+                    model.PreferenImageInfo = service.PreferenImageInfo.Select(s => new Rental.Model.Model.PreferenImageInfo { ImgUrl = s.ImgUrl }).ToList();
+                }
             }
             return _unitOfWork.Commit() > 0;
         }

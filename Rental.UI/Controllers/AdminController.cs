@@ -11,6 +11,10 @@ namespace Rental.UI.Controllers
     {
         public ActionResult Index()
         {
+            if (Session["rental.user"]==null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
             return View();
         }
 
