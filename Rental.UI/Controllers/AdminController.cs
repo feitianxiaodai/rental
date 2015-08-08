@@ -11,7 +11,7 @@ namespace Rental.UI.Controllers
     {
         public ActionResult Index()
         {
-            if (Session["rental.user"]==null)
+            if (Session["rental.user"] == null)
             {
                 return RedirectToAction("Login", "Account");
             }
@@ -24,29 +24,27 @@ namespace Rental.UI.Controllers
             {
                 new TreeNode()
                 {
-                    Text = "布局",
+                    Text = "房间管理",
                     IconCls = "pic_26",
                     Children = new List<TreeNode>()
                     {
-                        new TreeNode() { Text = "幻灯片管理", IconCls = "pic_5", Url = Url.Action("Index", "Slider") },
-                        new TreeNode() { Text = "服务设置", IconCls = "pic_198", Url = Url.Action("Index", "Service") },
                         new TreeNode() { Text = "房间管理", IconCls = "pic_93", Url = Url.Action("Index", "Room") },
                         new TreeNode() { Text = "美食管理", IconCls = "pic_93", Url = Url.Action("Index", "Food") },
-                         new TreeNode() { Text = "优惠精选", IconCls = "pic_93", Url = Url.Action("Index", "Preference") },
-                         new TreeNode() { Text = "酒店介绍", IconCls = "pic_93", Url = Url.Action("Create", "About") }
+                        new TreeNode() { Text = "优惠精选", IconCls = "pic_93", Url = Url.Action("Index", "Preference") },
+                         
                     }
                 },
                 new TreeNode()
                 {
-                    Text = "系统",
+                    Text = "首页内容管理",
                     IconCls = "pic_100",
                     Children = new List<TreeNode>()
                     {
-                        new TreeNode() { Text = "操作日志", IconCls = "pic_125", Url = Url.Action("Index", "OperateLogs") },
-                        new TreeNode() { Text = "系统日志", IconCls = "pic_101", Url = Url.Action("Index", "SystemLogs") },
-                        new TreeNode() { Text = "系统设置", IconCls = "pic_89", Url = Url.Action("Index", "SystemSettings") }
+                        new TreeNode() { Text = "酒店介绍", IconCls = "pic_93", Url = Url.Action("Create", "About") },
+                        new TreeNode() { Text = "幻灯片管理", IconCls = "pic_5", Url = Url.Action("Index", "Slider") },
+                        new TreeNode() { Text = "服务设置", IconCls = "pic_198", Url = Url.Action("Index", "Service") },
                     }
-                }
+                },
             };
 
             Action<ICollection<TreeNode>> action = list =>

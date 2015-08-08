@@ -453,6 +453,7 @@
     <Content Include="Content\logo_best_rates_sm.png" />
     <Content Include="Content\qq.gif" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\weichatlogo.jpg" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />

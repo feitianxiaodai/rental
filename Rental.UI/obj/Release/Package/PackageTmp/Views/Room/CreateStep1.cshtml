@@ -556,9 +556,9 @@
         var map;
         var markers = [];
         function initialize() {
-            var initPosition = new google.maps.LatLng(25.0172264, 121.506378);
+            var initPosition = new google.maps.LatLng(24.987356, 121.3271635);
             var mapOptions = {
-                zoom: 8,
+                zoom: 9,
                 center: initPosition
             }
             map = new google.maps.Map(document.getElementById('place-map-container'),
@@ -588,9 +588,9 @@
                 //map.setCurrentCity("高雄");
                 //map.addOverlay(new BMap.Marker(cityPoint));
                 
-                var position = new google.maps.LatLng(24.9117111, 121.2321896);
+                var position = new google.maps.LatLng(24.987356, 121.5271635);
                 var mapOptions = {
-                    zoom: 8,
+                    zoom: 9,
                     center: position
                 }
                 map = new google.maps.Map(document.getElementById('place-map-container'),
@@ -612,9 +612,9 @@
                 var longitude = $(this).find("option:selected").attr("data-longitude");
                 
                 setAllMap(null);
-                var position = new google.maps.LatLng(24.9480263, 121.2917038);
+                var position = new google.maps.LatLng(latitude, longitude);
                 var mapOptions = {
-                    zoom: 13,
+                    zoom: 17,
                     center: position
                 }
                 map = new google.maps.Map(document.getElementById('place-map-container'),
