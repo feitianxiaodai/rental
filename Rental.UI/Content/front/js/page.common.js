@@ -20,8 +20,8 @@ function SetTelephone() {
     var _telTitle = "免费订房热线：";
     if (window.GlobalLangIsHK)
         _telTitle = _telTitle.traditionalized();
-    var _telHtml = "400-820-0500";
-    var _telNum = "tel:400-820-0500";
+    var _telHtml = "+886988678885";
+    var _telNum = "tel:+886988678885";
     if (GetQueryString("source") != null) {
         $.cookie("search-cookie", GetQueryString("source"));
     }

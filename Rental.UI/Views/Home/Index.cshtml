@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 @section breadUrl{
-    <a class="tracks active" href="http://www.conrad.com.cn/">首页</a>
+    <a class="tracks active" href="@Url.Action("Index","Home")">首页</a>
     <a class="tracks active" href="javascript:void(0)">台湾</a>
-    <a class="tracks show" href="index.html">香港港丽酒店</a><span class="tracks">首页</span>
+    <span class="tracks">首页</span>
 }
 
 <div id="viewport" class="mainbody-gallery">

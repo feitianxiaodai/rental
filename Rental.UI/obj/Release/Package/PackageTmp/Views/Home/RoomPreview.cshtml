@@ -269,6 +269,7 @@
                 
                 </ul>
             </div>
+            <div id="mapInfo" style="width:90%;height:250px;"></div>
         </div>
     </div>
 </div>
@@ -352,6 +353,7 @@
     }
 </style>
 @section scripts{
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBJMf_9GvpD_yA-d6unsKI7DEq8IHSOIw"></script>
     <script src="~/Content/front/js/rooms.js"></script>
     <script>
         $(function () {
@@ -362,6 +364,19 @@
             $('.food-li a').removeClass('active');
             $('.service-li a').removeClass('active');
             $('.room-li a').addClass('active');
+
+            var position = new google.maps.LatLng(@(Model.RoomLang), @(Model.RoomLong));
+            var mapOptions = {
+                zoom: 13,
+                center: position
+            }
+            map = new google.maps.Map(document.getElementById('mapInfo'),
+                mapOptions);
+            var marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                title: '坐标'
+            });
         });
     </script>
 }

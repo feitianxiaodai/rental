@@ -2488,7 +2488,7 @@
       <publishTime>07/20/2015 21:16:51</publishTime>
     </File>
     <File Include="Views/Home/RoomPreview.cshtml">
-      <publishTime>07/21/2015 23:26:11</publishTime>
+      <publishTime>08/03/2015 22:04:01</publishTime>
     </File>
     <File Include="Views/Home/Service.cshtml">
       <publishTime>07/21/2015 20:59:37</publishTime>
@@ -2509,7 +2509,7 @@
       <publishTime>07/30/2015 00:33:04</publishTime>
     </File>
     <File Include="Views/Room/CreateStep1.cshtml">
-      <publishTime>07/19/2015 17:02:56</publishTime>
+      <publishTime>08/03/2015 21:54:23</publishTime>
     </File>
     <File Include="Views/Room/CreateStep2.cshtml">
       <publishTime>07/19/2015 16:46:06</publishTime>
