@@ -450,6 +450,7 @@
     <Content Include="Content\front\css\style.css" />
     <Content Include="Content\gouxuan.png" />
     <Content Include="Content\hotel_huanying.gif" />
+    <Content Include="Content\logo.jpg" />
     <Content Include="Content\logo_best_rates_sm.png" />
     <Content Include="Content\qq.gif" />
     <Content Include="Content\style.css" />

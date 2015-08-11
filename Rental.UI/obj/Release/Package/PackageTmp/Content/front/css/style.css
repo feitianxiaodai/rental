@@ -47,7 +47,7 @@ body{ font:12px/1.5 "Microsoft Yahei", Helvetica, Arial, sans-serif; color:#3030
 .hd-wrap-logo,.hd-mb-hotline,.hd-mb-search,.hd-mb-title{ float:left;}
 .hd-wrap{ position:relative;}
 .hd-wrap-logo{ width:25%; overflow:hidden;}
-.hd-wrap-logo a{ display:block; height:80px; background:#c08448 url("http://conrad.hilton.com.cn/zh-cn/css/../images/top_logo.png") no-repeat 50% 50%; background-size:contain; text-indent:-999em;}
+.hd-wrap-logo a{ display:block; height:80px; background:#c08448 url("../../logo.jpg") no-repeat 50% 50%; background-size:contain; text-indent:-999em;}
 .hd-mb-hotline{ width:75%; margin-top:10px; padding:3px 10px 3px 0; text-align:right;}
 .hd-mb-hotline-w,.hd-mb-lang,.hd-mb-xin{ display:inline-block; vertical-align:middle;}
 .hd-mb-hotline-pro,.hd-mb-hotline-tel{ display:inline-block; vertical-align:middle;}
@@ -718,7 +718,8 @@ body{ font-size:13px;}
 .computer .img-wrap img{ width:auto;}
 .computer .city-booking{ margin-top:0; padding:7px 30px 7px 20px;}
 .hd-wrap-logo{ width:12.5%; /*margin-top:50px;*/}
-.hd-mb-hotline{ width:87.5%; margin-top:0; position:relative;}
+/*.hd-mb-hotline{ width:87.5%; margin-top:0; position:relative;}*/
+.hd-mb-hotline{ width:42.5%; margin-top:0; position:relative; float:right;}
 .hd-mb-search a{ margin:0 15px 0 0; padding:2px 80px 2px 20px; font-size:15px;}
 .hd-mb-search a:before{ margin-top:-7px; border-width:7px;}
 .hd-mb-search a:after{ margin-top:-6px; border-width:6px;}
@@ -730,7 +731,8 @@ body{ font-size:13px;}
 .hd-mb-lang a:after{ border-width:4px 6px;}
 .hd-mb-lang a.on:after{ margin-top:4px; border-width:6px 4px;}
 .hd-mb-search,.hd-mb-title{ position:absolute;}
-.hd-mb-title{ width: 87.5%;left: 12.5%;margin-top: 64px;}
+/*.hd-mb-title{ width: 87.5%;left: 12.5%;margin-top: 64px;}*/
+.hd-mb-title{ width: 35.5%;left: 12.5%;margin-top: 64px;}
 .hd-mb-title .t{ margin-top:10px; font-size:30px;}
 .hd-mb-search{ width: 460px;right: 0;margin-top: 68px;z-index:1}
 .hd-mb-track .tracks{ height:40px; line-height:40px;}
