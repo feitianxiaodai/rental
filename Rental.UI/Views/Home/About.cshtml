@@ -20,7 +20,7 @@
     }
 </style>
 @section breadUrl{
-    <a class="tracks active" href="http://www.conrad.com.cn/">@Html.GetLanguageByKey("IndexPageName")</a>
+    <a class="tracks active" href="@Url.Action("Index","Home")">@Html.GetLanguageByKey("IndexPageName")</a>
     <a class="tracks active" href="javascript:void(0)">@Html.GetLanguageByKey("TaiWan")</a>
     <a class="tracks show" href="@Url.Action("About")">@Html.GetLanguageByKey("HotelProfile")</a>
 }
