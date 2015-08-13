@@ -2,7 +2,7 @@
 @model List<Rental.Service.domain.FoodCultureModel>
 @{
     var title = Html.GetLanguageByKey("IndexRoomName");
-    ViewBag.Title = title;
+    ViewBag.Title = Html.GetLanguageByKey("Food");
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 @section breadUrl{

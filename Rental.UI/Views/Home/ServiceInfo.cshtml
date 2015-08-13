@@ -2,7 +2,7 @@
 @model Rental.Service.domain.ServiceCultureModel
 @{
     var title = Html.GetLanguageByKey("Service");
-    ViewBag.Title = title;
+    ViewBag.Title = Html.GetLanguageByKey("Service");
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 @section breadUrl{
@@ -76,7 +76,7 @@
         </div>
         <div class="comtemplate-profile">
             <h3 class="t"><a href="javascript:void(0);">@Model.Ttitle</a></h3>
-            <div>@Html.Raw(Model.Content)</div>
+            <div class="detail">@Html.Raw(Model.Content)</div>
         </div>
     </div>
 </div>

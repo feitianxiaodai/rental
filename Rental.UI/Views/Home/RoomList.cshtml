@@ -2,7 +2,7 @@
 @model List<Rental.Service.domain.RoomModel>
 @{
     var title = Html.GetLanguageByKey("IndexRoomName");
-    ViewBag.Title = title;
+    ViewBag.Title = Html.GetLanguageByKey("RoomPrivew");
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 @section breadUrl{

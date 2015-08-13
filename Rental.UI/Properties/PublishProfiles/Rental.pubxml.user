@@ -1012,7 +1012,7 @@
       <publishTime>07/21/2015 07:24:51</publishTime>
     </File>
     <File Include="Content/logo.jpg">
-      <publishTime>08/11/2015 22:12:37</publishTime>
+      <publishTime>08/13/2015 21:59:21</publishTime>
     </File>
     <File Include="Content/logo_best_rates_sm.png">
       <publishTime>07/21/2015 07:23:51</publishTime>
@@ -2470,37 +2470,37 @@
       <publishTime>07/20/2015 21:16:51</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>08/11/2015 22:26:14</publishTime>
+      <publishTime>08/13/2015 22:02:02</publishTime>
     </File>
     <File Include="Views/Home/Food.cshtml">
-      <publishTime>07/21/2015 20:59:37</publishTime>
+      <publishTime>08/13/2015 22:06:20</publishTime>
     </File>
     <File Include="Views/Home/FoodInfo.cshtml">
-      <publishTime>07/21/2015 20:59:37</publishTime>
+      <publishTime>08/13/2015 22:07:08</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/08/2015 15:11:02</publishTime>
+      <publishTime>08/11/2015 22:36:21</publishTime>
     </File>
     <File Include="Views/Home/Preference.cshtml">
-      <publishTime>07/20/2015 22:06:29</publishTime>
+      <publishTime>08/13/2015 22:02:26</publishTime>
     </File>
     <File Include="Views/Home/PreferenceInfo.cshtml">
-      <publishTime>07/21/2015 07:12:23</publishTime>
+      <publishTime>08/13/2015 22:07:28</publishTime>
     </File>
     <File Include="Views/Home/Room.cshtml">
-      <publishTime>07/30/2015 01:00:02</publishTime>
+      <publishTime>08/13/2015 22:04:01</publishTime>
     </File>
     <File Include="Views/Home/RoomList.cshtml">
-      <publishTime>07/20/2015 21:16:51</publishTime>
+      <publishTime>08/13/2015 22:03:51</publishTime>
     </File>
     <File Include="Views/Home/RoomPreview.cshtml">
-      <publishTime>08/08/2015 15:47:14</publishTime>
+      <publishTime>08/11/2015 22:36:47</publishTime>
     </File>
     <File Include="Views/Home/Service.cshtml">
-      <publishTime>07/21/2015 20:59:37</publishTime>
+      <publishTime>08/13/2015 22:05:02</publishTime>
     </File>
     <File Include="Views/Home/ServiceInfo.cshtml">
-      <publishTime>07/30/2015 00:59:20</publishTime>
+      <publishTime>08/13/2015 22:07:44</publishTime>
     </File>
     <File Include="Views/Preference/Create.cshtml">
       <publishTime>07/29/2015 23:45:48</publishTime>
@@ -2557,7 +2557,7 @@
       <publishTime>07/13/2015 12:33:30</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutPage.cshtml">
-      <publishTime>08/11/2015 21:47:50</publishTime>
+      <publishTime>08/13/2015 22:12:10</publishTime>
     </File>
     <File Include="Views/Slider/Create.cshtml">
       <publishTime>07/16/2015 21:36:14</publishTime>
