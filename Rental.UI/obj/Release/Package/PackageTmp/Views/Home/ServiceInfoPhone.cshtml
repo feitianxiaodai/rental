@@ -1,0 +1,100 @@
+﻿@using Rental.UI.Utility
+@model Rental.Service.domain.ServiceCultureModel
+@{
+    var title = Html.GetLanguageByKey("Service");
+    ViewBag.Title = Html.GetLanguageByKey("Service");
+    Layout = "~/Views/Shared/_LayoutPhonePage.cshtml";
+}
+@section breadUrl{
+    <a class="tracks active" href="@Url.Action("Index","Home")">@Html.GetLanguageByKey("IndexPageName")</a>
+    <a class="tracks active" href="javascript:void(0)">@Html.GetLanguageByKey("TaiWan")</a>
+    <a class="tracks show" href="@Url.Action("Service")">@Html.GetLanguageByKey("Service")</a>
+}
+<style>
+    .ht-title .t{
+        margin-top:20px;
+    }
+</style>
+
+<div id="viewport" class="hotel-details">
+    <div class="comtemplate">
+        <h3 class="mb-comtemplate-profile-title"><a href="javascript:void(0);"></a></h3>
+        <div class="comtemplate-kv">
+            <ul class="comtemplate-kv-wrapper swiper-wrapper">
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var item in Model.ServiceImageInfo)
+                        {
+                            var imgUrl = item.ImgUrl;
+                            <li class="comtemplate-kv-items swiper-slide">
+                                <img class="comtemplate-detail-panel-img imgauto"
+                                     src=""
+                                     data-small-src="@imgUrl"
+                                     data-big-src="@imgUrl"
+                                     data-ratio="0.618" alt="">
+                                <!--<div class="comtemplate-kv-items-intro">
+                                    豪华海景行政套房<span>豪华海景行政套房</span>
+                                </div>-->
+                            </li>
+                        }
+                    }
+                }
+            </ul>
+            <div class="comtemplate-kv-list"></div>
+            <div class="mb-gallery-nav-details comtemplate-kv-thumb">
+                <div class="photos-wrapper">
+                    <div class="photos-wrapper-container">
+                        <ul class="ul-wrap swiper-wrapper">
+                            @{
+                                if (Model != null)
+                                {
+                                    int i = 0;
+                                    foreach (var item in Model.ServiceImageInfo)
+                                    {
+                                        var imgUrl = item.ThumbImgUrl;
+                                        if (i == 0)
+                                        {
+                                            <li class="on">
+                                                <img style="width:100%;height:100%" src="@imgUrl" alt="">
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li>
+                                                <img style="width:100%;height:100%" src="@imgUrl" alt="">
+                                            </li>
+                                        }
+                                        i++;
+                                    }
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <a class="photos-wrapper-arrow left" href="javascript:void(0);">左</a>
+                    <a class="photos-wrapper-arrow right" href="javascript:void(0);">右</a>
+                </div>
+            </div>
+            <a class="mb-gallery-lf" href="javascript:void(0);"><i></i></a>
+            <a class="mb-gallery-rg" href="javascript:void(0);"><i></i></a>
+        </div>
+        <div class="comtemplate-profile">
+            <h3 class="t"><a href="javascript:void(0);">@Model.Ttitle</a></h3>
+            <div class="detail">@Html.Raw(Model.Content)</div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/front/js/rooms.js"></script>
+    <script>
+        $(function () {
+            $('.index-li a').removeClass('active');
+            $('.introduce-li a').removeClass('active');
+            $('.arrive-li a').removeClass('active');
+            $('.yh-li a').removeClass('active');
+            $('.food-li a').removeClass('active');
+            $('.service-li a').addClass('active');
+            $('.room-li a').removeClass('active');
+        });
+    </script>
+}

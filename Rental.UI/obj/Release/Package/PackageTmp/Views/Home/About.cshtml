@@ -34,6 +34,19 @@
 </div>
 @section scripts{
     <script>
+
+        if (/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))) {
+            if (window.location.href.indexOf("?mobile") < 0) {
+                try {
+                    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                        window.location.href = "@Url.Action("AboutPhone","Home")";
+                    } else if (/iPad/i.test(navigator.userAgent)) {
+                    } else {
+                    }
+                } catch (e) { }
+            }
+        }
+
         $(function () {
             $('.index-li a').removeClass('active');
             $('.introduce-li a').addClass('active');

@@ -73,7 +73,19 @@ namespace Rental.UI.Controllers
             return View();
         }
 
+        public ActionResult RoomPhone()
+        {
+            return View();
+        }
+
         public ActionResult RoomList(int id)
+        {
+            //根据地区选择该地区所有的房间信息
+            var roomViewModels = roomSer.GetRoomInfoList(id);
+            return View(roomViewModels);
+        }
+
+        public ActionResult RoomListPhone(int id)
         {
             //根据地区选择该地区所有的房间信息
             var roomViewModels = roomSer.GetRoomInfoList(id);
@@ -91,13 +103,33 @@ namespace Rental.UI.Controllers
             return View(room);
         }
 
+        public ActionResult RoomPreviewPhone(int id)
+        {
+            var room = roomSer.GetPreviewRoomInfo(id);
+            return View(room);
+        }
+
         public ActionResult Service()
         {
             var viewModel = serviceSer.GetServiceViewModel(cultureName);
             return View(viewModel);
         }
 
+        public ActionResult ServicePhone()
+        {
+            var viewModel = serviceSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
+
         public ActionResult ServiceInfo(int id)
+        {
+            var viewModel = serviceSer.GetServiceViewModelById(id, cultureName);
+            return View(viewModel);
+        }
+
+
+        public ActionResult ServiceInfoPhone(int id)
         {
             var viewModel = serviceSer.GetServiceViewModelById(id, cultureName);
             return View(viewModel);
@@ -109,7 +141,19 @@ namespace Rental.UI.Controllers
             return View(viewModel);
         }
 
+        public ActionResult FoodPhone()
+        {
+            var viewModel = foodSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
         public ActionResult FoodInfo(int id)
+        {
+            var viewModel = foodSer.GetServiceViewModelById(id, cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult FoodInfoPhone(int id)
         {
             var viewModel = foodSer.GetServiceViewModelById(id, cultureName);
             return View(viewModel);
@@ -121,13 +165,31 @@ namespace Rental.UI.Controllers
             return View(viewModel);
         }
 
+        public ActionResult PreferencePhone()
+        {
+            var viewModel = prefenceSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
         public ActionResult PreferenceInfo(int id)
         {
             var viewModel = prefenceSer.GetServiceViewModelById(id, cultureName);
             return View(viewModel);
         }
 
+        public ActionResult PreferenceInfoPhone(int id)
+        {
+            var viewModel = prefenceSer.GetServiceViewModelById(id, cultureName);
+            return View(viewModel);
+        }
+
         public ActionResult About()
+        {
+            var viewModel = aboutSer.GetAboutViewModel(cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult AboutPhone()
         {
             var viewModel = aboutSer.GetAboutViewModel(cultureName);
             return View(viewModel);
