@@ -1,0 +1,911 @@
+
+/** reset **/
+html,body,div,dl,dt,dd,ol,ul,li,h1,h2,h3,h4,h5,h6,p,blockquote,pre,address,
+embed,object,iframe,img,audio,video,canvas,hr,
+form,fieldset,legend,label,input,button,textarea,select,table,caption,tfoot,thead,tbody,tr,th,td,
+article,aside,header,footer,hgroup,section,summary,nav,dialog,
+details,figcaption,figure,menu,meter,output,progress,time,mark {margin:0;padding:0;}
+
+embed,object,iframe,audio,video,canvas,
+article,aside,header,footer,hgroup,section,summary,nav,dialog,details,figcaption,figure,menu {display:block;}
+
+h1,h2,h3,h4,h5,h6 {font-size:100%; font-weight:normal;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img {border-style:none;}
+abbr,dfn {border-style:none;font-variant:inherit;}
+blockquote,address,abbr,dfn,cite,q,code,var,kbd,samp,del,ins,sub,sup,s,i,optgroup,em,mark,small {font-style:inherit;font-weight:inherit;}
+input,button,textarea,select,optgroup,option,small {font-size:100%;font-family:inherit;}
+blockquote,q {quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after {content:'';content:none;}
+ul,ol,menu {list-style:none outside;}
+svg:not(:root) {overflow:hidden;}
+
+/** basic style **/
+pre,code,var,kbd,samp {font-size:100%;font-family:Consolas,monospace;}
+pre {white-space:pre;white-space:pre-wrap;word-wrap:break-word;}
+label[for] {cursor:pointer;}
+abbr[title],dfn[title] {border-bottom:1px dotted;cursor:help;}
+hr {display:block;height:0;border-style:none;border-top:1px solid #ccc;background-color:transparent;}
+mark {background-color:#ff9;}
+audio:not([controls]) {display:none;}
+[hidden] {display:none;}
+sup,sub {position:relative;font-size:75%;line-height:1;vertical-align:baseline;}
+sup {top:-0.5em;}
+sub {bottom:-0.25em;}
+img {-ms-interpolation-mode:bicubic;}
+input, textarea {-webkit-user-modify: read-write-plaintext-only;}
+
+/*  some resets  */
+*,*:before,*:after{box-sizing:border-box;}
+.fix:before,.fix:after{ content:""; display:table;}
+.fix:after{ clear:both;}
+body{ font:12px/1.5 "Microsoft Yahei", Helvetica, Arial, sans-serif; color:#303030; background-color:#fff;}
+
+/* page start */
+[arrow]:before,[arrow]:after{ position:absolute; left:0; top:0; content:""; border:solid transparent;}
+.sprites{ background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat;}
+.hd-wrap-logo,.hd-mb-hotline,.hd-mb-search,.hd-mb-title{ float:left;}
+.hd-wrap{ position:relative;}
+.hd-wrap-logo{ width:25%; overflow:hidden;}
+.hd-wrap-logo a{ display:block; height:80px; background:#c08448 url("../../logo.jpg") no-repeat 50% 50%; background-size:contain; text-indent:-999em;}
+.hd-mb-hotline{ width:75%; margin-top:10px; padding:3px 10px 3px 0; text-align:right;}
+.hd-mb-hotline-w,.hd-mb-lang,.hd-mb-xin{ display:inline-block; vertical-align:middle;}
+.hd-mb-hotline-pro,.hd-mb-hotline-tel{ display:inline-block; vertical-align:middle;}
+.hd-mb-hotline-pro{ line-height:0;}
+.hd-mb-hotline-pro img{ width:100px;}
+.hd-mb-hotline-tel{ padding-left:10px; color:#303030; text-decoration:none;}
+.hd-mb-hotline-tel:before{ display:inline-block; vertical-align:middle; margin-right:5px; width:16px; height:16px; content:""; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat 0 0;}
+.hd-mb-lang{ margin-left:10px;}
+.hd-mb-lang a{ display:inline-block; padding:0 5px; color:#5b4839; text-decoration:none;}
+.hd-mb-lang a:after{ display:inline-block; vertical-align:middle; margin:-2px 0 0 3px; content:""; border:solid transparent; border-width:2px 4px; border-left-color:#5b4839;}
+.hd-mb-lang a.on{ color:#303030;}
+.hd-mb-lang a.on:after{ margin-top:2px; border-width:4px 2px; border-left-color:transparent; border-top-color:#303030;}
+.hd-mb-xin a{ display:block; width:32px; height:26px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -18px 0; text-indent:999em; overflow:hidden;}
+.hd-mb-search{ width:75%; padding-right:5px; text-align:right;}
+.hd-mb-search a{ display:inline-block; margin:0 5px; padding:0 20px 0 10px; color:#303030; text-decoration:none; position:relative; border:1px solid #ccc; border-radius:3px;}
+.hd-mb-search a:before,.hd-mb-search a:after{ position:absolute; right:3px; top:50%; content:""; border:solid transparent;}
+.hd-mb-search a:before{ margin-top:-5px; border-width:5px; border-left-color:#8f5822;}
+.hd-mb-search a:after{ margin-top:-4px; margin-right:3px; border-width:4px; border-left-color:#fff;}
+.hd-mb-title{ width:100%; margin-top:10px; padding-left:10px;}
+.hd-mb-title .t{ margin-top:25px; font-size:24px;}
+.hd-mb-title .t span{ display:inline-block; margin-right:10px; font-size:50%;}
+.hd-mb-track{ width:100%; position:absolute; left:0; top:80px; background-color:#eaeaea;}
+.hd-mb-track .tracks{ float:left; padding:0 3px; height:30px; line-height:30px; color:#303030; text-decoration:none; position:relative;}
+.hd-mb-track .tracks + .tracks{ padding:0 3px 0 15px;}
+.hd-mb-track .tracks:before,.hd-mb-track .tracks:after{ position:absolute; top:0; left:100%; content:""; border:solid transparent;}
+.hd-mb-track .active,.hd-mb-track .show{ background-color:#d3d3d3;}
+.hd-mb-track .active{ z-index:1;}
+.hd-mb-track .active:before,.hd-mb-track .active:after,.hd-mb-track .show:after{ border-width:15px 10px; border-left-color:#eaeaea;}
+.hd-mb-track .active:after,.hd-mb-track .show:after{ margin-left:-2px; border-left-color:#d3d3d3;}
+.hd-mb-track .show:after{ margin-left:0; border-width:15px 10px;}
+.hd-mb-sorts{ float:right; width:100%; background-color:#fff; text-align:right;}
+.hd-mb-sorts span{ display:inline-block; vertical-align:middle; margin-right:10px; line-height:30px;}
+.hd-mb-sorts span:first-child{ margin-right:5px;}
+.hd-mb-sorts span i,.sub-cols i{ display:inline-block; vertical-align:middle; margin:-2px 0 0 3px; width:10px; height:10px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -27px 0; background-size:200px 200px; text-indent:999em; overflow:hidden;}
+.hd-mb-sorts span i.on,.sub-cols i.on{ background-position:-37px 0;}
+.hd-mb-sorts span .cd{ display:inline-block; vertical-align:middle; margin:-2px 3px 0 0; width:16px; height:16px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -71px 0; background-size:291px 291px;}
+.mainbody{}
+.city-items{ margin-bottom:20px;}
+.city-items .img-wrap{ position:relative; overflow:hidden;}
+.city-items .img-wrap img{ display:block; width:100%;}
+.city-items .img-wrap-layer,.city-items .img-wrap-name{ width:100%; height:40px; padding:0 10px; line-height:40px; color:#fff; font-size:15px; position:absolute; left:0; bottom:0;}
+.city-items .img-wrap-layer{ opacity:.5; filter:alpha(opacity=50); text-indent:-999em; background-color:#000; overflow:hidden;}
+.city-items .mobile .img-welcome {display: inline; margin-left: 5px; vertical-align: middle;width:auto}
+.city-items .computer .img-welcome {  display: inline; margin-left: 5px; vertical-align: middle;}
+.img-wrap-brands{ position:absolute; top:0; right:0; width:54px; height:56px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/hotel_huanying.gif") no-repeat;}
+.img-wrap-brands i{ position:absolute; top:-52px; right:3px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat 0 -15px;width:29px; height:20px; background-size:200px 200px;}
+.img-wrap-brands i.hilton {background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat 0 -15px;background-size:200px 200px;}
+.img-wrap-brands i.waldorf {background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -39px -35px;background-size:200px 200px;}
+.img-wrap-brands i.doubletree {background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -68px -35px;width: 26px;background-size:200px 200px;}
+.img-wrap-brands i.gardeninn {background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -144px -35px;width: 26px;background-size:200px 200px;}
+.img-wrap-brands i.conrad {background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -94px -35px;  top: -54px;  right: 2px;  width: 30px;background-size:200px 200px;}
+.img-wrap-brands i.embassysuites {background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -124px -35px;width: 24px;background-size:200px 200px;}
+.city-items .city-intro{ margin:5px 0; padding:0 10px; font-size:13px;}
+.city-items .city-price{ display:inline-block; margin-left:10px; font-size:28px; color:#91a500;}
+.city-items .city-price i{ font-size:50%;}
+.city-items .city-booking{ float:right; margin:8px 10px 0 0; padding:3px 25px 3px 15px; color:#fff; text-decoration:none; background-color:#4c864c; border-radius:3px; position:relative;}
+.city-items .city-booking:before,.city-items .city-booking:after{ content:""; position:absolute; right:5px; top:50%; margin-top:-6px; border:6px solid transparent;}
+.city-items .city-booking:before{ border-left-color:#fff;}
+.city-items .city-booking:after{ margin-right:2px; border-left-color:#4c864c;}
+.subscribe{ padding:20px 10px; text-align:center; background-color:#c08448}
+.sub-cols{ display:inline-block; vertical-align:middle; margin:5px 10px; color:#fff;}
+.sub-cols a{ text-decoration:underline; color:#fff;}
+.sub-cols .inp{ float:left; width:220px; height:30px; padding:0 10px; line-height:30px; background-color:#fff; border:0; border-radius:0; border-top-left-radius:3px; border-bottom-left-radius:3px;}
+.sub-cols .conf{ float:left; width:60px; height:30px; line-height:30px; color:#fff; text-align:center; text-decoration:none; background-color:#8f5822; border-top-right-radius:3px; border-bottom-right-radius:3px;}
+.hd-mb-sorts .mb-code{ display:none; position:relative; cursor:pointer;}
+.mb-code-layer{ display:none; width:360px; height:210px; position:absolute; top:100%; right:0; z-index:2; margin-top:10px; background-color:#fff;}
+.mb-code-layer .cs,.city-dialog .cs{ position:absolute; right:5px; top:5px; font-family:"宋体"; font-size:24px; color:#a4a4a4; text-decoration:none;}
+.mb-code-layer .code{ width:37.778%; height:64.762%; margin:23px auto 5px; background-color:gray;}
+.mb-code-layer p{ text-align:center;}
+.hotel-detail{ padding:0 10px; height:35px; position:absolute; left:0; top:0; line-height:35px; font-size:13px; color:#fff; background-color:#c08448;}
+.hotel-detail:after{ content:""; display:inline-block; vertical-align:middle; margin:-3px 0 0 20px; width:20px; height:20px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -123px 0;}
+.full-layer{ display:none; opacity:.9; filter:alpha(opacity=90); position:fixed; top:0; right:0; bottom:0; left:0; z-index:8; background-color:#000;}
+.city-dialog{ display:none; position:fixed; left:50%; top:50%; z-index:9; width:100%; max-width:1160px; background-color:#fff;}
+.city-dialog .cs{ top:0; z-index:1; font-size:30px;}
+.city-dialog-top{ position:relative;}
+.city-dialog-kv{ width:65%; float:left;}
+.city-dialog-profile{ width:35%; float:left;}
+.city-dialog-kv{ padding-right:30px;}
+.city-dialog-kv .wrapper{ position:relative; overflow:hidden;}
+.city-dialog-kv .swiper-slide{ position:relative;}
+.swiper-pagination{ padding:20px 0; position:relative; text-align:center;}
+.swiper-pagination .arrow{ margin:0 8px; display:inline-block; position:relative; width:18px; height:14px;}
+.swiper-pagination .arrow:before,.swiper-pagination .arrow:after{ position:absolute; left:0; top:0; content:""; border:solid transparent; border-width:7px 9px;}
+.swiper-pagination .arrow-left:before{ border-right-color:#8f5822;}
+.swiper-pagination .arrow-left:after{ margin-left:3px; border-right-color:#fff;}
+.swiper-pagination .arrow-right:before{ border-left-color:#8f5822;}
+.swiper-pagination .arrow-right:after{ margin-left:-3px; border-left-color:#fff;}
+.swiper-pagination .loca{ position:absolute; right:0; top:12px; color:#303030; text-decoration:none;}
+.swiper-pagination .loca:before{ display:inline-block; vertical-align:middle; margin:-3px 10px 0 0; content:""; width:19px; height:31px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -64px -21px;}
+.city-dialog-profile{ padding-right:50px;}
+.city-dialog-profile .t{ margin-top:30px;}
+.city-dialog-profile .t a{ font-size:26px; color:#262223; text-decoration:none;}
+.city-dialog-profile .t img{ display:inline-block; vertical-align:middle; margin:-12px 0 0 15px;}
+.city-dialog-profile .intro{ height:80px; margin:20px 0; line-height:1.6;}
+.city-dialog-profile .fea{ margin-bottom:2px; font-size:20px; color:#8f5822;}
+.city-dialog-profile .feas{ margin-bottom:10px;}
+.city-dialog-profile .feas span{ display:block; margin-bottom:5px; padding-left:20px; line-height:2; font-size:15px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/star-hilton.png") no-repeat 0 8px;}
+.city-dialog-profile .price{ margin-bottom:5px; float:right; font-size:30px; color:#000;  margin-right: -42px;}
+.city-dialog-profile .price i{ font-size:50%;}
+.city-dialog-profile .butts{ text-align:right; clear:both;  margin-right: -42px;}
+.city-dialog-profile .butts a{ display:inline-block; margin-left:15px; height:40px; line-height:40px; padding:0 40px 0 30px; position:relative; font-size:15px; color:#fff; text-decoration:none; background-color:#8f5822; border-radius:3px;}
+.city-dialog-profile .butts a + a{ background-color:#4c864c;}
+.city-dialog-profile .butts a:before,.city-dialog-profile .butts a:after{ content:""; position:absolute; right:0; top:50%; margin-top:-7px; border:solid transparent; border-width:7px 8px;}
+.city-dialog-profile .butts a:before{ border-left-color:#fff;}
+.city-dialog-profile .butts a:after{ margin-right:3px; border-left-color:#8f5822;}
+.city-dialog-profile .butts a + a:after{ border-left-color:#4c864c;}
+.city-hotel-detail-img{ display:block; width:100%;}
+.city-dialog-btm{ margin-right:-50px; padding:15px 0 5px; overflow:hidden;}
+.city-dialog-btm .wrapper{ float:left; display:table; margin:0 7px 10px 0; width:128px; height:40px; border:1px solid #ccc; border-radius:4px;}
+.city-dialog-btm .icon,.city-dialog-btm .text{ display:table-cell; vertical-align:middle;}
+.city-dialog-btm .icon{ width:34px; text-align:center;}
+.city-dialog-btm .text{ font-size:12px;}
+.pagination{ display:inline-block;}
+.swiper-pagination-switch{ display:inline-block; margin:0 2px; width:12px; height:12px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat 0 -78px; cursor:pointer;}
+.swiper-active-switch{ background-position:-15px -78px;}
+/* hotel-index */
+.hotel-calendar a:before,.hotel-calendar a:after{ content:none;}
+.hotel-calendar a:after{ content:""; border:0; margin-top:-5px; width:10px; height:10px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -86px 0; background-size:235px 235px;}
+.hotel-calendar .search{ padding-right:10px; color:#fff; background-color:#4c864c; border:0;}
+.hotel-calendar .search:after{ content:none;}
+.hotel-calendar .pc-hide{ display:none;}
+.hotel-calendar .mb-show{ display:inline-block;}
+.ht-title .t{ margin-top:5px; font-size:20px;}
+.hd-mb-title .t .img{ display:inline-block; vertical-align:middle; margin-top:-3px; width:30px; height:30px;}
+.ht-head-commu{ margin:10px 0 5px; padding-right:10px;}
+.ht-head-commu a,.ht-head-commu span{ display:inline-block; vertical-align:middle;}
+.ht-head-commu .addr,.ht-head-commu .tel-pc,.ht-head-commu .email-pc{ display:none;}
+.ht-head-commu .tel,.ht-head-commu .email{ margin-right:5px; font-size:14px; color:#303030; text-decoration:none;}
+.ht-head-commu .tel:before,.ht-head-commu .email:before{ display:inline-block; vertical-align:middle; margin:-3px 3px 0 0; content:""; width:22px; height:22px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat 0 -46px; background-size:200px 200px;}
+.ht-head-commu .email{ color:#8f5822;}
+.ht-head-commu .email:before{ width:30px; background-position:0 -69px;}
+.ht-head-commu .w-fr{ float:right; margin-top:5px; width:100%; text-align:right;}
+.ht-head-commu .price{ font-size:22px; color:#91a500;}
+.ht-head-commu .price i{ font-size:50%;}
+.ht-head-commu .booking{ padding:3px 10px; color:#fff; text-decoration:none; background-color:#4c864c; border-radius:3px;}
+.mainbody-gallery,.mainbody-sub{ float:left; position:relative;}
+.mainbody-gallery{ width:100%;}
+.mainbody-gallery .wrapper{ position:relative; overflow:hidden;}
+.mb-gallery-outer{ position:relative;}
+.mb-gallery-container{ overflow:hidden;}
+.mb-gallery-scroll{ height:100%;}
+.mb-gallery-lf,.mb-gallery-rg{ position:absolute; left:0; top:50%; margin-top:-20px; width:23px; height:39px;}
+.mb-gallery-rg{ left:auto; right:0;}
+.mb-gallery-lf i,.mb-gallery-rg i{ position:absolute; left:0; top:0; width:100%; height:100%; background-color:#000; filter:alpha(opacity=60); opacity:.6;}
+.mb-gallery-lf:after,.mb-gallery-rg:after{ content:""; position:absolute; left:50%; top:50%; margin:-8px 0 0 -5px; width:10px; height:17px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat; background-size:200px auto;}
+.mb-gallery-lf:after{ background-position:0 -93px;}
+.mb-gallery-rg:after{ background-position:0 -113px;}
+.mb-gallery-img{ display:block; width:100%;}
+.mb-gallery-item{ float:left; position:relative;  overflow: hidden;}
+.mb-gallery-intro{ height:72px; padding:10px; line-height:1.2; color:#fff; font-size:15px; background-color:#303030;}
+.mb-gallery-intro span{ margin-left:10px; font-size:80%;}
+.mb-gallery-nav{ position:absolute; left:0; bottom:0; width:100%; background-color:#000; filter:alpha(opacity=80); opacity:.8;}
+.mb-gallery-nav .sorts{ float:left; margin-right:1px; display:table; width:64px; background-color:#fff;}
+.mb-gallery-nav .sorts a{ display:table-cell; vertical-align:middle; height:50px; font-size:13px; color:#062032; text-align:center; text-decoration:none;}
+.mb-gallery-nav .sorts a.on{ color:#fff; background-color:#000; border:3px solid #fff;}
+.mb-gallery-nav-details{ float:left;}
+.mb-gallery-nav-details .photos-wrapper{ padding:0 46px; position:relative;}
+.mb-gallery-nav-details .photos-wrapper-container{ overflow:hidden;}
+.mb-gallery-nav-details .photos-wrapper-container .ul-wrap{ position:relative;}
+.mb-gallery-nav-details .photos-wrapper-container .ul-wrap li{ float:left; margin-right:1px; width:60px; height:50px; cursor:pointer;}
+.mb-gallery-nav-details .photos-wrapper-container .ul-wrap li.on{ border:3px solid #fff;}
+.mb-gallery-nav-details .photos-wrapper-arrow{ position:absolute; top:0; width:40px; height:50px; text-indent:-999em; overflow:hidden;}
+.mb-gallery-nav-details .photos-wrapper-arrow:after{ content:""; position:absolute; left:50%; top:50%; margin:-6px 0 0 -4px; width:8px; height:13px;}
+.mb-gallery-nav-details .photos-wrapper-arrow.left{ left:0;}
+.mb-gallery-nav-details .photos-wrapper-arrow.left:after{ background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -167px 0;}
+.mb-gallery-nav-details .photos-wrapper-arrow.right{ right:0;}
+.mb-gallery-nav-details .photos-wrapper-arrow.right:after{ background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -179px 0;}
+.mainbody-checkall{ padding:12px 10px; clear:both;}/* 2015-02-04 update */
+.mainbody-checkall a{ display:block; width:67.8125%; height:36px; margin:0 auto; position:relative; line-height:36px; font-size:15px; color:#fff; text-align:center; text-decoration:none; background-color:#a8a8a8; background-image:linear-gradient(#a8a8a8,#a8a8a8 50%,#9a9a9a 50%,#9b9b9b); border-radius:4px;}
+.mainbody-checkall a i{ position:absolute; top:7px; left:20px; width:26px; height:22.5px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites-jp.png") no-repeat 0 -76px; background-size:auto 303px;}
+.mainbody-checkall a i + i{ top:11px; left:auto; right:10px; width:9px; height:14.5px; background-position:0 -56px;}
+.mainbody-sub{ width:100%; }
+.hotel-nav{ overflow:hidden;}
+.hotel-nav-item{ float:left; display:table; text-align:center; width:33.333%; border:0 solid #353535; border-bottom-width:1px;}
+.hotel-nav-item:nth-child(3n+1),.hotel-nav-item:nth-child(3n+2){ border-right-width:1px;}
+.hotel-nav-links{ display:table-cell; padding-bottom:3px; width:100%; height:54px; vertical-align:bottom; font-size:14px; color:#c08448; text-decoration:none; background:#000 url("http://conrad.hilton.com.cn/zh-cn/css/../images/hotel-nav-jp.png") no-repeat; background-size:auto 543px;}
+.hotel-nav-links.active,.hotel-nav-links:hover{   background-color: #c08448;  color: #fff;background-image: url("http://conrad.hilton.com.cn/zh-cn/css/../images/hotel-nav-jp-2.png");}
+.hotel-nav-links.l1{ background-position:center -432px;}
+.hotel-nav-links.l2{ background-position:center -270px;}
+.hotel-nav-links.l3{ background-position:center -108px;}
+.hotel-nav-links.l4{ background-position:center -378px;}
+.hotel-nav-links.l5{ background-position:center -324px;}
+.hotel-nav-links.l6{ background-position:center -54px;}
+.hotel-nav-links.l7{ background-position:center -162px;}
+.hotel-nav-links.l8{ background-position:center -216px;}
+.hotel-nav-links.l9{ background-position:center 0;}
+.hotel-nav-links.l10{ background-position:center -485px;}
+/* hotel-details */
+.hotel-details,.hotel-details-column,.access-guide{ float:left; width:100%; position:relative;}
+.hotel-details-column.lf{ }
+.hotel-details-column.lf .t{ margin-bottom:12px; line-height:1.2; font-size:18px; color:#8f5822;}
+.hotel-details-column.lf .items{ margin:20px 0;}
+.hotel-details-column.lf .items li{ float:left; display:table; width:50%; height:50px;}
+.hotel-details-column.lf .items .cols{ display:table-cell; vertical-align:middle; width:40px; text-align:center;}
+.hotel-details-column.lf .items .cols + .cols{ width:auto; line-height:1.2; text-align:left;}
+.hotel-details-column.lf .intro{}
+.hotel-details-column.lf .intro p{ margin-bottom:20px; line-height:1.6;}
+.hotel-details-column.lf .intro .price{ float:right;}
+.hotel-details-column.lf .intro .price .b,.hotel-details-column.lf .intro .price .w{ float:right; clear:both;}
+.hotel-details-column.lf .intro .price .w{ font-size:30px; color:#91a500;}
+.hotel-details-column.lf .intro .price .w i{ font-size:50%;}
+.hotel-details-column.lf .intro .price .b{ padding:3px 10px; color:#fff; text-decoration:none; background-color:#4c864c; border-radius:3px;}
+.hotel-details-column.rg .campaign{ float:left; width:50%; position:relative; overflow:hidden;  min-height: 0;}
+.hotel-details-column.rg .campaign .campaign-img{ display:block; width:100%;}
+.campaign-layer-bg,.campaign-layer-txt{ position:absolute; left:0; bottom:0; padding:7px 10px 0; width:100%; height:42px;}
+.campaign-layer-bg{ background-color:#000; filter:alpha(opacity=80); opacity:.8;}
+.campaign-layer-txt{ line-height:1.4; font-size:12px; color:#fff;}
+.campaign-layer-txt i{ display:block;}
+.access-map{ height:500px; background-color:gray;}
+.access-guide-inner{ padding:10px 20px 30px;}
+.access-t{ font-size:24px;}
+.access-guide-inner p{ margin-bottom:20px; font-size:14px;}
+.access-guide-inner .cap{ margin-bottom:10px; font-size:18px; color:#8f5822; border-bottom:1px solid #8f5822;}
+.access-guide-inner .cap:before{ content:""; display:inline-block; vertical-align:middle; margin:-5px 5px 0 0; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat;}
+.access-guide-inner .c1:before{ width:22px; height:24px; background-position:-86px -26px;}
+.access-guide-inner .c2:before{ width:19px; height:24px; background-position:-112px -26px;}
+.access-guide-inner .c3:before{ margin-top:-6px; width:28px; height:28px; background-position:-136px -26px;}
+.campaign,.comtemplate{ position:relative;min-height:500px;}
+.campaign-panel{ float:left; position:relative; width:100%; height:auto; overflow:hidden;}
+.campaign-panel-img{ display:block; width:100%;}
+.campaign-panel-bg,.campaign-panel-note{ position:absolute; left:40px; top:0; width:130px; height:30px;}
+.campaign-panel-bg{ filter:alpha(opacity=80); opacity:.8;}
+.campaign-panel-bg.b1{ background-color:#bbb007;}
+.campaign-panel-bg.b2{ background-color:#a55a06;}
+.campaign-panel-bg.b3{ background-color:#9d28a4;}
+.campaign-panel-bg.layer,.campaign-panel-note.intro{ left:0; top:auto; bottom:0; width:100%; height:48px; background-color:#000;}
+.campaign-panel-note{ line-height:30px; font-size:15px; color:#fff; text-align:center;}
+.campaign-panel-note.intro{ padding:6px 10px; line-height:1.5; font-size:13px; text-align:left; background:transparent;}
+.campaign-panel-note.intro i{ display:block;}
+.campaign-sorts{ position:absolute; left:0; top:146px; padding:5px 0 0 10px; width:100%; font-size:16px; text-align:left; border-top:1px solid #e0e0e0;}
+.campaign-title{ margin-bottom:50px;}
+.comtemplate-panel{ float:left; width:100%;}
+.comtemplate-panel>a{ display:block; position:relative; text-decoration:none; overflow:hidden;}
+.comtemplate-panel-img,.comtemplate-detail-panel-img{ display:block; width:100%;}
+.comtemplate-panel-cap{ position:absolute; left:0; bottom:0; width:100%; padding:0 10px; height:32px; line-height:32px; font-size:16px; color:#fff; background-color:#c08448;}
+.comtemplate-panel-cap:after{ float:right; margin-top:6px; content:""; width:20px; height:20px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -123px 0;}
+.nodetail {cursor: default;}.nodetail .comtemplate-panel-cap:after{  background: none; }
+.comtemplate-panel-intro{ padding:10px; height:50px; line-height:1.2;display:none;}/*暂时隐藏*/
+.comtemplate-kv,.comtemplate-profile{ float:left; position:relative; width:100%;}
+.comtemplate-kv{ overflow:hidden;}
+.comtemplate-kv-wrapper{ position:relative;}
+.comtemplate-kv-items{ float:left; position:relative; width:100%; overflow:hidden;}
+.comtemplate-kv-items-img{ display:block; width:100%;}
+.comtemplate-kv-items-intro{ position:absolute; left:0; bottom:0; width:100%; padding:10px; height:53px; line-height:1.2; font-size:15px; color:#fff; background-color:#d8c2a6;}
+.comtemplate-kv-items-intro span{ margin-left:10px; font-size:86.667%;}
+.comtemplate-kv-list,.comtemplate-kv-thumb{ position:absolute; left:0; bottom:53px; width:100%; height:50px;}
+.comtemplate-kv-list{ filter:alpha(opacity=50); opacity:.5; background-color:#000;}
+.comtemplate-kv-thumb .photos-wrapper{ padding:0 23px;}
+.comtemplate-kv-thumb .photos-wrapper-arrow{ width:23px;}
+.comtemplate-kv .mb-gallery-lf,.comtemplate-kv .mb-gallery-rg{ margin-top:-66px;}
+.comtemplate-profile .t,.mb-comtemplate-profile-title{ padding:0 20px; height:40px; line-height:40px; font-size:15px; background-color:#c08448;}
+.comtemplate-profile .t a,.mb-comtemplate-profile-title a{ display:block; color:#fff; text-decoration:none;}
+.comtemplate-profile .t a:hover,.mb-comtemplate-profile-title a:hover{ text-decoration:underline;}
+.comtemplate-profile .t a:after,.mb-comtemplate-profile-title a:after{ float:right; margin-top:8px; content:""; width:23px; height:23px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -193px 0;}
+.comtemplate-profile .inner{ padding:10px 20px;  overflow-y: auto;}
+.comtemplate-profile .inner p{ /*margin-bottom:20px; height:160px; font-size:13px; line-height:1.8;*/}
+.comtemplate-profile .links{ margin-top:25px;margin-bottom:25px; font-size:16px; color:#262223;}
+.comtemplate-profile .links .b{ float:right; padding:2px 10px; font-size:15px; color:#fff; text-decoration:none; background-color:#4c864c; border-radius:3px;}
+.mb-comtemplate-profile-title{ height:30px; line-height:30px;}
+.mb-comtemplate-profile-title a:after{ margin-top:7px; width:16px; height:16px; background-position:-134.261px 0; background-size:278.261px auto;}
+/* 2015-02-04 update */
+.code-dialog{ right:0; top:260px; z-index:3; width:100%; padding:50px 0 0 50px; box-shadow:5px 5px 5px rgba(0,0,0,.3);}
+.code-dialog .cs{ top:0; font-size:36px;}
+.code-dialog p{ margin-bottom:15px; text-align:left; color:#262626;}
+.code-dialog p + p{ margin-bottom:10px;}
+.code-dialog p .cb{ vertical-align:middle; margin:-3px 5px 0 0; display:inline-block;}
+.code-dialog p .w{ width:228px; height:28px; padding:0 10px; line-height:28px; background:#fff; border:1px solid #ccc; border-radius:3px; outline:none;}
+.code-dialog p .s{ padding-left:6px;}
+/* 2015-02-06 hotel-campaign-detail.html */
+.hotel-campaign-detail{ overflow:hidden;}
+.hotel-campaign-detail-buts{ text-align:right;}
+.hotel-campaign-detail-buts .a{ margin:20px 0 0 6px; display:inline-block; width:136px; height:28px; line-height:28px; font-size:14px; color:#fff; text-align:center; text-decoration:none; border-radius:5px; background-color:#4c864c;}
+.hotel-campaign-detail-buts .a + .a{ background-color:#3da8fc;}
+.hotel-campaign-detail-buts .a:after,.hotel-campaign-profile .toggle:after{ margin:-3px 0 0 8px; display:inline-block; vertical-align:middle; content:""; border:solid transparent; border-width:4px 5px; border-left-color:#fff;}
+.hotel-campaign-profile .inner p{ height:auto; margin-bottom:20px;}
+.hotel-campaign-profile .toggle{ color:#3da8fc; text-decoration:none;}
+.hotel-campaign-profile .toggle:after{ margin-top:-12px; border-width:8px 6px; border-color:transparent; border-bottom-color:#3da8fc;}
+.hotel-campaign-profile .toggle.on:after{ margin-top:4px; border-color:transparent; border-top-color:#3da8fc;}
+.hotel-campaign-profile-terms{ display:none; margin-top:10px; overflow:auto;}
+.hotel-campaign-profile .hotel-campaign-profile-terms p{ margin-bottom:10px; font-size:12px; line-height:1.5;}
+/* 2015-02-09 update */
+.inp-hide{ text-indent: 5px;position:absolute; left:0; top:0; width:100%; height:100%; border:0; background:transparent;}
+
+/* 2015-02-11 index update */
+.new_top_inner .hotline,.new_top_inner .promise a,.new_top_inner .jiant a,.new_top_inner .fant a,.new_top_inner .yingy a{ display:block; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/tel-sc.png") no-repeat; text-indent:-999em;}
+.new_top_inner .jiant, .new_top_inner .fant , .new_top_inner .yingy { float:right; }
+.new_top_inner{ position:relative; max-width:997px; margin:0 auto;}
+.new_top_inner .jiant a { background-position:-205px 0px; width:45px; height: 30px; }
+.new_top_inner .jiant a.on { background-position:-105px 0px; width:45px; height: 30px; }
+.new_top_inner .fant a { background-position:-150px 0px; width:48px; height: 30px; }
+.new_top_inner .fant a.on { background-position:-250px 0px; width:48px; height: 30px; }
+.new_top_inner .promise a { float:right; background-position: 0px 0px; width:108px; height:25px; }
+.new_top_inner .yingy a { background-position:-250px -35px; width:48px; height: 30px; }
+.top-bar-tel,.top-bar-lang { float:right;}
+.top-bar-lang { margin-top:5px; padding:8px 3px; }
+.top-bar-tel { margin-top:2px;}
+.new_top_inner .hotline { background-position:0px -41px; height:20px; clear:both; text-indent:6.5em; color:#613414; font:14px "Arial"; margin:4px 8px 0 0; }
+.new_top_inner .top-bar-logos{ left:0;}
+.top-bar-code{ position:absolute; left:100%; top:5px; margin-left:10px; width:39px; height:0; padding-top:39px; background-position:0 -265px; overflow:hidden;}
+.main-container{ position:relative;}
+.index-kv{ width:100%; overflow:hidden;}
+.index-kv-move{ position:relative;}
+.index-kv-panel{ position:relative; overflow:hidden;}
+.index-kv-panel-img{ display:block; width:100%;}
+.index-kv-panel-tips{ position:absolute; left:50%; top:50%; width:80%; transform:translate3D(-50%,-50%,0); background:rgba(0,30,60,.6);}
+.index-kv-panel-tips .bg,.index-kv-panel-tips .txt,.index-kv-pagination .bg{ position:absolute; left:0; top:0; width:100%;}
+.index-kv-panel-tips .bg,.index-kv-pagination .bg{ height:100%; background-color:#323232; filter:alpha(opacity=60); opacity:.6;}
+.index-kv-panel-tips .bg{ display:none;}
+.index-kv-panel-tips .txt{ position:static; padding:15px; line-height:1.2; font-size:30px; color:#fff; text-align:center;}
+.index-kv-panel-tips .txt span{ display:block; font-size:80%;}
+.index-kv-panel-tips .pricediv{ position:absolute; right:140px; top:100%; margin:20px 0 0 -60px; width:120px; height:30px;line-height:30px; color:#fff; text-align:center; text-decoration:none; background-color:#DB5555; border-radius:5px;}
+.index-kv-panel-tips .booking{ position:absolute; right:0; top:100%; margin:20px 0 0 -60px; width:120px; height:30px; padding-right:20px; line-height:30px; padding-right:20px; line-height:30px; color:#fff; text-align:center; text-decoration:none; background-color:#c08448; border-radius:5px;}
+.index-kv-panel-tips .booking:before,.index-kv-panel-tips .booking:after{ left:auto; right:15px; top:9px; border-width:6px;}
+.index-kv-panel-tips .booking:before{ border-left-color:#fff;}
+.index-kv-panel-tips .booking:after{ margin-right:2px; border-left-color:#c08448;}
+.index-kv-pagination{ position:absolute; left:50%; bottom:30px; margin-left:-523px; width:1046px; height:70px; padding:0 50px;}
+.index-kv-pagination .thumb{ position:absolute; left:53px; top:10px; width:946px; overflow:hidden;}
+.index-kv-pagination .thumb-ul{ position:relative; }
+.index-kv-pagination .thumb-items{ float:left; width:80px; height:50px; margin-right:6px; background-color:gray; cursor:pointer;}
+.index-kv-pagination .thumb-items.on{ border:3px solid #fff;}
+.index-kv-pagination .prev,.index-kv-pagination .next{ position:absolute; top:50%; margin-top:-9px; width:9px; height:17px;}
+.index-kv-pagination .prev{ left:20px; background-position:-261px 0;}
+.index-kv-pagination .next{ right:20px; background-position:-272px 0;}
+.new_nav_logo .hilton a, .new_nav_logo .tab_nav li.nation a,.new_nav_logo .tab_nav li.mudidi a, .new_nav_logo .tab_nav li.abroad a, .new_nav_logo .tab_nav li.world a, .new_nav_logo .tab_nav li.promo a, .new_nav_logo .tab_content .name1, .new_nav_logo .tab_content .forward a, .new_nav_logo .tab_content .name2, .promo_list li .copy a.detail, .order .sina, .inner_nav .i_hilton a, .inner_nav .i_navlist li.nation a, .inner_nav .i_navlist li.abroad a, .inner_nav .i_navlist li.world a, .inner_nav .i_navlist li.promo a, .city_title .nbutt a, .new_nav_logo .tab_nav li.honor a, .inner_nav .i_navlist li.honor a{ background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites-old.png") no-repeat;}
+.new_nav{ width:100%; height:110px; background:#262223; position:absolute; top:0; left:0;}
+.new_nav_row{ width:100%; height:47px; background:#000; position:absolute; left:0;}
+.new_nav_logo{ width:997px; margin:0 auto; position:relative; z-index:1;}
+.new_nav_logo .hilton{ width:107px; height:87px; float:left; margin:10px 50px 0 50px; position:relative; z-index:1; display:inline;}
+.new_nav_logo .hilton a{ width:107px; height:87px; display:block; background-position:0 -24px; text-indent:-999em;}
+.new_nav_logo .left_element{ width:3000px; height:47px; position:absolute; left:-2790px; background:#262223;}
+.new_nav_logo .tab_nav{ height:47px; float:left;}
+.new_nav_logo .tab_nav li{ height:47px; float:left;}
+.new_nav_logo .tab_nav li.nation a{ width:139px; height:47px; display:block; background-position:0 -112px; text-indent:-999em;}
+.new_nav_logo .tab_nav li.nation a:hover{ background-position:0 -160px;}
+.new_nav_logo .tab_nav li.nation a.on{ background-position:0 -160px;}
+.new_nav_logo .tab_nav li.abroad a{ width:140px; height:47px; display:block; background-position:-140px -112px; text-indent:-999em;}
+.new_nav_logo .tab_nav li.abroad a:hover{ background-position:-140px -160px;}
+.new_nav_logo .tab_nav li.abroad a.on{ background-position:-140px -160px;}
+.new_nav_logo .tab_nav li.world a{ width:147px; height:47px; display:block; background-position:-281px -112px; text-indent:-999em;}
+.new_nav_logo .tab_nav li.world a:hover{ background-position:-281px -160px;}
+.new_nav_logo .tab_nav li.world a.on{ background-position:-281px -160px;}
+.new_nav_logo .tab_nav li.promo a{ width:123px; height:47px; display:block; background-position:-429px -112px; text-indent:-999em;}
+.new_nav_logo .tab_nav li.promo a:hover{ background-position:-429px -160px;}
+.new_nav_logo .tab_nav li.promo a.on{ background-position:-429px -160px;}
+.new_nav_logo .tab_nav li.honor a{ width:129px; height:47px; display:block; background-position:-561px -112px; text-indent:-999em;}
+.new_nav_logo .tab_nav li.honor a:hover{ background-position:-561px -160px;}
+.new_nav_logo .tab_nav li.honor a.on{ background-position:-561px -160px;}
+.new_nav_logo .tab_nav li.welcome a,.new_nav_logo .tab_nav li.wedding a{ width:121px; height:47px; display:block; text-indent:-999em;}
+.new_nav_logo .tab_nav li.welcome a{ background-position:-42px -262px;}
+.new_nav_logo .tab_nav li.welcome a:hover{ background-position:-42px -312px;}
+.new_nav_logo .tab_nav li.welcome a.on{ background-position:-42px -312px;}
+.new_nav_logo .tab_nav li.wedding a{ background-position:-166px -262px;}
+.new_nav_logo .tab_nav li.wedding a:hover{ background-position:-166px -312px;}
+.new_nav_logo .tab_nav li.wedding a.on{ background-position:-166px -312px;}
+.new_nav_logo .tab_content{ height:25px; position:absolute; left:250px; top:70px;}
+.new_nav_logo .tab_content .name1{ width:59px; height:14px; float:left; margin:6px 15px 0 0; background-position:-198px -24px; text-indent:-999em; overflow:hidden;}
+.new_nav_logo .tab_content .name2{ width:59px; height:14px; float:left; margin:6px 15px 0 0; background-position:-258px -24px; text-indent:-999em; overflow:hidden;}
+.new_nav_logo .tab_content .search{ float:left; position:relative; margin-right:15px; border:2px solid white; background-color:white; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/form_bg_left.gif") 0 0 no-repeat,url("http://conrad.hilton.com.cn/zh-cn/css/../images/form_bg.gif") 43px 0 repeat-x;}
+.new_nav_logo .tab_content .search input{ width:260px; height:20px; line-height:20px; color:black; padding:0 5px; background:transparent; border:none;}
+.new_nav_logo .tab_content .search_list,.header #default_list_china_new{ width:640px; padding:10px 0 20px 30px; position:absolute; left:-2px; top:25px; background:white; border:1px solid #aaa; color:#4c4c4c;}
+.header #default_list_china_new {  right: 77px;  top: 106px;  left: auto;}
+.new_nav_logo .tab_content .search_list li,.header #default_list_china_new li{ width:60px; line-height:2; float:left; margin-top:10px;}
+.new_nav_logo .tab_content .search_list dl,.header #default_list_china_new dl{ width:94px; float:left; padding-left:10px; margin-top:10px; border-left:1px solid #d2d2d2;}
+.new_nav_logo .tab_content .search_list dt,.header #default_list_china_new dt{ font-weight:bold; font-size:14px; padding-bottom:2px;}
+.new_nav_logo .tab_content .search_list dd,.header #default_list_china_new dd{ margin-top:6px;}
+.new_nav_logo .tab_content .search_list a,.header #default_list_china_new a{ color:#4c4c4c; font-size:12px; text-decoration:none;}
+.new_nav_logo .tab_content .search_list a:hover,.header #default_list_china_new a:hover{ color:#4c4c4c; text-decoration:underline;}
+.new_nav_logo .tab_content .forward{ float:left;}
+.new_nav_logo .tab_content .forward a{ width:89px; height:25px; float:left; background-position:-108px -24px; text-indent:-999em;}
+.new_nav_logo .new_tab_content{ width:450px; height:77px; padding-top:3px; position:absolute; left:250px; top:55px; border-right:1px solid #002d5d;}
+.new_nav_logo .new_tab_content .thumb{ width:113px; height:75px; float:left; margin-right:20px;}
+.new_nav_logo .new_tab_content .text{ width:288px; line-height:1.6; font-size:12px; float:left; color:white;}
+.new_nav_logo .new_tab_content .text a{ display:inline-block; margin-left:20px; color:#33b4fa; text-decoration:none;}
+.new_nav_logo .new_tab_content .text a:hover{ color:#33b4fa; text-decoration:underline;}
+.promo_list{ padding:15px 20px; background:#e6e6e6; overflow:hidden;}
+.promo_list li{ margin-top:20px; width:100%; height:111px; float:left; background-color:#fff;}
+.promo_list li:first-child{ margin-top:5px;}
+.promo_list li .thumb{ width:121px; height:111px; float:left; margin-right:14px;}
+.promo_list li .text{ margin-top:5px; width:100%; height:70px; padding-right:20px; color:#1a1a1a; font-size:12px; }
+.promo_list li .detail,.promo_list li .mb-detail{ width:72px; height:19px; float:left; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/detail.gif") left top no-repeat; text-indent:-999em; font-size:12px; }
+.promo_list li .detail{ display:none;}
+.promo_list li .mb-detail{ position:relative; padding-right:10px; line-height:20px; font-size:12px; color:#fff; text-align:center; text-decoration:none; background:#46a1d5; text-indent:0;}
+.promo_list li .mb-detail:before,.promo_list li .mb-detail:after{ left:auto; top:50%; margin-top:-5px; right:0; border-width:5px;}
+.promo_list li .mb-detail:before{ border-left-color:#fff;}
+.promo_list li .mb-detail:after{ margin-right:1px; border-left-color:#46a1d5;}
+.btm-bg{ padding:0 20px; background:#e6e6e6;}
+.footer-city{ max-width:1118px; margin:0 auto; padding-top:10px;}
+.footer-city-name{ position:relative; padding-bottom:2px; font-size:18px; color:#323232;}
+.footer-city-name:after{ position:absolute; left:0; top:50%; margin-top:-1px; content:""; width:100%; height:2px; background-color:#323232;}
+.footer-city-name>span{ padding-right:20px; position:relative; z-index:1; background-color:#e6e6e6;}
+.footer-city-lists{ margin-bottom:10px; clear:both;}
+.footer-city-lists .items{ margin:8px 20px 0 0; float:left; font-size:14px; color:#323232; text-decoration:none;}
+.footer-city.abroad{ margin-bottom:40px;}
+.footer-city.abroad .footer-city-lists{ margin-bottom:15px; float:left; width:100%; clear:none;}
+.footer-city.abroad .footer-city-name + .footer-city-lists{ clear:left;}
+.footer-city-lists .fr{ margin-top:15px; float:left; clear:both;}
+.footer-city.abroad .footer-city-lists .items:first-child{ margin-right:5px;}
+.footer-city.abroad .footer-city-lists .items:nth-child(2){ clear:left;}
+
+
+
+.mb-header{ height:110px; padding:0 10px; position:relative; background-color:#051f38;}
+.mb-header .lg{ margin-left:-10px; float:left; width:110px; height:110px; background:#051f38 url("http://conrad.hilton.com.cn/zh-cn/css/../images/top_logo.png") no-repeat 0 50%; background-size:contain; text-indent:-999em; overflow:hidden;}
+.mb-header .hd-right{ position:absolute; right:10px; top:35px;}
+.mb-header .hd-right .hotline{ vertical-align:middle; display:inline-block; text-align:right; font-size:14px; color:#fff;}
+.mb-header .hd-right .hotline i{ display:block;}
+.mb-header .hd-right .hotline i:before{ margin:-3px 10px 0 0; vertical-align:middle; display:inline-block; content:""; width:30px; height:30px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -143px 0; background-size:200px 200px;}
+.mb-header .hd-nav{ margin-left:20px; display:inline-block; position:relative; width:26px; height:3px; background-color:#fff;}
+.mb-header .hd-nav:before,.mb-header .hd-nav:after{ width:100%; height:100%; position:absolute; left:0; top:0; content:""; background:inherit;}
+.mb-header .hd-nav:before{ top:-8px;}
+.mb-header .hd-nav:after{ top:8px;}
+.city-search{ padding:20px 10px; position:relative; background-color:#000f1e;}
+.city-search-wrap{ display:block; width:100%; height:50px; padding:5px; line-height:40px; background-color:#fff; border-radius:5px; box-shadow:inset 0 0 9px rgba(0,0,0,.7);}
+.city-search-wrap .name{ display:inline-block; position:relative; width:120px; font-size:20px; color:#000f1e; text-align:center; border-right:1px solid #b8bcc0;}
+.city-search-wrap .name:before,.city-search-wrap .name:after{ left:auto; right:-11px; top:50%; margin-top:-5px; border-width:5px;}
+.city-search-wrap .name:before{ border-left-color:#b8bcc0;}
+.city-search-wrap .name:after{ margin-right:1px; border-left-color:#fff;}
+.city-search-wrap .forward{ float:right; position:relative; width:80px; padding-right:15px; text-align:center; font-size:20px; color:#fff; background-color:#46a1d5; border-radius:5px;}
+.city-search-wrap .forward:before,.city-search-wrap .forward:after{ left:auto; right:2px; top:50%; margin-top:-8px; border-width:8px;}
+.city-search-wrap .forward:before{ border-left-color:#fff;}
+.city-search-wrap .forward:after{ margin-right:1px; border-left-color:#46a1d5;}
+.city-search-dialog{ display:none; position:absolute; left:0; top:70px; z-index:5; width:100%;}
+.city-search-dialog .column{ float:left; width:50%; border-right:1px solid #999;}
+.city-search-dialog .column + .column{ border-right:0;}
+.city-search-dialog .column .name,.city-search-dialog .column li a{ height:40px; padding:0 10px; line-height:40px; font-size:14px; color:#fff; background-color:#4b4b4c;}
+.city-search-dialog .column li.countryname {color:#051f38;text-decoration:none;border-bottom:1px solid#999;background-color:#fff;font-size:14px;text-align:center;line-height:40px;padding:0 10px;height:40px;}
+.city-search-dialog .column li{ width:100%; position:relative;}
+.city-search-dialog .column li:before,.city-search-dialog .column li:after{ left:auto; right:10px; top:50%; margin-top:-5px; border-width:5px 6px;}
+.city-search-dialog .column li:before{ border-left-color:#0d3756;}
+.city-search-dialog .column li:after{ margin-right:2px; border-left-color:#fff;}
+.city-search-dialog .column li a{ display:block; color:#051f38; text-decoration:none; border-bottom:1px solid #999; background-color:#fff;}
+.city-search-dialog .column li:last-child a{ /*border-bottom:0;*/}
+.mb-kv-pagination{ position:absolute; left:50%; bottom:20px; margin-left:-40%; width:80%; height:2px;}
+.mb-kv-pagination li{ float:left; width:10%; height:2px; padding:0 1px;}
+.mb-kv-pagination li a{ display:block; height:100%; background-color:rgba(255,255,255,.5);}
+.mb-kv-pagination li.on a{ background-color:#c08448;}
+
+
+/* 国内酒店 海外酒店 城市列表 开始↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ */
+.search_list{ width:100%; padding:10px 0 20px 40px; position:absolute; right:0; top:62px; z-index:5; background:white; border:1px solid #ccc; color:#4c4c4c; display:none;}
+.search_list li{ width:60px; line-height:2; float:left; margin-top:10px;}
+.search_list dl{ width:94px; float:left; padding-left:10px; margin-top:10px; border-left:1px solid #d2d2d2;}
+.search_list dl:nth-child(4){ clear:left;}
+.search_list dt{ font-weight:bold; font-size:14px; padding-bottom:2px;}
+.search_list dd{ margin-top:6px;}
+.search_list a{ color:#4c4c4c; text-decoration:none;}
+.search_list a:hover{ color:#4c4c4c; text-decoration:underline;}
+.tri-hide-layer{ position:fixed; left:0; top:0; right:0; bottom:0; z-index:4; display:none;}
+#default_list_abroad{ width:100%;}
+/* 国内酒店 海外酒店 城市列表 结束↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ */
+
+/* 头尾内容开始↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ */
+.top-bar-logos { display:none; position:absolute; left:30px; top:0; height:49px; margin-top:5px; text-align:left;z-index:7}
+.top-bar-logos li { float:left; margin-left:3px; display:inline; position: relative; }
+.top-bar-logos li.first { margin-left:0; }
+.top-bar-logos li a { background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/logobar-brandsite-top-tc.png") no-repeat; display:block; width:45px; height:40px; }
+/* header icon */
+.top-bar-logos li a.hilton { background-position:-5px 0px; width:35px; }
+.top-bar-logos li a.waldorf { background-position:-45px 0px; width:35px; }
+.top-bar-logos li a.conrad { background-position:-87px 0px; width:39px; }
+.top-bar-logos li a.canopy { background-position:-136px 0px; }
+.top-bar-logos li a.curio { background-position:-188px 0px; width:39px; }
+.top-bar-logos li a.doubletree { background-position:-235px 0px; }
+.top-bar-logos li a.embassyuites { background-position:-285px 0px; width:35px; }
+.top-bar-logos li a.gardeninn { background-position:-324px 0px; }
+.top-bar-logos li a.hamptoninn { background-position:-374px 0px; }
+.top-bar-logos li a.homewood { background-position:-418px 0px; }
+.top-bar-logos li a.home2 { background-position:-466px 0px; }
+.top-bar-logos li a.hiltongrand { background-position:-510px 0px; width:50px; }
+.top-bar-logos li a.hhonors { background-position:-565px 0px; width:40px; }
+/* header icon.on */
+.top-bar-logos li.on a.hilton { background-position:-5px -47px; width:35px; }
+.top-bar-logos li.on a.waldorf { background-position:-45px -47px; width:35px; }
+.top-bar-logos li.on a.conrad { background-position:-87px -47px; width:39px; }
+.top-bar-logos li.on a.canopy { background-position:-136px -47px; }
+.top-bar-logos li.on a.curio { background-position:-188px -47px; width:39px; }
+.top-bar-logos li.on a.doubletree { background-position:-235px -47px; }
+.top-bar-logos li.on a.embassyuites { background-position:-285px -47px; width:35px; }
+.top-bar-logos li.on a.gardeninn { background-position:-324px -47px; }
+.top-bar-logos li.on a.hamptoninn { background-position:-374px -47px; }
+.top-bar-logos li.on a.homewood { background-position:-418px -47px; }
+.top-bar-logos li.on a.home2 { background-position:-466px -47px; }
+.top-bar-logos li.on a.hiltongrand { background-position:-510px -47px; width:50px; }
+.top-bar-logos li.on a.hhonors { background-position:-565px -47px; width:40px; }
+/* header tips */
+.logobar_brand_tooltip {
+    top: 46px;
+    position: absolute;
+    width: 158px;
+    z-index: 1050;
+    font-size: 11px;
+    color: #666;
+    line-height: 18px;
+    padding: 10px 15px 10px 15px;
+    background: #fff;
+    border: solid 1px #f0f0f0;
+    -moz-box-shadow: 0 0 5px #ccc;
+	-webkit-box-shadow: 0 0 5px #ccc;
+	box-shadow: 0px 0px 5px #ccc;
+    -moz-border-radius: 4px 4px 4px 4px;
+	-webkit-box-shadow: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
+	visibility: hidden;
+	behavior: url("http://conrad.hilton.com.cn/js/PIE.htc");	
+    
+}
+.logo_bar1 { left: 0; }
+.logo_bar2 { left: -70px; }
+.logo_bar3 { left: -65px; }
+.logo_bar4 { left: -70px; }
+.logo_bar5 { left: -70px; }
+.logo_bar6 { left: -70px; }
+.logo_bar7 { left: -75px; }
+.logo_bar8 { left: -75px; }
+.logo_bar9 { left: -73px; }
+.arrow_bottom_bar {
+	background: url("http://conrad.hilton.com.cn/zh-cn/css/../images/brand_tooltip_arrow_DOWN.png") 0 0 no-repeat;
+    width: 20px;
+    height: 13px;
+    display: block;
+    left: 77px;
+    position: absolute;
+    top: -13px;
+}
+.first .arrow_bottom_bar {left: 10px;}
+/* footer logos */
+.logos{ padding:20px 0 10px 0; text-align:center; }
+.logos li{ display:inline-block; position: relative; text-align:left; }
+.logos li a { display:block; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/logobar-brandsite-down-sc.png") 0 0 no-repeat; margin-left: 4px; height:60px; margin:0; padding:0; width:45px; }
+
+.generalconrad li a { display:block; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/logobar-conrad-down-sc.png") 0 0 no-repeat; }
+
+.logos li.brand_bar_HH { margin-left:40px; }
+.logos li.brand_bar_HH a { width: 150px; background-position: -850px 0px; }
+
+.logos li.brand_bar_HI a { background-position:2px 0px; width: 70px; }
+.logos li.brand_bar_HI a:hover { background-position:2px -79px; }
+
+.logos li.brand_bar_WA a { background-position: -70px 0px; width: 40px; }
+.logos li.brand_bar_WA a:hover { background-position: -70px -79px; }
+
+.logos li.brand_bar_CH a { background-position: -120px 0; width: 60px; }
+.logos li.brand_bar_CH a:hover { background-position: -120px -79px; }
+
+.logos li.brand_bar_CA a { background-position: -190px 0; width: 65px; }
+.logos li.brand_bar_CA a:hover { background-position: -190px -79px; }
+
+.logos li.brand_bar_CU a { background-position: -270px 0; width: 60px; }
+.logos li.brand_bar_CU a:hover { background-position: -270px -79px; }
+
+.logos li.brand_bar_DT a { background-position: -345px 0; width: 60px; }
+.logos li.brand_bar_DT a:hover { background-position: -345px -79px; }
+
+.logos li.brand_bar_ES a { background-position: -415px 0; width: 55px; }
+.logos li.brand_bar_ES a:hover { background-position: -415px -79px; }
+
+.logos li.brand_bar_GI a { background-position: -480px 0; width: 60px; }
+.logos li.brand_bar_GI a:hover { background-position: -480px -79px; }
+
+.logos li.brand_bar_HP a { background-position: -555px 0; width: 50px; }
+.logos li.brand_bar_HP a:hover { background-position: -555px -79px; }
+
+.logos li.brand_bar_HW a { background-position: -618px 0; width: 55px; }
+.logos li.brand_bar_HW a:hover { background-position: -618px -79px; }
+
+.logos li.brand_bar_HS a { background-position: -691px 0; width: 50px; }
+.logos li.brand_bar_HS a:hover { background-position: -691px -79px; }
+
+.logos li.brand_bar_HG a { background-position: -757px 0; width: 70px; }
+.logos li.brand_bar_HG a:hover { background-position: -757px -79px; }
+
+.brand_tooltip {
+    bottom: 70px; position: absolute; width: 158px; z-index: 1050; font-size: 11px; color: #666; line-height: 18px; padding: 10px 15px 10px 15px;
+    background: #fff; border: solid 1px #f0f0f0; -moz-box-shadow: 0 0 5px #ccc; -webkit-box-shadow: 0 0 5px #ccc; box-shadow: 0px 0px 5px #ccc; -moz-border-radius: 4px 4px 4px 4px; -webkit-box-shadow: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px; display:none; behavior: url("http://conrad.hilton.com.cn/js/PIE.htc");	   
+}
+* html .brand_tooltip { border: solid 1px #2f2f2f; border-radius: 0; }
+.logos li a .brand_tooltip { left: -55px; }
+.logos li.brand_bar_HH .brand_tooltip { left: -45px; }
+.logos li.brand_bar_HI .brand_tooltip { left: -63px; }
+.logos li.brand_bar_WA .brand_tooltip { left: -74px; }
+.logos li.brand_bar_CH .brand_tooltip { left: -63px; }
+.logos li.brand_bar_CA .brand_tooltip { left: -60px; }
+.logos li.brand_bar_CU .brand_tooltip { left: -72px; }
+.logos li.brand_bar_DT .brand_tooltip { left: -63px; }
+.logos li.brand_bar_ES .brand_tooltip { left: -64px; }
+.logos li.brand_bar_GI .brand_tooltip { left: -65px; }
+.logos li.brand_bar_HP .brand_tooltip { left: -69px; }
+.logos li.brand_bar_HW .brand_tooltip { left: -60px; }
+.logos li.brand_bar_HS .brand_tooltip { left: -65px; }
+.logos li.brand_bar_HG .brand_tooltip { left: -55px; }
+
+.arrow_bottom
+{
+	background: url("http://conrad.hilton.com.cn/zh-cn/css/../images/brand_tooltip_arrow.png") 0 0 no-repeat;
+	width: 20px;
+	height: 13px;
+	display: block;
+	left: 80px;
+    position: absolute;
+	width: 20px;
+	bottom: -11px;	
+}
+/* footer global */
+.global{ /*padding:20px 0 60px;*/ text-align:center; }
+.global li{ display:inline-block; height:22px; margin-right:18px; overflow:hidden;}
+.global li a { font-size:12px; color:#303030; text-decoration:none; }
+.global li span { margin-left:15px; color:#303030; }
+/* 头尾内容结束↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ */
+
+
+/* 2015-03-16 */
+.search .small,#default_list_china_new .small{ padding-top:12px; font:bold 16px "Microsoft Yahei"; color:#38281b; letter-spacing:1px;}
+.search .tt .sorts,#default_list_china_new .tt .sorts{ margin-top:-4px; padding-left:8px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/home-sorts-line.png") no-repeat 0 50%;}
+.search .tt .sorts li,#default_list_china_new .tt .sorts li{ width:auto; height:30px; float:left; padding-right:8px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/home-sorts-line.png") no-repeat 100% 50%;}
+.search .tt .sorts li a,#default_list_china_new .tt .sorts li a{ display:block; padding-right:8px; margin:0 6px 0 2px; font:12px/30px "Arial"; color:#000; text-decoration:none; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/home-sorts-off.png") no-repeat 100% 50%;}
+.search .tt .sorts li a.on,#default_list_china_new .tt .sorts li a.on{ color:#64bae5; background-image:url("http://conrad.hilton.com.cn/zh-cn/css/../images/home-sorts-on.png");}
+.search .area,#default_list_china_new .area{ padding:8px 20px 0 0; background:#fff; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; overflow:hidden;}
+.search .area li,#default_list_china_new .area li{ width:auto !important; margin-right:5px; float:left;}
+.search .area li a,#default_list_china_new .area li a{ padding:0 20px; display:block; font:bold 12px/1.8 "宋体"; color:#4c4c4c; text-decoration:none;}
+.search .area li a:hover,#default_list_china_new .area li a:hover,.search .area li a.on,#default_list_china_new .area li a.on{ color:#4c4c4c; text-decoration:none; background:#aed6f0;}
+
+
+
+/*update 3X3 2015-04-20*/
+.new_nav_logo .tab_nav li.mudidi a{ display:block; width:167px; height:47px;  background-position:-601px -16px; text-indent:-999em;}
+.new_nav_logo .tab_nav li.mudidi a.on,.new_nav_logo .tab_nav li.mudidi a:hover{background-position:-601px -64px;}
+.hot-title{ padding:0.3125em 0; background-color:#000; font-size:1.875em; color:#fff; text-align:center;}
+.hot-hotels-w{ overflow:hidden;}
+.hot-hotels{ margin-left:-0.25em;}
+.hot-hotels .items{ float:left; width:33.333%; position:relative; border:solid #000; border-width:0 0 0.25em 0.25em;}
+.hot-hotels .items img{ width:100%; display:block;}
+.hot-hotels .items-info,.hot-hotels .items-hover,.hot-hotels .items-hover .detail,.hot-hotels .items-box{ position:absolute; left:0; width:100%;}
+.hot-hotels .items-info{ bottom:0; display:table; padding:0.3125em 0.625em; color:#fff; font-size:1.375em; background:url("http://www.hilton.com.cn/huanying/css/../images/b-70.png") repeat; background:rgba(0,0,0,.7);}
+.hot-hotels .items-info span{ display:table-cell; vertical-align:middle; width:50%; text-shadow:2px 2px 5px rgba(0,0,0,.8);}
+.hot-hotels .items-info span + span{ text-align:right;}
+.hot-hotels .items-info .p{ font-size:1.125em;}
+.hot-hotels .items-info .p i{ font-size:150%;}
+.hot-hotels .items-hover{ filter:alpha(opacity=0)\9/*for ie8*/; opacity:0; top:0; right:0; bottom:0; background:url("http://www.hilton.com.cn/huanying/css/../images/w-40.png") repeat; background:rgba(255,255,255,.4); transition:all .3s linear;}
+.hot-hotels .items-hover .detail{ top:0; right:0; bottom:0; margin:auto; width:37.5%; height:2.5em; font-size:1.125em; font-weight:bold; color:#fff; line-height:2.5em; letter-spacing:2px; text-align:center; background-color:#c08448;}
+.hot-hotels .items-hover .detail:before,.hot-hotels .items-hover .detail:after{ left:auto; top:50%; right:5px; margin-top:-0.5em; border-width:0.5em;}
+.hot-hotels .items-hover .detail:before{ border-left-color:#fff;}
+.hot-hotels .items-hover .detail:after{ margin-right:2px; border-left-color:#c08448;}
+.hot-hotels .items-box{ left:5px; top:5px; right:5px; bottom:5px; width:auto;}
+.hot-hotels .items-box .top,.hot-hotels .items-box .right,.hot-hotels .items-box .bottom,.hot-hotels .items-box .left{ position:absolute; width:0; height:3px; background-color:#051f38; transition:all .3s linear;}
+.hot-hotels .items-box .left,.hot-hotels .items-box .right{ width:3px; height:0;}
+.hot-hotels .items-box .top{ top:0; left:0;}
+.hot-hotels .items-box .right{ top:0; right:0;}
+.hot-hotels .items-box .bottom{ bottom:0; right:0;}
+.hot-hotels .items-box .left{ bottom:0; left:0;}
+.hot-hotels .items a:hover .items-hover{ filter:alpha(opacity=40)\9/*for ie8*/; opacity:1;}
+.hot-hotels .items a:hover .top,.hot-hotels .items a:hover .bottom{ width:100%;}
+.hot-hotels .items a:hover .left,.hot-hotels .items a:hover .right{ height:100%;}
+
+/* for pc */
+.computer,.pc{ display:none;}
+@media (min-width:750px){
+.hotel-calendar .pc-hide{ display:inline-block;}
+.hotel-calendar .mb-show{ display:none;}
+body{ font-size:13px;}
+.top-bar-logos{ display:block;}
+.hd-mb-sorts{ width:auto; position:relative; background-color:transparent;}
+.mobile{ display:none;}
+.pc{ display:inline-block;}
+.computer{ display:block; background-color:#fff; overflow:hidden;}
+.mainbody{ padding:0 10px 10px 0; background-color:#eaeaea;}
+.city-items{ width:33.333%; float:left; margin-bottom:0; padding:10px 0 0 10px;}
+.computer .img-wrap img{ width:auto;}
+.computer .city-booking{ margin-top:0; padding:7px 30px 7px 20px;}
+.hd-wrap-logo{ width:12.5%; /*margin-top:50px;*/}
+/*.hd-mb-hotline{ width:87.5%; margin-top:0; position:relative;}*/
+.hd-mb-hotline{ width:42.5%; margin-top:0; position:relative; float:right;}
+.hd-mb-search a{ margin:0 15px 0 0; padding:2px 80px 2px 20px; font-size:15px;}
+.hd-mb-search a:before{ margin-top:-7px; border-width:7px;}
+.hd-mb-search a:after{ margin-top:-6px; border-width:6px;}
+.hd-wrap-logo a{ height:110px;}
+.hd-mb-track{ width:87.5%; margin-left:12.5%; top:auto; bottom:0;}
+.hd-mb-hotline-pro img{ width:126px;}
+.hd-mb-lang{ margin-left:60px; font-size:15px;}
+.hd-mb-lang a{ margin:0 10px;}
+.hd-mb-lang a:after{ border-width:4px 6px;}
+.hd-mb-lang a.on:after{ margin-top:4px; border-width:6px 4px;}
+.hd-mb-search,.hd-mb-title{ position:absolute;}
+/*.hd-mb-title{ width: 87.5%;left: 12.5%;margin-top: 64px;}*/
+.hd-mb-title{ width: 35.5%;left: 12.5%;margin-top: 64px;}
+.hd-mb-title .t{ margin-top:10px; font-size:30px;}
+.hd-mb-search{ width: 460px;right: 0;margin-top: 68px;z-index:1}
+.hd-mb-track .tracks{ height:40px; line-height:40px;}
+.hd-mb-sorts span{ line-height:40px;}
+.hd-mb-track .active:before, .hd-mb-track .active:after, .hd-mb-track .show:after{ border-width:20px 10px;}
+.hd-mb-sorts span i, .sub-cols i{ width:19px; height:19px; background-position:-54px 0; background-size:auto;}
+.hd-mb-sorts span i.on, .sub-cols i.on{ background-position:-74px 0;}
+.hd-mb-sorts span .cd{ width:22px; height:22px; background-position:-97px 0; background-size:auto;}
+.hd-mb-sorts .mb-code{ display:inline-block;}
+.mb-code-layer .cs{ font-size:36px;}
+.hd-mb-hotline-pro{ display:block;}
+/* hotel-index */
+.hotelbody{ padding:0; background-color:#000;}
+.hotel-calendar a:after{ margin-top:-8px; width:17px; height:16px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -146px 0;}
+.hotel-calendar .search{ padding-right:20px;}
+.ht-title .t{ margin-top:-5px; font-size:25px;}
+.ht-head-commu{ margin:0; font-size:12px;}
+.ht-head-commu .addr{ display:inline-block;}
+.ht-head-commu .tel,.ht-head-commu .email{ display:none;}
+.ht-head-commu .tel-pc,.ht-head-commu .email-pc{ display:inline-block; font-size:12px;}
+.ht-head-commu .tel-pc:before,.ht-head-commu .email-pc:before{ display:inline-block; vertical-align:middle; margin:-3px 3px 0 0; content:""; width:16.5px; height:16.5px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat 0 -34.5px; background-size:150px 150px; width:14px\0; height:14px\0; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -244px 0\0;}
+.ht-head-commu .email-pc:before{ width:22.5px; background-position:0 -51.75px; width:21px\0; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/sprites.png") no-repeat -220px 0\0;}
+.ht-head-commu .w-fr{ display:none;}
+.mainbody-checkall{ display:none;}
+.mainbody-sub{ width:12.5%; right:87.5%;}
+.mainbody-gallery{ width:87.5%; left:12.5%;}
+.hotel-nav{ min-height:495px;}
+.hotel-nav li:first-child {  border-top-width: 1px; }
+.hotel-nav-item{ width:100%; border-right:0;}
+.mb-gallery-intro{ position:absolute; bottom:50px; padding:7px 20px; width:100%; height:30px; background:url("http://conrad.hilton.com.cn/zh-cn/css/../images/0000007f-5.png?cb66da47") repeat; background:rgba(0,0,0,.5);}
+.hotel-nav-links{ background-image:url("http://conrad.hilton.com.cn/zh-cn/css/../images/pc-hotel-nav-jp.png");background-size:auto 530px;}
+.hotel-nav-links.active,.hotel-nav-links:hover{ background-image: url("http://conrad.hilton.com.cn/zh-cn/css/../images/pc-hotel-nav-jp-2.png");}
+.mb-gallery-lf, .mb-gallery-rg{ width:46px; height:78px; margin-top:-39px;}
+.mb-gallery-lf:after, .mb-gallery-rg:after{ width:20px; height:35px; margin:-17px 0 0 -10px; background-size:auto;}
+.mb-gallery-lf:after{ background-position:0 -186px;}
+.mb-gallery-rg:after{ background-position:0 -226px;}
+/* hotel details */
+.hotel-details{ width:87.5%; left:12.5%; background-color:#fff;}
+.hotel-details-column{ width:50%;}
+.hotel-details-column.lf .items li{ width:33.333%;}
+#viewport{ min-height:500px;}
+/* hotel access */
+.access-guide{ width:50%;}
+.campaign-panel{ margin-bottom:0; width:33.333%; height:33.333%;}
+.campaign-sorts{ display:inline-block; margin-right:30px; position:static; width:auto; padding:0; border-top:0; font-size:13px;}
+.comtemplate-panel{ width:33.333%; height:50%;}
+.comtemplate-kv-items-intro span{ margin-left:0; display:block;}
+.comtemplate-kv{ width:68%;}
+.comtemplate-profile{ width:32%;}
+.comtemplate-kv-thumb .photos-wrapper{ padding:0 46px;}
+.comtemplate-kv-thumb .photos-wrapper-arrow{ width:46px;}
+.mb-comtemplate-profile-title{ display:none;}
+.hd-mb-track .tracks{ padding:0 15px;}
+.hd-mb-track .tracks + .tracks{ padding:0 10px 0 20px;}
+.comtemplate-profile .links .b{ padding:2px 20px;}
+.search_list{ width:358px; right:77px; top:106px;}
+.search_list dl:nth-child(4){ clear:none;}
+#default_list_abroad{ width:615px;}
+.code-dialog{ right:525px; top:95px; width:360px;}
+.mb-header{ display:none;}
+.promo_list{ width:972px; margin:0 auto; padding:15px 0; background-color:#fff;}
+.promo_list li{ margin-top:0; width:243px;}
+.btm-bg{ padding:0; background:#dbd7cb url("http://conrad.hilton.com.cn/zh-cn/css/../images/body_bj.jpg") center top repeat-y;}
+.promo_list li .text{ margin-top:0px; padding-right:0; width:100px; height:92px; float:left;}
+.promo_list li .mb-detail{ display:none;}
+.promo_list li .detail{ display:block;}
+.index-kv-panel-tips{ left:50%; top:50%; margin:-69px 0 0 -300px; width:600px; height:138px; transform:none; background:none;}
+.index-kv-panel-tips .txt{ position:absolute; font-size:50px;}
+.index-kv-panel-tips .bg{ display:block;}
+.index-kv-panel-tips .booking{ position:absolute; left:auto; right:0; top:100%; margin-top:10px;}
+.index-kv-panel-tips .pricediv {  left:auto; margin-top: 10px; }
+.city-search,.mb-kv-pagination{ display:none;}
+.footer-city-name{ float:left; border-bottom:1px solid #646e7a;}
+.footer-city-name:after{ content:none;}
+.footer-city-name>span{ padding-right:0; background-color:transparent;}
+.footer-city.abroad .footer-city-lists .items:nth-child(2){ clear:none;}
+.footer-city.abroad .footer-city-lists{ margin-bottom:0; width:50%;}
+.footer-city-lists .fr{ margin-top:0; float:right; clear:none;}
+}
+@media (max-width:749px){
+.global li{ display:inline-block; height:22px; margin-right:10px; overflow:hidden;}
+.mainbody_zach{ margin-top:50px;}
+.full-layer,.city-dialog{ display:none !important;}
+.mb-gallery-nav{ display:none;}
+.hotel-details-column.rg{ display:none;}
+.comtemplate-profile .t{ display:none;}
+.new_top_inner,.index-kv-pagination,.new_nav{ display:none;} /* .hotel-calendar */
+.hd-mb-search a { width:90px; }
+.hd-mb-search a.mb-show { width:auto; }
+.hot-hotels .items{ width:100%;}
+}
+
+@media only screen and (max-device-width:749px) and (orientation:landscape){
+	.index-kv-panel-tips{ width:60%;}
+}
+
+/* 海外酒店lists 2015-04-23 */
+@media (min-width:750px) {
+    #default_list_abroad,#default_list_abroad_new {width: 440px;padding: 10px;}
+}
+.abroad-t{
+	padding-bottom: 2px;
+	border-bottom: 2px solid #cbcbcb;
+}
+.abroad-t .name{
+	margin: 0 15px -4px 0;
+	float: left;
+	padding: 2px 5px;
+	font-size: 13px !important;
+	color: #313131 !important;
+	border-bottom: 2px solid transparent;
+}
+.abroad-t .name:hover{
+	color: #0063ca !important;
+	text-decoration: none !important;
+}
+.abroad-t .name.active{
+	color: #0063ca !important;
+	font-weight: bold;
+	border-bottom-color: #0063ca;
+}
+.abroad-lists{
+	margin-top: 5px;
+}
+.abroad-cell{
+	margin: 5px 3px 0 0 !important;
+	float: left;
+	width: 100px !important;
+	padding: 0 5px;
+	font-size: 12px;
+	color: #313131;
+}
+.abroad-cell a {
+display:block;
+}
+.abroad-cell:hover,.abroad-cell a:hover{
+	color: #fff !important;
+    text-decoration:none !important;
+	background-color: #2577e3;
+}
+
+/*20150506*/
+.hotelwechat {  background: url("http://conrad.hilton.com.cn/zh-cn/css/../images/icon-wechat.png") no-repeat;  width: 25px;  height: 20px;}
+.hotelweibo {  background: url("http://conrad.hilton.com.cn/zh-cn/css/../images/icon-weibo.png") no-repeat;  width: 24px;  height: 20px;  margin-left: 5px;}
+.hotelqq {background: url("/Content/qq.gif") no-repeat;  width: 25px;  height: 20px;}
+/* meeting 2015-05-05 */
+.meeting-down{
+	display: block;
+	padding: 8px 5px 8px 0;
+	font-size: 13px;
+	color: #62b5e5;
+	text-decoration: none;
+	border-bottom: 1px solid #e5e5e5;
+	background: url("http://conrad.hilton.com.cn/zh-cn/css/../images/icon-down.png") no-repeat 99% 50%;
+}
+.meeting-booking{ display: block; margin-top:50px; position: relative; width:120px; height:30px; padding-right:20px; font-size: 14px; line-height:30px; color:#fff; text-align:center; text-decoration:none; background-color:#4c864c; border-radius:5px;}
+.meeting-booking:before,.meeting-booking:after{ left:auto; right:15px; top:9px; border-width:6px;}
+.meeting-booking:before{ border-left-color:#fff;}
+.meeting-booking:after{ margin-right:2px; border-left-color:#4c864c;}
+
+.mb-gallery-destine { position: absolute; top: 0;  width: 100%; background: url("http://conrad.hilton.com.cn/zh-cn/css/../images/0000007f-5.png?cb66da47") repeat; background: rgba(0,0,0,.5); padding-left: 5%; color: #fff; z-index: 1;}
+.mb-gallery-destine-text { width: 75%; vertical-align: middle; display: table-cell; }
+.mb-gallery-destine .btn { position: absolute; top: 50%; right: 5%; background: url("http://conrad.hilton.com.cn/zh-cn/css/../images/button_03.jpg"); width: 102px; height: 32px; margin-top: -16px; }
+@media (min-width:750px) {
+    .mb-gallery-destine {  font: 14px/16px "microsoft yahei";  height: 58px; display: table; }
+}
+@media (max-width:749px) {
+    .mb-gallery-destine { font: 14px/1.2em "microsoft yahei";  }
+    .mb-gallery-destine span { width: 75%; float: left; }
+}
+
+    .comtemplate-kv{width:68% !important;}
+    .comtemplate-profile{width:32% !important;}
+    .comtemplate-panel {
+        width: 33.33333% !important;
+    }

@@ -1,13 +1,13 @@
 ﻿@using Rental.UI.Utility
 @{
     var title = Html.GetLanguageByKey("IndexRoomName");
-    ViewBag.Title = title;
+    ViewBag.Title = Html.GetLanguageByKey("RoomPrivew");
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 @section breadUrl{
-    <a class="tracks active" href="http://www.conrad.com.cn/">IndexPageName</a>
+   <a class="tracks active" href="@Url.Action("Index","Home")">@Html.GetLanguageByKey("IndexPageName")</a>
     <a class="tracks active" href="javascript:void(0)">台湾</a>
-    <a class="tracks show" href="@Url.Action("Room")">房间预览</a><span class="tracks">房间</span>
+    <a class="tracks show" href="@Url.Action("Room")">@Html.GetLanguageByKey("RoomPrivew")</a><span class="tracks">房间</span>
 }
 <div class="hotel-details">
     <div class="comtemplate">
@@ -66,6 +66,19 @@
 </div>
 @section scripts{
     <script>
+        if (/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))) {
+            if (window.location.href.indexOf("?mobile") < 0) {
+                try {
+                    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                        window.location.href = "@Url.Action("RoomPhone","Home")";
+                    } else if (/iPad/i.test(navigator.userAgent)) {
+                    } else {
+                    }
+                } catch (e) { }
+            }
+        }
+
+
         $(function () {
             $('.index-li a').removeClass('active');
             $('.introduce-li a').removeClass('active');

@@ -6,7 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\发布文件\Rental</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\rental_deploy</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -34,7 +34,7 @@
       <publishTime>07/30/2015 10:31:09</publishTime>
     </File>
     <File Include="bin/Rental.UI.dll">
-      <publishTime>07/30/2015 10:31:10</publishTime>
+      <publishTime>08/14/2015 12:12:53</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
       <publishTime>07/09/2013 11:04:48</publishTime>
@@ -964,7 +964,10 @@
       <publishTime>07/30/2015 10:29:33</publishTime>
     </File>
     <File Include="Content/front/css/style.css">
-      <publishTime>07/30/2015 10:29:33</publishTime>
+      <publishTime>08/14/2015 11:25:04</publishTime>
+    </File>
+    <File Include="Content/front/css/stylePhone.css">
+      <publishTime>08/14/2015 11:48:37</publishTime>
     </File>
     <File Include="Content/front/css/style_back.css">
       <publishTime>07/30/2015 10:29:33</publishTime>
@@ -994,7 +997,7 @@
       <publishTime>07/30/2015 10:29:33</publishTime>
     </File>
     <File Include="Content/front/js/page.common.js">
-      <publishTime>07/30/2015 10:29:33</publishTime>
+      <publishTime>08/14/2015 11:25:04</publishTime>
     </File>
     <File Include="Content/front/js/prefixfree.min.js">
       <publishTime>07/30/2015 10:29:33</publishTime>
@@ -1010,6 +1013,9 @@
     </File>
     <File Include="Content/hotel_huanying.gif">
       <publishTime>07/30/2015 10:29:33</publishTime>
+    </File>
+    <File Include="Content/logo.jpg">
+      <publishTime>08/14/2015 11:25:04</publishTime>
     </File>
     <File Include="Content/logo_best_rates_sm.png">
       <publishTime>07/30/2015 10:29:33</publishTime>
@@ -1187,6 +1193,9 @@
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
       <publishTime>07/30/2015 10:29:34</publishTime>
+    </File>
+    <File Include="Content/weichatlogo.jpg">
+      <publishTime>08/14/2015 11:25:04</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>07/30/2015 10:29:34</publishTime>
@@ -2452,7 +2461,7 @@
       <publishTime>07/30/2015 10:29:34</publishTime>
     </File>
     <File Include="Views/Admin/Welcome.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:25:04</publishTime>
     </File>
     <File Include="Views/Food/Create.cshtml">
       <publishTime>07/30/2015 10:29:34</publishTime>
@@ -2464,37 +2473,55 @@
       <publishTime>07/30/2015 10:29:34</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 12:11:31</publishTime>
+    </File>
+    <File Include="Views/Home/AboutPhone.cshtml">
+      <publishTime>08/14/2015 12:10:43</publishTime>
     </File>
     <File Include="Views/Home/Food.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 12:00:59</publishTime>
     </File>
     <File Include="Views/Home/FoodInfo.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:25:04</publishTime>
+    </File>
+    <File Include="Views/Home/FoodPhone.cshtml">
+      <publishTime>08/14/2015 12:03:04</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:31:06</publishTime>
     </File>
     <File Include="Views/Home/Preference.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:49:52</publishTime>
     </File>
     <File Include="Views/Home/PreferenceInfo.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:25:04</publishTime>
+    </File>
+    <File Include="Views/Home/PreferencePhone.cshtml">
+      <publishTime>08/14/2015 11:51:51</publishTime>
     </File>
     <File Include="Views/Home/Room.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:45:35</publishTime>
     </File>
     <File Include="Views/Home/RoomList.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 12:12:19</publishTime>
+    </File>
+    <File Include="Views/Home/RoomListPhone.cshtml">
+      <publishTime>08/14/2015 12:12:06</publishTime>
+    </File>
+    <File Include="Views/Home/RoomPhone.cshtml">
+      <publishTime>08/14/2015 12:15:10</publishTime>
     </File>
     <File Include="Views/Home/RoomPreview.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:25:04</publishTime>
     </File>
     <File Include="Views/Home/Service.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:51:25</publishTime>
     </File>
     <File Include="Views/Home/ServiceInfo.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:25:04</publishTime>
+    </File>
+    <File Include="Views/Home/ServicePhone.cshtml">
+      <publishTime>08/14/2015 11:52:00</publishTime>
     </File>
     <File Include="Views/Preference/Create.cshtml">
       <publishTime>07/30/2015 10:29:34</publishTime>
@@ -2509,7 +2536,7 @@
       <publishTime>07/30/2015 10:29:34</publishTime>
     </File>
     <File Include="Views/Room/CreateStep1.cshtml">
-      <publishTime>07/30/2015 10:29:34</publishTime>
+      <publishTime>08/14/2015 11:25:04</publishTime>
     </File>
     <File Include="Views/Room/CreateStep2.cshtml">
       <publishTime>07/30/2015 10:29:34</publishTime>
@@ -2551,7 +2578,10 @@
       <publishTime>07/30/2015 10:29:35</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutPage.cshtml">
-      <publishTime>07/30/2015 10:29:35</publishTime>
+      <publishTime>08/14/2015 11:43:59</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutPhonePage.cshtml">
+      <publishTime>08/14/2015 11:45:05</publishTime>
     </File>
     <File Include="Views/Slider/Create.cshtml">
       <publishTime>07/30/2015 10:29:35</publishTime>
@@ -2569,7 +2599,7 @@
       <publishTime>07/30/2015 10:29:35</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/30/2015 10:31:13</publishTime>
+      <publishTime>08/14/2015 11:55:14</publishTime>
     </File>
   </ItemGroup>
 </Project>

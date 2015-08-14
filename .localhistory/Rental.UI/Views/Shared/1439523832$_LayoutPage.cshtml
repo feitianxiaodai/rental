@@ -1,0 +1,185 @@
+﻿@using Rental.UI.Utility
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <meta name="Keywords" content="9000home,诚意邀请在旅行途中的你,到我家做客。我们专注于中国大陆和台湾地区的短租，日租业务，实惠平价，方便快捷，贴心服务，让分享和信赖成为我们之间的桥梁。">
+    <meta name="description" content="9000home,诚意邀请在旅行途中的你,到我家做客。我们专注于中国大陆和台湾地区的短租，日租业务，实惠平价，方便快捷，贴心服务，让分享和信赖成为我们之间的桥梁。">
+
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/front/css/idangerous.swiper.css")">
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/front/css/style.css")">
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/front/js/datepicker/jquery-ui.min.css")">
+    <title>9000Home酒店</title>
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+        <script src="/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="@Url.Content("~/Content/front/js/prefixfree.min.js")"></script>
+    <script src="@Url.Content("~/Content/front/js/jquery-1.11.2.min.js")"></script>
+    <script src="@Url.Content("~/Content/front/js/common-func.js")"></script>
+    <script src="@Url.Content("~/Content/front/js/qrcode.js")"></script>
+    <script src="@Url.Content("~/Content/front/js/datepicker/jquery-ui.min.js")"></script>
+
+    @*<script type="text/javascript">
+            var digitalData = digitalData || {};
+            digitalData = {
+                event: [{ eventInfo: { eventAction: "roomView" } }],
+                product: [{ productInfo: { productID: "HKGHCCI" } }],
+                page: {
+                    pageInfo: {
+                        language: "zh-CN",
+                        pageName: "ConradChina:zh-CN:hotel:HongKong:conrad-hongkong-hkghcci:index"
+                    },
+                    category: {
+                        brand: "CI",
+                        primaryCategory: "zh-CN",
+                        siteName: "ConradChina",
+                        subSection: "zh-CN:hotel",
+                        subSubSection: "zh-CN:hotel:HongKong:conrad-hongkong-hkghcci:index",
+                        siteType: "C"
+                    },
+                    attributes: {
+                        contentTypes: "images,text",
+                        siteExperience: "D"
+                    }
+                }
+            };
+        </script>
+        <script src="//assets.adobedtm.com/1a8b82639e97b4c8938c46c6ad045392048d00e5/satelliteLib-5f15f2949f2a761b35db03f2b389a11d61654c4e.js"></script>*@
+
+    <!--framehead.html-->
+
+    <script src="@Url.Content("~/Content/front/js/idangerous.swiper-2.0.min.js")"></script>
+    <script src="@Url.Content("~/Content/front/js/page.common.js")"></script>
+    <style>
+        .detail{
+            width:90%;
+            margin:0px auto;
+        }
+        .detail p {
+            text-indent: 2em;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header fix">
+        <div class="hd-wrap fix">
+            <!-- frame top begin -->
+            <!-- top bar logos begin -->
+            <!-- top bar logos end -->
+            <div class="hd-wrap-logo"><a href="@Url.Action("Index","Home")"></a> </div>
+            <!--frametopbar.html-->
+            <!-- frame top end -->
+            <!-- page top begin -->
+            <div class="hd-mb-hotline">
+                <!-- 微信 begin -->
+                <div class="mb-code-layer">
+                    <a class="cs" href="javascript:void(0);">×</a>
+                    <div class="code">
+                        <img src="@Url.Content("~/Content/weichatlogo.jpg")" alt="" style="width: 100%; height: 100%">
+                    </div>
+                    <p>9000Home酒店</p>
+                </div>
+                <!-- 微信 end -->
+                <span class="hd-mb-hotline-w">
+                    <a class="hd-mb-hotline-pro" href="javascript:void(0);">
+                        <img src="~/Content/logo_best_rates_sm.png" />
+                    </a>
+                    <a class="hd-mb-hotline-tel pc" href="javascript:void(0);"></a>
+                    <a class="hd-mb-hotline-tel mobile" href="javascript:void(0);">免费订房热线</a>
+                </span>
+                <span class="hd-mb-lang pc"><a href="@Url.Content("~/zh-CN/Home/Index")">简体</a> <a href="@Url.Content("~/zh-TW/Home/Index")" >繁体</a> <a href="@Url.Content("~/en-US/Home/Index")" >EN</a></span>
+                <span class="hd-mb-xin pc"><a href="javascript:void(0);">weixin</a></span>
+            </div>
+
+            <div class="hd-mb-title ht-title" style="margin-top:10px;">
+                <h1 class="t" data-id="13">9000Home酒店</h1>
+                <div class="ht-head-commu fix">
+                    <span class="addr">台北101/世贸站</span>
+                    <span class="tel tel-pc">+886988678885</span>
+                    <a class="tel" href="tel:+886988678885">+886988678885</a>
+                    <a class="email" href="mailto:18562873915@163.com">邮箱</a>
+                    <a class="email email-pc" href="mailto:18562873915@163.com">18562873915@163.com</a>
+                    <a class="hotelwechat hotelwechat-pc" href="javascript:void(0);"></a>
+                </div>
+            </div>
+            <div class="hd-mb-track">
+                @RenderSection("breadUrl",true)
+                
+                <div class="hd-mb-sorts">
+
+                    <span class="mb-code"><em class="cd"></em>扫一扫</span>
+                    <!-- 手机二维码 begin -->
+                    <div class="mb-code-layer">
+                        <a class="cs" href="javascript:void(0);">×</a>
+                        <div class="code" id="urlQrCode"></div>
+                        <p>扫一扫</p>
+                    </div>
+                    <!-- 手机二维码 end -->
+                </div>
+            </div>
+            <!--hoteltitlebar.html-->
+            <!-- page top end -->
+        </div>
+    </div>
+    <!-- page body begin -->
+    <div class="mainbody hotelbody fix">
+        @RenderBody()
+        <div class="mainbody-sub">
+            <ul class="hotel-nav">
+                <li class="hotel-nav-item index-li"><a class="hotel-nav-links l1  active" href="@Url.Action("Index","Home")">@Html.GetLanguageByKey("HomePage")</a></li>
+                <li class="hotel-nav-item introduce-li"><a class="hotel-nav-links l2 " href="@Url.Action("About")">@Html.GetLanguageByKey("HotelProfile")</a></li>
+                <li class="hotel-nav-item arrive-li"><a class="hotel-nav-links l3 " href="javascript:void(0);">@Html.GetLanguageByKey("Guidance")</a></li>
+                <li class="hotel-nav-item yh-li"><a class="hotel-nav-links l4 " href="@Url.Action("Preference","Home")">@Html.GetLanguageByKey("PreferenceSelection")</a></li>
+                <li class="hotel-nav-item room-li"><a class="hotel-nav-links l5 " href="@Url.Action("Room","Home")">@Html.GetLanguageByKey("RoomPrivew")</a></li>
+                <li class="hotel-nav-item food-li"><a class="hotel-nav-links l6 " href="@Url.Action("Food","Home")">@Html.GetLanguageByKey("Food")</a></li>
+                <li class="hotel-nav-item service-li"><a class="hotel-nav-links l7 " href="@Url.Action("Service","Home")">@Html.GetLanguageByKey("Service")</a></li>
+            </ul>
+        </div>
+        <!--hotelleftmenu.html-->
+    </div>
+    <!-- page body end -->
+    <!-- frame footer begin-->
+    <div class="subscribe">
+        <div class="ht-head-commu fix">
+            <span class="addr">台北101/世贸站</span>
+            <span class="tel tel-pc">+886988678885</span>
+            <a class="tel" href="tel:+886988678885">+886988678885</a>
+            <a class="email" href="mailto:18562873915@163.com">邮箱</a>
+            <a class="email email-pc" href="mailto:18562873915@163.com">18562873915@163.com</a>
+            <a class="hotelqq" href="tencent://message/?uin=2791783975&Site=&Menu=yes"></a>
+        </div>
+    </div>
+
+    <!-- footer others brands links begin -->
+    <div class="global">
+        @*<ul>
+            <li>电话:00833423333</li>
+            <li>地址:台湾高雄市</li>
+        </ul>*@
+    </div>
+    <!-- footer others brands links end -->
+    <!-- frame footer end-->
+    <script type="text/javascript">
+        //_satellite.pageBottom();
+    </script>
+</body>
+</html>
+@RenderSection("scripts", required: false)
+<script>
+    $(function () {
+        var pageUrl = window.location.href;
+        if (pageUrl.toLowerCase().indexOf("en-us")>0) {
+            $('.hd-mb-lang a:eq(2)').addClass('on').siblings().removeClass("on");
+        } else if (pageUrl.toLowerCase().indexOf("zh-tw")>0) {
+            $('.hd-mb-lang a:eq(1)').addClass('on').siblings().removeClass("on");
+        } else {
+            $('.hd-mb-lang a:eq(0)').addClass('on').siblings().removeClass("on");
+        }
+    });
+</script>

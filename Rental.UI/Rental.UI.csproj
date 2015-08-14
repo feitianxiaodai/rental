@@ -447,12 +447,15 @@
     <Content Include="Content\easyui\themes\metro\tree.css" />
     <Content Include="Content\easyui\themes\metro\validatebox.css" />
     <Content Include="Content\easyui\themes\metro\window.css" />
+    <Content Include="Content\front\css\stylePhone.css" />
     <Content Include="Content\front\css\style.css" />
     <Content Include="Content\gouxuan.png" />
     <Content Include="Content\hotel_huanying.gif" />
+    <Content Include="Content\logo.jpg" />
     <Content Include="Content\logo_best_rates_sm.png" />
     <Content Include="Content\qq.gif" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\weichatlogo.jpg" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
@@ -747,7 +750,7 @@
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Properties\PublishProfiles\Rental.pubxml" />
+    <None Include="Properties\PublishProfiles\rental.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\easyui-lang-zh_CN.js" />
     <Content Include="Scripts\file-upload\load-image.all.min.js" />
@@ -995,6 +998,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Preference\test.cshtml" />
+    <Content Include="Views\Home\RoomPhone.cshtml" />
+    <Content Include="Views\Shared\_LayoutPhonePage.cshtml" />
+    <Content Include="Views\Home\PreferencePhone.cshtml" />
+    <Content Include="Views\Home\ServicePhone.cshtml" />
+    <Content Include="Views\Home\FoodPhone.cshtml" />
+    <Content Include="Views\Home\AboutPhone.cshtml" />
+    <Content Include="Views\Home\RoomListPhone.cshtml" />
+    <None Include="Web.Rental.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -73,7 +73,19 @@ namespace Rental.UI.Controllers
             return View();
         }
 
+        public ActionResult RoomPhone()
+        {
+            return View();
+        }
+
         public ActionResult RoomList(int id)
+        {
+            //根据地区选择该地区所有的房间信息
+            var roomViewModels = roomSer.GetRoomInfoList(id);
+            return View(roomViewModels);
+        }
+
+        public ActionResult RoomListPhone(int id)
         {
             //根据地区选择该地区所有的房间信息
             var roomViewModels = roomSer.GetRoomInfoList(id);
@@ -97,6 +109,13 @@ namespace Rental.UI.Controllers
             return View(viewModel);
         }
 
+        public ActionResult ServicePhone()
+        {
+            var viewModel = serviceSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
+
         public ActionResult ServiceInfo(int id)
         {
             var viewModel = serviceSer.GetServiceViewModelById(id, cultureName);
@@ -104,6 +123,12 @@ namespace Rental.UI.Controllers
         }
 
         public ActionResult Food()
+        {
+            var viewModel = foodSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult FoodPhone()
         {
             var viewModel = foodSer.GetServiceViewModel(cultureName);
             return View(viewModel);
@@ -121,6 +146,12 @@ namespace Rental.UI.Controllers
             return View(viewModel);
         }
 
+        public ActionResult PreferencePhone()
+        {
+            var viewModel = prefenceSer.GetServiceViewModel(cultureName);
+            return View(viewModel);
+        }
+
         public ActionResult PreferenceInfo(int id)
         {
             var viewModel = prefenceSer.GetServiceViewModelById(id, cultureName);
@@ -128,6 +159,12 @@ namespace Rental.UI.Controllers
         }
 
         public ActionResult About()
+        {
+            var viewModel = aboutSer.GetAboutViewModel(cultureName);
+            return View(viewModel);
+        }
+
+        public ActionResult AboutPhone()
         {
             var viewModel = aboutSer.GetAboutViewModel(cultureName);
             return View(viewModel);

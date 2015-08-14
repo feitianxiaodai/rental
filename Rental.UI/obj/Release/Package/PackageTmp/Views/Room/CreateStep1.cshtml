@@ -499,7 +499,7 @@
 </form>
 
 @section otherScript{
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=Nb9McbTaSsTNv4XDWwQOsYeE"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBJMf_9GvpD_yA-d6unsKI7DEq8IHSOIw"></script>
     <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
     <script src="~/Scripts/sweetalert-dev.js"></script>
     <script>
@@ -534,35 +534,75 @@
             }
             
         };
-        var map = new BMap.Map("place-map-container");          // 创建地图实例
-        var point = new BMap.Point(121.566349, 25.047042);  // 创建点坐标
-        //map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别
-        map.addControl(new BMap.NavigationControl());
-        map.setCurrentCity("台北");
-        var marker = new BMap.Marker(point);        // 创建标注
-        map.addOverlay(marker);
+        //var map = new BMap.Map("place-map-container");          // 创建地图实例
+        //var point = new BMap.Point(121.566349, 25.047042);  // 创建点坐标
+        ////map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别
+        //map.addControl(new BMap.NavigationControl());
+        //map.setCurrentCity("台北");
+        //var marker = new BMap.Marker(point);        // 创建标注
+        //map.addOverlay(marker);
 
-        marker.addEventListener("click", function (e) {
-            alert(e.point.lng + ',' + e.point.lat);
-        });
+        //marker.addEventListener("click", function (e) {
+        //    alert(e.point.lng + ',' + e.point.lat);
+        //});
 
-        marker.enableDragging();
-        marker.addEventListener("dragend", function (e) {
-            alert("当前位置：" + e.point.lng + ", " + e.point.lat);
-        });
+        //marker.enableDragging();
+        //marker.addEventListener("dragend", function (e) {
+        //    alert("当前位置：" + e.point.lng + ", " + e.point.lat);
+        //});
 
-        map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
-        map.enableContinuousZoom();
+        //map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+        //map.enableContinuousZoom();
+        var map;
+        var markers = [];
+        function initialize() {
+            var initPosition = new google.maps.LatLng(24.987356, 121.3271635);
+            var mapOptions = {
+                zoom: 9,
+                center: initPosition
+            }
+            map = new google.maps.Map(document.getElementById('place-map-container'),
+                mapOptions);
+            var marker = new google.maps.Marker({
+                position: initPosition,
+                map: map,
+                title: '坐标'
+            });
+            markers.push(marker);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        function setAllMap(map) {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(map);
+            }
+        }
+
         $(function () {
             initCity();
             $('#sel-city').change(function () {
                 var latitude = $(this).find("option:selected").attr("data-latitude");
                 var longitude = $(this).find("option:selected").attr("data-longitude");
                 var areaId = $(this).find("option:selected").attr("data-id");
-                var cityPoint = new BMap.Point(latitude, longitude);
                 //map.centerAndZoom(cityPoint, 15)
-                map.setCurrentCity("高雄");
-                map.addOverlay(new BMap.Marker(cityPoint));
+                //map.setCurrentCity("高雄");
+                //map.addOverlay(new BMap.Marker(cityPoint));
+                
+                var position = new google.maps.LatLng(24.987356, 121.5271635);
+                var mapOptions = {
+                    zoom: 9,
+                    center: position
+                }
+                map = new google.maps.Map(document.getElementById('place-map-container'),
+                    mapOptions);
+                var marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: '坐标'
+                });
+                markers.push(marker);
+
+
                 //初始化区
                 initArea(areaId);
             });
@@ -570,10 +610,29 @@
             $('#sel-area').change(function () {
                 var latitude = $(this).find("option:selected").attr("data-latitude");
                 var longitude = $(this).find("option:selected").attr("data-longitude");
-                var cityPoint = new BMap.Point(latitude, longitude);
-                map.centerAndZoom(cityPoint, 15)
-                map.addOverlay(new BMap.Marker(cityPoint));
-                alert(latitude + ',' + longitude);
+                
+                setAllMap(null);
+                var position = new google.maps.LatLng(latitude, longitude);
+                var mapOptions = {
+                    zoom: 17,
+                    center: position
+                }
+                map = new google.maps.Map(document.getElementById('place-map-container'),
+                    mapOptions);
+                var marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    draggable: true,
+                    title: '坐标'
+                });
+                //获得拖拉的坐标
+                google.maps.event.addListener(marker, 'dragend', function () {
+                    var loc = marker.getPosition();
+                    $('#AreaLong').val(loc.lng());
+                    $('#AreaLang').val(loc.lat());
+                });
+                markers.push(marker);
+
                 $('#AreaLong').val(longitude);
                 $('#AreaLang').val(latitude);
             });

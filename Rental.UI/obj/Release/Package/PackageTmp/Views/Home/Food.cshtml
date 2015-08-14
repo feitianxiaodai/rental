@@ -2,11 +2,11 @@
 @model List<Rental.Service.domain.FoodCultureModel>
 @{
     var title = Html.GetLanguageByKey("IndexRoomName");
-    ViewBag.Title = title;
+    ViewBag.Title = Html.GetLanguageByKey("Food");
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 @section breadUrl{
-    <a class="tracks active" href="http://www.conrad.com.cn/">@Html.GetLanguageByKey("IndexPageName")</a>
+    <a class="tracks active" href="@Url.Action("Index","Home")">@Html.GetLanguageByKey("IndexPageName")</a>
     <a class="tracks active" href="javascript:void(0)">@Html.GetLanguageByKey("TaiWan")</a>
     <a class="tracks show" href="@Url.Action("Food")">@Html.GetLanguageByKey("Food")</a>
 }
@@ -49,6 +49,19 @@
 </div>
 @section scripts{
     <script>
+
+        if (/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))) {
+            if (window.location.href.indexOf("?mobile") < 0) {
+                try {
+                    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                        window.location.href = "@Url.Action("FoodPhone","Home")";
+                    } else if (/iPad/i.test(navigator.userAgent)) {
+                    } else {
+                    }
+                } catch (e) { }
+            }
+        }
+
         $(function () {
             $('.index-li a').removeClass('active');
             $('.introduce-li a').removeClass('active');
