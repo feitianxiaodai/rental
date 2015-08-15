@@ -31,10 +31,10 @@
       <publishTime>08/15/2015 09:05:21</publishTime>
     </File>
     <File Include="bin/Rental.Service.dll">
-      <publishTime>08/15/2015 09:05:21</publishTime>
+      <publishTime>08/16/2015 00:01:15</publishTime>
     </File>
     <File Include="bin/Rental.UI.dll">
-      <publishTime>08/15/2015 21:52:52</publishTime>
+      <publishTime>08/16/2015 00:01:16</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
       <publishTime>07/09/2013 11:04:48</publishTime>
@@ -2467,7 +2467,7 @@
       <publishTime>08/08/2015 18:05:37</publishTime>
     </File>
     <File Include="Views/Arrival/Create.cshtml">
-      <publishTime>08/15/2015 08:57:59</publishTime>
+      <publishTime>08/15/2015 23:56:04</publishTime>
     </File>
     <File Include="Views/Food/Create.cshtml">
       <publishTime>07/20/2015 21:16:51</publishTime>

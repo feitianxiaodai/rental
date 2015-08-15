@@ -60,7 +60,7 @@ namespace Rental.UI.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(ArrivalModel model)
+        public ActionResult Create(AboutModel model)
         {
             aboutSer.Update(model);
             return RedirectToAction("Create");

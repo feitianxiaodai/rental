@@ -15,10 +15,10 @@ namespace Rental.Service
             _unitOfWork = new UnitOfWork();
         }
 
-        public Rental.Service.domain.ArrivalModel GetHotelAbout()
+        public Rental.Service.domain.AboutModel GetHotelAbout()
         {
             var hotel = _unitOfWork.AboutRepository.Query().FirstOrDefault(s => s.Id == 1);
-            var viewModel = new ArrivalModel()
+            var viewModel = new AboutModel()
             {
                 ContentCN = hotel.ContentCN,
                 ContentEN = hotel.ContentEN,
@@ -28,7 +28,7 @@ namespace Rental.Service
             return viewModel;
         }
 
-        public void Update(ArrivalModel model)
+        public void Update(AboutModel model)
         {
             var dbModel = _unitOfWork.AboutRepository.Query().FirstOrDefault(s => s.Id == 1);
             dbModel.ContentTW = model.ContentTW;
