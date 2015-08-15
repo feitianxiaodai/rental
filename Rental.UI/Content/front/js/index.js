@@ -140,11 +140,12 @@ function InitKv(type) {
     $("ul.mb-gallery-scroll").empty();
     $("ul.ul-wrap").empty();
 
+
     //生成滚动图片
     $.each(datalist, function (i, item) {
         //大图
         var li = '   	<li class="mb-gallery-item swiper-slide">\
-                    	<img class="mb-gallery-img imgauto" src="/images/LOADING.gif" \
+                    	<img class="mb-gallery-img imgauto" \
                             data-small-src="' + item.MiddleSrc + '" \
                             data-big-src="' + item.ImageSrc + '" \
                             data-ratio="0.618" alt="' + item.ImageAlt + '" ></img>\
@@ -155,13 +156,12 @@ function InitKv(type) {
         $("ul.mb-gallery-scroll").append(li);
         //小图
         var li = '  <li ' + (i == 0 ? 'class="on"' : '') + ' >\
-                    	<img style="width:100%;height:100%" src="' + item.ThumbSrc + '" alt="' + item.ImageAlt + '" ></img>\
+                    	<img style="width:100%;height:100%" src="' + item.ThumbSrc + '" alt="' + item.ImageAlt + '" />\
                     </li>';
         if (window.GlobalLangIsHK)
             li = li.traditionalized();
         $("ul.ul-wrap").append(li);
     });
-
     if (datalist.length == 1)
         $(".mb-gallery-rg").hide();
     else

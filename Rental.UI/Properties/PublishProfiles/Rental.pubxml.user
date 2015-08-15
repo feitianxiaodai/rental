@@ -25,16 +25,16 @@
       <publishTime>07/13/2015 12:33:31</publishTime>
     </File>
     <File Include="bin/Rental.Model.dll">
-      <publishTime>08/14/2015 22:02:39</publishTime>
+      <publishTime>08/15/2015 09:05:19</publishTime>
     </File>
     <File Include="bin/Rental.Repository.dll">
-      <publishTime>08/14/2015 22:02:39</publishTime>
+      <publishTime>08/15/2015 09:05:21</publishTime>
     </File>
     <File Include="bin/Rental.Service.dll">
-      <publishTime>08/14/2015 22:02:39</publishTime>
+      <publishTime>08/15/2015 09:05:21</publishTime>
     </File>
     <File Include="bin/Rental.UI.dll">
-      <publishTime>08/14/2015 22:39:21</publishTime>
+      <publishTime>08/15/2015 21:52:52</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
       <publishTime>07/09/2013 11:04:48</publishTime>
@@ -964,10 +964,10 @@
       <publishTime>07/13/2015 12:33:29</publishTime>
     </File>
     <File Include="Content/front/css/style.css">
-      <publishTime>08/11/2015 22:13:30</publishTime>
+      <publishTime>08/15/2015 23:39:16</publishTime>
     </File>
     <File Include="Content/front/css/stylePhone.css">
-      <publishTime>08/14/2015 22:02:39</publishTime>
+      <publishTime>08/15/2015 23:09:08</publishTime>
     </File>
     <File Include="Content/front/css/style_back.css">
       <publishTime>07/30/2015 00:13:00</publishTime>
@@ -991,13 +991,16 @@
       <publishTime>07/20/2015 23:27:17</publishTime>
     </File>
     <File Include="Content/front/js/index.js">
-      <publishTime>07/20/2015 22:14:45</publishTime>
+      <publishTime>08/15/2015 21:51:11</publishTime>
+    </File>
+    <File Include="Content/front/js/indexPhone.js">
+      <publishTime>08/15/2015 21:50:52</publishTime>
     </File>
     <File Include="Content/front/js/jquery-1.11.2.min.js">
       <publishTime>07/13/2015 12:33:29</publishTime>
     </File>
     <File Include="Content/front/js/page.common.js">
-      <publishTime>08/08/2015 15:07:16</publishTime>
+      <publishTime>08/15/2015 21:45:02</publishTime>
     </File>
     <File Include="Content/front/js/prefixfree.min.js">
       <publishTime>07/13/2015 12:33:29</publishTime>
@@ -1924,7 +1927,7 @@
       <publishTime>07/13/2015 12:33:30</publishTime>
     </File>
     <File Include="Scripts/json2.js">
-      <publishTime>07/13/2015 12:33:30</publishTime>
+      <publishTime>08/15/2015 16:36:04</publishTime>
     </File>
     <File Include="Scripts/knockout-2.2.0.debug.js">
       <publishTime>07/13/2015 12:33:30</publishTime>
@@ -2404,7 +2407,7 @@
       <publishTime>07/16/2015 21:36:14</publishTime>
     </File>
     <File Include="Upload/SliderImg/635726829301496894.jpg">
-      <publishTime>07/16/2015 22:35:30</publishTime>
+      <publishTime>07/16/2015 21:36:14</publishTime>
     </File>
     <File Include="Upload/SliderImg/thumb/635724799804104210.jpg">
       <publishTime>07/14/2015 22:31:05</publishTime>
@@ -2463,6 +2466,9 @@
     <File Include="Views/Admin/Welcome.cshtml">
       <publishTime>08/08/2015 18:05:37</publishTime>
     </File>
+    <File Include="Views/Arrival/Create.cshtml">
+      <publishTime>08/15/2015 08:57:59</publishTime>
+    </File>
     <File Include="Views/Food/Create.cshtml">
       <publishTime>07/20/2015 21:16:51</publishTime>
     </File>
@@ -2478,11 +2484,17 @@
     <File Include="Views/Home/AboutPhone.cshtml">
       <publishTime>08/14/2015 22:02:39</publishTime>
     </File>
+    <File Include="Views/Home/Arrival.cshtml">
+      <publishTime>08/15/2015 08:59:58</publishTime>
+    </File>
+    <File Include="Views/Home/ArrivalPhone.cshtml">
+      <publishTime>08/15/2015 16:27:57</publishTime>
+    </File>
     <File Include="Views/Home/Food.cshtml">
       <publishTime>08/14/2015 22:02:39</publishTime>
     </File>
     <File Include="Views/Home/FoodInfo.cshtml">
-      <publishTime>08/13/2015 22:07:08</publishTime>
+      <publishTime>08/15/2015 08:04:00</publishTime>
     </File>
     <File Include="Views/Home/FoodInfoPhone.cshtml">
       <publishTime>08/14/2015 22:14:13</publishTime>
@@ -2491,10 +2503,13 @@
       <publishTime>08/14/2015 22:14:44</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/14/2015 22:02:39</publishTime>
+      <publishTime>08/15/2015 10:20:29</publishTime>
+    </File>
+    <File Include="Views/Home/IndexPhone.cshtml">
+      <publishTime>08/15/2015 22:17:57</publishTime>
     </File>
     <File Include="Views/Home/Preference.cshtml">
-      <publishTime>08/14/2015 22:02:39</publishTime>
+      <publishTime>08/15/2015 23:31:03</publishTime>
     </File>
     <File Include="Views/Home/PreferenceInfo.cshtml">
       <publishTime>08/14/2015 22:09:26</publishTime>
@@ -2590,10 +2605,10 @@
       <publishTime>07/13/2015 12:33:30</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutPage.cshtml">
-      <publishTime>08/14/2015 22:02:39</publishTime>
+      <publishTime>08/15/2015 08:53:36</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutPhonePage.cshtml">
-      <publishTime>08/14/2015 22:02:39</publishTime>
+      <publishTime>08/15/2015 17:04:35</publishTime>
     </File>
     <File Include="Views/Slider/Create.cshtml">
       <publishTime>07/16/2015 21:36:14</publishTime>
@@ -2611,7 +2626,7 @@
       <publishTime>07/13/2015 12:33:30</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/14/2015 22:22:58</publishTime>
+      <publishTime>08/15/2015 21:46:14</publishTime>
     </File>
   </ItemGroup>
 </Project>

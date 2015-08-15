@@ -1,0 +1,60 @@
+﻿@using Rental.UI.Utility
+@model Rental.Service.domain.ArrivalCultureModel
+@{
+    var title = Html.GetLanguageByKey("IndexRoomName");
+    ViewBag.Title = Html.GetLanguageByKey("Guidance");
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    .aboutContent{
+        width:960px;
+        height:auto;
+        margin:0px auto;
+    }
+    .aboutContent p {
+        text-indent: 2em;
+        line-height: 1.5em;
+        font-size: 16px;
+        padding: 10px;
+        margin: 0px;
+    }
+</style>
+@section breadUrl{
+    <a class="tracks active" href="@Url.Action("Index","Home")">@Html.GetLanguageByKey("IndexPageName")</a>
+    <a class="tracks active" href="javascript:void(0)">@Html.GetLanguageByKey("TaiWan")</a>
+    <a class="tracks show" href="@Url.Action("About")">@Html.GetLanguageByKey("Guidance")</a>
+}
+
+<div class="hotel-details">
+    <div class="comtemplate">
+        <div class="aboutContent">
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+
+        if (/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))) {
+            if (window.location.href.indexOf("?mobile") < 0) {
+                try {
+                    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                        window.location.href = "@Url.Action("ArrivalPhone","Home")";
+                    } else if (/iPad/i.test(navigator.userAgent)) {
+                    } else {
+                    }
+                } catch (e) { }
+            }
+        }
+
+        $(function () {
+            $('.index-li a').removeClass('active');
+            $('.introduce-li a').addClass('active');
+            $('.arrive-li a').removeClass('active');
+            $('.yh-li a').removeClass('active');
+            $('.food-li a').removeClass('active');
+            $('.service-li a').removeClass('active');
+            $('.room-li a').removeClass('active');
+        });
+    </script>
+}

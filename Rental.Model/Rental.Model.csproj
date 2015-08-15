@@ -54,6 +54,9 @@
     <Compile Include="Model\Area.cs">
       <DependentUpon>rental.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Arrival.cs">
+      <DependentUpon>rental.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Food.cs">
       <DependentUpon>rental.tt</DependentUpon>
     </Compile>

@@ -126,6 +126,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ArrivalController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -449,6 +450,7 @@
     <Content Include="Content\easyui\themes\metro\window.css" />
     <Content Include="Content\front\css\stylePhone.css" />
     <Content Include="Content\front\css\style.css" />
+    <Content Include="Content\front\js\indexPhone.js" />
     <Content Include="Content\gouxuan.png" />
     <Content Include="Content\hotel_huanying.gif" />
     <Content Include="Content\logo.jpg" />
@@ -1009,12 +1011,17 @@
     <Content Include="Views\Home\FoodInfoPhone.cshtml" />
     <Content Include="Views\Home\ServiceInfoPhone.cshtml" />
     <Content Include="Views\Home\RoomPreviewPhone.cshtml" />
+    <Content Include="Views\Home\IndexPhone.cshtml" />
+    <Content Include="Views\Arrival\Create.cshtml" />
+    <Content Include="Views\Home\Arrival.cshtml" />
+    <Content Include="Views\Home\ArrivalPhone.cshtml" />
     <None Include="Web.Rental.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\ArrivalImg\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -19,6 +19,15 @@
     <Property Name="AreaLong" Type="varchar" MaxLength="256" Nullable="false" />
     <Property Name="AreaLang" Type="varchar" MaxLength="256" Nullable="false" />
   </EntityType>
+  <EntityType Name="Arrival">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentEN" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentTW" Type="varchar(max)" Nullable="false" />
+    <Property Name="ContentCN" Type="varchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="Food">
     <Key>
       <PropertyRef Name="Id" />
@@ -212,6 +221,7 @@
   <EntityContainer Name="RentalModelStoreContainer">
     <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Arrival" EntityType="Self.Arrival" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FoodImageInfo" EntityType="Self.FoodImageInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PreferenImageInfo" EntityType="Self.PreferenImageInfo" Schema="dbo" store:Type="Tables" />

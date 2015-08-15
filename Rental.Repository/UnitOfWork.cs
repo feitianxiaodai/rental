@@ -19,9 +19,22 @@ namespace Rental.Repository
         private PreferenceRepository _preferenceRepository = null;
         private AboutRepository _aboutRepository = null;
         private UserRepository _userRepository = null;
+        private ArrivalRepository _arrivalRepository = null;
         public UnitOfWork()
         {
             _edm = new RentalEntities();
+        }
+
+        public ArrivalRepository ArrivalRepository
+        {
+            get
+            {
+                if (_arrivalRepository == null)
+                {
+                    _arrivalRepository = new ArrivalRepository(_edm);
+                }
+                return _arrivalRepository;
+            }
         }
 
         public UserRepository UserRepository

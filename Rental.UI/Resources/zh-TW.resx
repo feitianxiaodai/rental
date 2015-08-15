@@ -120,6 +120,9 @@
   <data name="AncillaryFacility" xml:space="preserve">
     <value>配套設施</value>
   </data>
+  <data name="Arrival" xml:space="preserve">
+    <value>到達指引</value>
+  </data>
   <data name="BasicInfo" xml:space="preserve">
     <value>基本信息</value>
   </data>

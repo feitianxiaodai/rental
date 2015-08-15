@@ -29,6 +29,7 @@
       <End Role="Service" EntitySet="Service" />
       <End Role="ServiceImageInfo" EntitySet="ServiceImageInfo" />
     </AssociationSet>
+    <EntitySet Name="Arrival" EntityType="RentalModel.Arrival" />
   </EntityContainer>
   <EntityType Name="About">
     <Key>
@@ -247,4 +248,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Arrival">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentTW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentCN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

@@ -21,6 +21,7 @@
         <AssociationConnector Association="RentalModel.FK_PreferenImageInfo_Preferential" />
         <AssociationConnector Association="RentalModel.FK_RoomImageInfo_Room" />
         <AssociationConnector Association="RentalModel.FK_ServiceImageInfo_Service" />
+        <EntityTypeShape EntityType="RentalModel.Arrival" Width="1.5" PointX="10.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

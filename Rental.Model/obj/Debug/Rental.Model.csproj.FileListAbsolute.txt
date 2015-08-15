@@ -16,15 +16,6 @@ E:\rental\rental\Rental.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\rental\rental\Rental.Model\obj\Debug\Rental.Model.csprojResolveAssemblyReference.cache
 E:\rental\rental\Rental.Model\obj\Debug\Rental.Model.dll
 E:\rental\rental\Rental.Model\obj\Debug\Rental.Model.pdb
-D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\Rental.Model.dll.config
-D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\Rental.Model.dll
-D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\Rental.Model.pdb
-D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\EntityFramework.dll
-D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\EntityFramework.xml
-D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
-D:\VSCode\rentalsite\rental\Rental.Model\obj\Debug\Rental.Model.csprojResolveAssemblyReference.cache
-D:\VSCode\rentalsite\rental\Rental.Model\obj\Debug\Rental.Model.dll
-D:\VSCode\rentalsite\rental\Rental.Model\obj\Debug\Rental.Model.pdb
 E:\rentalnew\rental\Rental.Model\bin\Debug\Rental.Model.dll.config
 E:\rentalnew\rental\Rental.Model\bin\Debug\Rental.Model.dll
 E:\rentalnew\rental\Rental.Model\bin\Debug\Rental.Model.pdb
@@ -34,3 +25,11 @@ E:\rentalnew\rental\Rental.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\rentalnew\rental\Rental.Model\obj\Debug\Rental.Model.csprojResolveAssemblyReference.cache
 E:\rentalnew\rental\Rental.Model\obj\Debug\Rental.Model.dll
 E:\rentalnew\rental\Rental.Model\obj\Debug\Rental.Model.pdb
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\Rental.Model.dll.config
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\Rental.Model.dll
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\Rental.Model.pdb
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\EntityFramework.dll
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\EntityFramework.xml
+D:\VSCode\rentalsite\rental\Rental.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\VSCode\rentalsite\rental\Rental.Model\obj\Debug\Rental.Model.dll
+D:\VSCode\rentalsite\rental\Rental.Model\obj\Debug\Rental.Model.pdb

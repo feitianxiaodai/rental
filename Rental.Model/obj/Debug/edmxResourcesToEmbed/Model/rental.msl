@@ -168,5 +168,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Arrival">
+      <EntityTypeMapping TypeName="RentalModel.Arrival">
+        <MappingFragment StoreEntitySet="Arrival">
+          <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+          <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+          <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

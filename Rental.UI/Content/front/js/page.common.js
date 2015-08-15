@@ -28,10 +28,10 @@ function SetTelephone() {
     if ($.cookie("search-cookie") != null) {
         var _source = $.cookie("search-cookie");
         if (_source == "search") {
-            _telHtml = "400-820-3011";
+            _telHtml = "+86988678885";
             _telNum = "tel:" + _telHtml;
         } else if (_source == "baidu" ) {
-            _telHtml = "400-820-2012";
+            _telHtml = "+86988678885";
             _telNum = "tel:" + _telHtml;
         }
     }

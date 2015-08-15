@@ -24,6 +24,15 @@
           <Property Name="AreaLong" Type="varchar" MaxLength="256" Nullable="false" />
           <Property Name="AreaLang" Type="varchar" MaxLength="256" Nullable="false" />
         </EntityType>
+        <EntityType Name="Arrival">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContentEN" Type="varchar(max)" Nullable="false" />
+          <Property Name="ContentTW" Type="varchar(max)" Nullable="false" />
+          <Property Name="ContentCN" Type="varchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="Food">
           <Key>
             <PropertyRef Name="Id" />
@@ -217,6 +226,7 @@
         <EntityContainer Name="RentalModelStoreContainer">
           <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Arrival" EntityType="Self.Arrival" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FoodImageInfo" EntityType="Self.FoodImageInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PreferenImageInfo" EntityType="Self.PreferenImageInfo" Schema="dbo" store:Type="Tables" />
@@ -277,6 +287,7 @@
             <End Role="Service" EntitySet="Service" />
             <End Role="ServiceImageInfo" EntitySet="ServiceImageInfo" />
           </AssociationSet>
+          <EntitySet Name="Arrival" EntityType="RentalModel.Arrival" />
         </EntityContainer>
         <EntityType Name="About">
           <Key>
@@ -495,6 +506,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Arrival">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContentEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ContentTW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ContentCN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -664,6 +684,16 @@
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Arrival">
+            <EntityTypeMapping TypeName="RentalModel.Arrival">
+              <MappingFragment StoreEntitySet="Arrival">
+                <ScalarProperty Name="ContentCN" ColumnName="ContentCN" />
+                <ScalarProperty Name="ContentTW" ColumnName="ContentTW" />
+                <ScalarProperty Name="ContentEN" ColumnName="ContentEN" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

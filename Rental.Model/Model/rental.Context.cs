@@ -37,5 +37,6 @@ namespace Rental.Model.Model
         public DbSet<ServiceImageInfo> ServiceImageInfo { get; set; }
         public DbSet<Slider> Slider { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<Arrival> Arrival { get; set; }
     }
 }

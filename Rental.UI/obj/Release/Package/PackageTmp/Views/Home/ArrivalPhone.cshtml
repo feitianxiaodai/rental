@@ -1,0 +1,51 @@
+﻿@using Rental.UI.Utility
+@model Rental.Service.domain.ArrivalCultureModel
+@{
+    var title = Html.GetLanguageByKey("IndexRoomName");
+    ViewBag.Title = Html.GetLanguageByKey("Guidance");
+    Layout = "~/Views/Shared/_LayoutPhonePage.cshtml";
+}
+<style>
+    .aboutContent{
+        width:100%;
+        height:auto;
+        margin:0px auto;
+    }
+    .aboutContent p {
+        text-indent: 2em;
+        line-height: 1.5em;
+        font-size: 16px;
+        padding: 10px;
+        margin: 0px;
+        width:90%;
+    }
+    .aboutContent img{
+        width:100%;
+    }
+</style>
+@section breadUrl{
+    <a class="tracks active" href="@Url.Action("Index","Home")">@Html.GetLanguageByKey("IndexPageName")</a>
+    <a class="tracks active" href="javascript:void(0)">@Html.GetLanguageByKey("TaiWan")</a>
+    <a class="tracks show" href="@Url.Action("About")">@Html.GetLanguageByKey("Guidance")</a>
+}
+
+<div class="hotel-details">
+    <div class="comtemplate">
+        <div class="aboutContent">
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $('.index-li a').removeClass('active');
+            $('.introduce-li a').addClass('active');
+            $('.arrive-li a').removeClass('active');
+            $('.yh-li a').removeClass('active');
+            $('.food-li a').removeClass('active');
+            $('.service-li a').removeClass('active');
+            $('.room-li a').removeClass('active');
+        });
+    </script>
+}

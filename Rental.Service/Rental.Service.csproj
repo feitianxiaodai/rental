@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrivalService.cs" />
     <Compile Include="AboutService.cs" />
     <Compile Include="AreaService.cs" />
     <Compile Include="convertor\PreferenceModelConvertor.cs" />
     <Compile Include="convertor\FoodModelConvertor.cs" />
     <Compile Include="convertor\RoomModelConvertor.cs" />
     <Compile Include="convertor\ServiceModelConvertor.cs" />
+    <Compile Include="domain\ArrivalCultureModel.cs" />
+    <Compile Include="domain\ArrivalModel.cs" />
     <Compile Include="domain\AboutModel.cs" />
     <Compile Include="domain\AboutCultureModel.cs" />
     <Compile Include="domain\AreaModel.cs" />

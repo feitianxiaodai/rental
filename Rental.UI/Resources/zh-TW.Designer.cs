@@ -70,6 +70,15 @@ namespace Rental.UI.Resources {
         }
         
         /// <summary>
+        ///   查找类似 到達指引 的本地化字符串。
+        /// </summary>
+        public static string Arrival {
+            get {
+                return ResourceManager.GetString("Arrival", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 基本信息 的本地化字符串。
         /// </summary>
         public static string BasicInfo {
