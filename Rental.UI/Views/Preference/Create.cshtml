@@ -196,6 +196,7 @@
                         SaveImg(file.name);
                         $(data.context.children()[index])
                             .wrap(link);
+                        $(data.context.find('span')).html('上传成功');
                     } else if (file.error) {
                         var error = $('<span class="text-danger"/>').text(file.error);
                         $(data.context.children()[index])

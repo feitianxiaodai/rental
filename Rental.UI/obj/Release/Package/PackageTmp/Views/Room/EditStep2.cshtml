@@ -184,6 +184,7 @@
                             .prop('href', file.url);
                         $(data.context.children()[index])
                             .wrap(link);
+                        $(data.context.find('span')).html('上传成功');
                         createImgHidden(file.name);
                     } else if (file.error) {
                         var error = $('<span class="text-danger"/>').text(file.error);
